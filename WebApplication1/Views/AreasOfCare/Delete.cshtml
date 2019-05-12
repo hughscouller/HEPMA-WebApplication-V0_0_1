@@ -1,0 +1,424 @@
+﻿@model WebApplication1.Models.HEPMA.AreaOfCare
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AreaOfCare</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteLocation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteLocation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AocType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AocType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstContactDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstContactDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstContactNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstContactNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlannedGoLiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlannedGoLiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlannedGoLiveNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlannedGoLiveNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualGoLiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualGoLiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualGoLiveNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualGoLiveNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BauHandoverDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BauHandoverDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BauHandoverNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BauHandoverNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCGeneralNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCGeneralNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADTsRealTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADTsRealTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADTsNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADTsNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPCLinic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPCLinic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPClinicRealTIme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPClinicRealTIme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OPClinicNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OPClinicNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedRec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedRec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedRecWho)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedRecWho)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedRecWhere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedRecWhere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedRecWhen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedRecWhen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedRecNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedRecNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescWardRounds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescWardRounds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescWardRoundsNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescWardRoundsNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescMDTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescMDTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescMDTsNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescMDTsNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescNursesOffice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescNursesOffice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescNursesOfficeNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescNursesOfficeNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescOtherNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescOtherNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescUsersEpr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescUsersEpr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescUsersEprNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescUsersEprNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrescGeneralNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrescGeneralNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugRoundBedsideRecording)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugRoundBedsideRecording)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugRoundCentralPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugRoundCentralPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatToCentralPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatToCentralPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedAdminNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedAdminNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedAdminUsersEpr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedAdminUsersEpr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedAdminUsersEprNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedAdminUsersEprNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmCheck)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmCheck)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmCheckBedsite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmCheckBedsite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmCheckOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmCheckOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmCheckNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmCheckNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmChecUsersEpr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmChecUsersEpr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmChecEprNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmChecEprNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

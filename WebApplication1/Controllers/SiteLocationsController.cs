@@ -18,7 +18,8 @@ namespace WebApplication1.Controllers
         // GET: SiteLocations
         public ActionResult Index()
         {
-            return View(db.SiteLocations.ToList());
+            var siteLocations = db.SiteLocations.Include(s => s.HospitalSite);
+            return View(siteLocations.ToList());
         }
 
         // GET: SiteLocations/Details/5
@@ -29,6 +30,23 @@ namespace WebApplication1.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             SiteLocation siteLocation = db.SiteLocations.Find(id);
+            // ////////////////////////////////////////////////
+            var hospitalSiteName = db.HospitalSite
+                    .Where(HS => HS.Id == siteLocation.HospitalSiteId);
+
+            ViewBag.HospitalSiteName = hospitalSiteName.First().Name;
+
+            // ////////////////////////////////////////////////
+            // find all SiteLocations where HospitalSiteId = id
+            var AreasOfCare = db.AreasOfCare
+                    .Where(AoC => AoC.SiteLocationId == id);
+
+            ViewBag.AreasOfCare = AreasOfCare;
+
+            ViewBag.AreasOfCareCount = AreasOfCare.Count();
+            // //////////////////////////////////////////////////
+            
+
             if (siteLocation == null)
             {
                 return HttpNotFound();
@@ -37,9 +55,18 @@ namespace WebApplication1.Controllers
         }
 
         // GET: SiteLocations/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            return View();
+            // ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name");  // required for the HospitalSite dropdown form field
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name");
+
+
+
+            var SL = new SiteLocation();
+            SL.HospitalSiteId = id;
+            //ViewBag.HSID = id;
+
+            return View(SL);
         }
 
         // POST: SiteLocations/Create
@@ -56,6 +83,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 
@@ -71,6 +99,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 
@@ -87,6 +116,7 @@ namespace WebApplication1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 

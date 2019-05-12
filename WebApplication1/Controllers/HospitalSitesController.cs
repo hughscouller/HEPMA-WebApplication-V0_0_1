@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         // GET: HospitalSites
         public ActionResult Index()
         {
-            return View(db.HospitalSites.ToList());
+            return View(db.HospitalSite.ToList());
         }
 
         // GET: HospitalSites/Details/5
@@ -28,11 +28,21 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSites.Find(id);
+            HospitalSite hospitalSite = db.HospitalSite.Find(id);
+
             if (hospitalSite == null)
             {
                 return HttpNotFound();
             }
+
+            // find all SiteLocations where HospitalSiteId = id
+            var x = db.SiteLocations
+                    .Where(sl => sl.HospitalSiteId == id);
+
+            ViewBag.SiteLocations = x;
+            ViewBag.SiteLocationsCount = x.Count();
+
+
             return View(hospitalSite);
         }
 
@@ -51,7 +61,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.HospitalSites.Add(hospitalSite);
+                db.HospitalSite.Add(hospitalSite);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +76,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSites.Find(id);
+            HospitalSite hospitalSite = db.HospitalSite.Find(id);
             if (hospitalSite == null)
             {
                 return HttpNotFound();
@@ -97,7 +107,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSites.Find(id);
+            HospitalSite hospitalSite = db.HospitalSite.Find(id);
             if (hospitalSite == null)
             {
                 return HttpNotFound();
@@ -110,8 +120,8 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            HospitalSite hospitalSite = db.HospitalSites.Find(id);
-            db.HospitalSites.Remove(hospitalSite);
+            HospitalSite hospitalSite = db.HospitalSite.Find(id);
+            db.HospitalSite.Remove(hospitalSite);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

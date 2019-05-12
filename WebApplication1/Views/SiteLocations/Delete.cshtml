@@ -12,6 +12,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.HospitalSite.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HospitalSite.Name)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
@@ -35,14 +43,6 @@
             @Html.DisplayFor(model => model.Notes)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HospitalSiteId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.HospitalSiteId)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
@@ -50,7 +50,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to List", "../HospitalSites/Details/", new { Id = Model.Id })
         </div>
     }
 </div>

@@ -14,6 +14,7 @@ namespace WebApplication1.Models.HEPMA
         public string Descrption { get; set; }
         public string Notes { get; set; }
         public int? HospitalSiteId { get; set; }
+        public virtual HospitalSite HospitalSite { get; set; }
 
         public virtual ICollection<AreaOfCare> AreasOfCare { get; set; }
 

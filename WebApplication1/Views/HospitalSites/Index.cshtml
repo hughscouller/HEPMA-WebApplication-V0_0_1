@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebApplication1.Models.HEPMA.HospitalSite>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hospital Sites";
 }
 
-<h2>Index</h2>
+<h2>Hospital Sites</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -35,11 +35,19 @@
             @Html.DisplayFor(modelItem => item.Notes)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Details", "Details", new { id = item.Id })
+        </td>
+        <td>
+            | @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+            | @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
         </td>
     </tr>
 }
-
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><strong>@Html.ActionLink("Create New", "Create")</strong></td>
+    </tr>
 </table>

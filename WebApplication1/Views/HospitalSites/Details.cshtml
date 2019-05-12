@@ -4,39 +4,87 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Hospital Site Details</h2>
 
-<div>
-    <h4>HospitalSite</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+<div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <div>
+        @*@Html.ActionLink("Back to List", "../HospitalSites/Details", new { id = Model.Id })*@
+        @Html.ActionLink("Back to list of hospital sites", "../HospitalSites/Index")
+        <hr />
+        <div class="col-md-3">
+            <div class="panel">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <div class="panel-heading bg-primary">
+                    <h3>@Html.DisplayFor(model => model.Name)</h3>
+                    @*<hr />*@
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <div class="panel-body">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
+                    <p>
+                        <strong>Desctiption:</strong>
+                        @Html.DisplayFor(model => model.Description)
+                    </p>
+                    <p>
+                        <strong>Notes:</strong>
+                        @Html.DisplayFor(model => model.Notes)
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    <p>
+                        Site Locations:
+                        @ViewBag.SiteLocationsCount
+                    </p>
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
+            <table class="table">
+                <tr class="alert-info">
+                    <td>&nbsp</td>
+                    <td>
+                        <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
+                    </td>
+                </tr>
+            </table>
 
-    </dl>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        @*<div>*@
+            <table class="table table-dark">
+
+                <tr class="bg-primary">
+                    <td><strong>ID</strong></td>
+                    <td><strong>Site Locations</strong></td>
+                    <td><strong>Description</strong></td>
+                    <td></td>
+                    <td></td>
+                    @*<td><strong>@Html.ActionLink("Create New", "../SiteLocations/Create")</strong></td>*@
+                </tr>
+
+                @foreach (var SL in ViewBag.SiteLocations)
+                {
+                <tr>
+                    <td class="">@SL.Id</td>
+                    <td>@SL.Name</td>
+                    <td>@SL.Descrption</td>
+                    <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = SL.Id })</td>
+                    <td>
+                        | @Html.ActionLink("Edit", "../SiteLocations/Edit", new { id = SL.Id })
+                        | @Html.ActionLink("Delete", "../SiteLocations/Delete", new { id = SL.Id }) |
+                    </td>
+                </tr>
+                } @*---------------------close offor each----------------------------*@
+                <tr class="alert-info">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><strong>@Html.ActionLink("Create New", "../SiteLocations/Create", new { id = Model.Id })</strong></td>
+                </tr>
+            </table>
+        @*</div>*@
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
