@@ -32,159 +32,114 @@
 
         @*Area of Care - high level information on Area of Care*@
         <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.AocType)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.AocType)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.Description)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.Description)
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.Name)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.Name)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-        </div>
+            <div class="col-md-6">
+                <Div class="table">
+                    <table class="table table-hover">
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.SiteLocation.Name)</strong></td>
+                            <td><strong>@Html.DisplayFor(model => model.SiteLocation.Name)</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.AocType)</strong></td>
+                            <td>@Html.DisplayFor(model => model.AocType)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.Description)</strong></td>
+                            <td>@Html.DisplayFor(model => model.Description)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.Name)</strong></td>
+                            <td>@Html.DisplayFor(model => model.Name)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.Status)</strong></td>
+                            <td>@Html.DisplayFor(model => model.Status)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.Notes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.Notes)</td>
+                        </tr>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.Status)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.Status)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.Notes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.Notes)
-            </div>
-        </div>
+                        <tr>
+                            <td><strong></strong></td>
+                            <td></td>
+                        </tr>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.SiteLocation.Name)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.SiteLocation.Name)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
+                    </table>
+                </Div>
             </div>
-        </div>
 
+            <div class="col-md-6">
+            </div>
+
+        </div>
     </div>
+
+
     <div id="AoCProjectDates" class="tab-pane fade">
         <h3>AoC Project Date</h3>
 
         @*AoC project dates - dates relevent to the project*@
-
         <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.FirstContactDate)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.FirstContactDate)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.FirstContactNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.FirstContactNotes)
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.PlannedGoLiveDate)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.PlannedGoLiveDate)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.PlannedGoLiveNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.PlannedGoLiveNotes)
-            </div>
-        </div>
+            <div class="col-md-6">
+                <Div class="table">
+                    <table class="table table-hover">
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.FirstContactDate)</strong></td>
+                            <td>@Html.DisplayFor(model => model.FirstContactDate)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.FirstContactNotes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.FirstContactNotes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.PlannedGoLiveDate)</strong></td>
+                            <td>@Html.DisplayFor(model => model.PlannedGoLiveDate)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.PlannedGoLiveNotes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.PlannedGoLiveNotes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.ActualGoLiveDate)</strong></td>
+                            <td>@Html.DisplayFor(model => model.ActualGoLiveDate)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.ActualGoLiveNotes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.ActualGoLiveNotes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.BauHandoverDate)</strong></td>
+                            <td>@Html.DisplayFor(model => model.BauHandoverDate)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.BauHandoverNotes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.BauHandoverNotes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@Html.DisplayNameFor(model => model.AoCGeneralNotes)</strong></td>
+                            <td>@Html.DisplayFor(model => model.AoCGeneralNotes)</td>
+                        </tr>
+                        <tr>
+                            <td><strong></strong></td>
+                            <td></td>
+                        </tr>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.ActualGoLiveDate)</strong>
+                    </table>
+                </Div>
             </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.ActualGoLiveDate)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.ActualGoLiveNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.ActualGoLiveNotes)
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.BauHandoverDate)</strong>
+            <div class="col-md-6">
             </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.BauHandoverDate)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.BauHandoverNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.BauHandoverNotes)
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.AoCGeneralNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.AoCGeneralNotes)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-
     </div>
+
+
+
     <div id="AoCBusinessProcess" class="tab-pane fade">
         <h3>AoC Business Process</h3>
 
@@ -603,11 +558,113 @@
     <div id="AoCGoliveChecklist" class="tab-pane fade">
         <h3>AoC Golive Checklist</h3>
         @*AoC Golive Checklist*@
+        <p>.</p>
+
+        <div class="row">
+            <div class="col-md-12">
+                <Div class="table">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>
+                                <h5>Users</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5>Software</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5>Hardware</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Infrastructure</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Notes</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </Div>
+            </div>
+        </div>
+
+
+
     </div>
 
     <div id="AoCBaUChecklist" class="tab-pane fade">
         <h3>AoC BaUCheck list</h3>
         @*AoC BaUCheck list*@
+        <p>.</p>
+
+        <div class="row">
+            <div class="col-md-12">
+                <Div class="table">
+                    <table class="table table-hover">
+                        <tr>
+                            <td>
+                                <h5>Users</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5>Software</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <h5>Hardware</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Infrastructure</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Notes</h5>
+                                <p>.</p>
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </Div>
+            </div>
+        </div>
+
+
+
     </div>
 </div>
     
