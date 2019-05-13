@@ -194,17 +194,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905040735074_InitialCreate.cs" />
-    <Compile Include="Migrations\201905040735074_InitialCreate.Designer.cs">
-      <DependentUpon>201905040735074_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905121049460_refactor01.cs" />
-    <Compile Include="Migrations\201905121049460_refactor01.Designer.cs">
-      <DependentUpon>201905121049460_refactor01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905121216221_refactor02.cs" />
-    <Compile Include="Migrations\201905121216221_refactor02.Designer.cs">
-      <DependentUpon>201905121216221_refactor02.cs</DependentUpon>
+    <Compile Include="Migrations\201905130732537_INitialBuild.cs" />
+    <Compile Include="Migrations\201905130732537_INitialBuild.Designer.cs">
+      <DependentUpon>201905130732537_INitialBuild.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -511,14 +503,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905040735074_InitialCreate.resx">
-      <DependentUpon>201905040735074_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905121049460_refactor01.resx">
-      <DependentUpon>201905121049460_refactor01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905121216221_refactor02.resx">
-      <DependentUpon>201905121216221_refactor02.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905130732537_INitialBuild.resx">
+      <DependentUpon>201905130732537_INitialBuild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
