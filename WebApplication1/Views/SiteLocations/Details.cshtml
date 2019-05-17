@@ -4,64 +4,68 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Site Location Details</h2>
+<h2>Site Location Details </h2>
 
 <div class="container">
 
     <div>
-        @Html.ActionLink("Back to List of Hospitals", "Index") | 
-        @Html.ActionLink("Back to Hospital Site & locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
+        <h4><strong>@Model.HospitalSite.Name - @Model.Name</strong></h4>
 
-        <hr />
+                @Html.ActionLink("Back to List of Hospitals", "Index") |
+                @Html.ActionLink("Back to Hospital Site & locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
+
+                <hr />
 
 
 
-        <div class="col-md-3">
+                <div class="col-md-3">
 
-            <div class="panel">
+                    <div class="panel">
 
-                <div class="panel-heading bg-primary">
-                    <h5>@ViewBag.HospitalSiteName</h5>
-                    <h3>@Html.DisplayFor(model => model.Name)</h3>
-                    @*<hr />*@
+                        <div class="panel-heading bg-primary">
+                            <h5>@ViewBag.HospitalSiteName</h5>
+                            <h3>@Html.DisplayFor(model => model.Name)</h3>
+                            <h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>
+                            
+                            @*<hr />*@
+                        </div>
+
+                        <div class="panel-body">
+                            <p>
+                                <strong>Desctiption:</strong>
+                            </p>
+                            <p>
+                                @Html.DisplayFor(model => model.Descrption)
+                            </p>
+                            <p>
+                                <strong>Notes:</strong>
+                            </p>
+                            <p>
+                                @Html.DisplayFor(model => model.Notes)
+                            </p>
+                        </div>
+                        <div class="panel-footer">
+                            <p>
+                                Areas of Care:
+                                @ViewBag.AreasOfCareCount
+                            </p>
+                        </div>
+                    </div>
+
+                    <table class="table">
+
+                        <tr class="alert-info">
+                            <td>&nbsp</td>
+                            <td>
+                                <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+
                 </div>
-
-                <div class="panel-body">
-                    <p>
-                        <strong>Desctiption:</strong>
-                    </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Descrption)
-                    </p>
-                    <p>
-                        <strong>Notes:</strong>
-                    </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Notes)
-                    </p>
-                </div>
-                <div class="panel-footer">
-                    <p>
-                        Areas of Care:
-                        @ViewBag.AreasOfCareCount
-                    </p>
-                </div>
-            </div>
-
-            <table class="table">
-                
-                <tr class="alert-info">
-                    <td>&nbsp</td>
-                    <td>
-                        <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
-                    </td>
-                </tr>
-
-            </table>
-
-
-
-        </div>
     </div>
 
     <div class="col-md-9">

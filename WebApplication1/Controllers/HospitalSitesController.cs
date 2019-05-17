@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
         private HEPMADbContext db = new HEPMADbContext();
 
         // GET: HospitalSites
+        //[Authorize]
         public ActionResult Index()
         {
             return View(db.HospitalSite.ToList());

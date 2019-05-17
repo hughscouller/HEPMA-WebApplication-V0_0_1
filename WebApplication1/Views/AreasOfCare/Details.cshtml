@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Area Of Care Details</h2>
 
 <div>
-    <h4>AreaOfCare</h4>
+    <h4><strong>@ViewBag.HospitalSite - @Model.Name</strong></h4>
 
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
@@ -28,12 +28,13 @@
 
 <div class="tab-content">
     <div id="AoCGeneralInformation" class="tab-pane fade in active">
-        <h3>AoC General Information</h3>
+        @*<h3>AoC General Information</h3>*@
 
-        @*Area of Care - high level information on Area of Care*@
+        @*Area of Care - AoC General Information*@
         <div class="row">
 
             <div class="col-md-6">
+                <h3>AoC General Information</h3>
                 <Div class="table">
                     <table class="table table-hover">
                         <tr>
@@ -72,6 +73,7 @@
             </div>
 
             <div class="col-md-6">
+                <h3>General Notes</h3>
             </div>
 
         </div>
@@ -79,12 +81,13 @@
 
 
     <div id="AoCProjectDates" class="tab-pane fade">
-        <h3>AoC Project Date</h3>
+        @*<h3>AoC Project Date</h3>*@
 
         @*AoC project dates - dates relevent to the project*@
         <div class="row">
 
             <div class="col-md-6">
+                <h3>AoC Project Date</h3>
                 <Div class="table">
                     <table class="table table-hover">
                         <tr>
@@ -133,6 +136,7 @@
             </div>
 
             <div class="col-md-6">
+                <h3>General Notes</h3>
             </div>
 
         </div>
@@ -145,168 +149,225 @@
 
         @*AoC business process*@
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.ADTs)</strong>
+
+
+        @*left hand columb ///////////////////////////////////////////////////////////////*@
+        <div class="col-lg-6">
+
+
+            @* panel - ADTs ///////////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.ADTs)</div>
+                        <div class="col-lg-1">@Html.DisplayFor(model => model.ADTs)</div>
+                        <div class="col-lg-8">@Html.DisplayNameFor(model => model.ADTsNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.ADTsRealTime)</div>
+                        <div class="col-lg-1">@Html.DisplayFor(model => model.ADTsRealTime)</div>
+                        <div class="col-lg-8" style="background-color:white">@Html.DisplayFor(model => model.ADTsNotes)</div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.ADTs)
+
+            @* panel - OP clinic //////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.OPCLinic)</div>
+                        <div class="col-lg-1">@Html.DisplayFor(model => model.OPCLinic)</div>
+                        <div class="col-lg-8">@Html.DisplayNameFor(model => model.OPClinicNotes)</div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.OPClinicRealTIme)</div>
+                        <div class="col-lg-1">@Html.DisplayFor(model => model.OPClinicRealTIme)</div>
+                        <div class="col-lg-8">@Html.DisplayFor(model => model.OPClinicNotes)</div>
+
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.ADTsNotes)</strong>
+
+            @* panel - Med Rec ////////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedRec)</div>
+                        <div class="col-lg-1">@Html.DisplayFor(model => model.MedRec)</div>
+                        <div class="col-lg-8">.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedRecWho)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedRecWho)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedRecWhere)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedRecWhere)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedRecWhen)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedRecWhen)</div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.ADTsNotes)
+
+            @* panel - ward round /////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescWardRounds)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescWardRounds)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescWardRoundsNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescWardRoundsNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescGeneralNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescGeneralNotes)</div>
+                    </div>
+
+                </div>
+            </div>
+
+            @* panel - drug beadside /////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescMDTs)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescMDTs)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescMDTsNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescMDTsNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescNursesOffice)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescNursesOffice)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescNursesOfficeNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescNursesOfficeNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescOther)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescOther)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescOtherNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescOtherNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescUsersEpr)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescUsersEpr)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PrescUsersEprNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PrescUsersEprNotes)</div>
+                    </div>
+                </div>
+            </div>
+
+            @* panel - ward round //////////////////////////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.DrugRoundBedsideRecording)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.DrugRoundBedsideRecording)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.DrugRoundCentralPoint)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.DrugRoundCentralPoint)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PatToCentralPoint)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PatToCentralPoint)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.Other)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.Other)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedAdminNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedAdminNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedAdminUsersEpr)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedAdminUsersEpr)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.MedAdminUsersEprNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.MedAdminUsersEprNotes)</div>
+                    </div>
+                </div>
+            </div>
+
+            @* panel - ward round //////////////////////////////////////////////////////////////////////////// *@
+            <div class="panel panel-default" style="background-color:ghostwhite">
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmCheck)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmCheck)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmCheckBedsite)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmCheckBedsite)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmCheckOther)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmCheckOther)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmCheckNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmCheckNotes)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmChecUsersEpr)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmChecUsersEpr)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">@Html.DisplayNameFor(model => model.PharmChecEprNotes)</div>
+                        <div class="col-lg-9">@Html.DisplayFor(model => model.PharmChecEprNotes)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @*left hand columb - end ///////////////////////////////////////////////////////////////*@
+
+
+
+
+        @*right hand columb ///////////////////////////////////////////////////////////////*@
+        <div class="col-lg-6">
+            <div class="panel panel-default" style="background-color:antiquewhite">
+                <div class="panel-heading">
+                    AoC Business Process Notes
+                </div>
+                <div class="panel-body">
+                    Notes
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.ADTsRealTime)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.ADTsRealTime)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.OPCLinic)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.OPCLinic)
-            </div>
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.OPClinicNotes)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.OPClinicNotes)
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <strong>@Html.DisplayNameFor(model => model.OPClinicRealTIme)</strong>
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.OPClinicRealTIme)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.MedRec)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.MedRec)
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.MedRecWho)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.MedRecWho)
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.MedRecWhere)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.MedRecWhere)
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.MedRecWhen)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.MedRecWhen)
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.MedRecNotes)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.MedRecNotes)
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <hr />
-            </div>
-        </div>
 
 
-        <div class="row">
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.PrescWardRounds)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.PrescWardRounds)
-            </div>
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.PrescWardRoundsNotes)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.PrescWardRoundsNotes)
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2">
-                @Html.DisplayNameFor(model => model.PrescGeneralNotes)
-            </div>
-            <div class="col-md-3">
-                @Html.DisplayFor(model => model.PrescGeneralNotes)
-            </div>
-            <div class="col-md-2">
-                <p>.</p>
-            </div>
-            <div class="col-md-3">
-                <p>.</p>
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
 
 
         <div class="row">
@@ -668,63 +729,5 @@
     </div>
 </div>
     
-
-
-
-
-    @* 1 1 *@
-    <div class="row">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-    </div>
-
-    @* 1 x  *@
-    <div class="row">
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-2">
-            <p>.</p>
-        </div>
-        <div class="col-md-3">
-            <p>.</p>
-        </div>
-    </div>
-
-    @* x 1 *@
-    <div class="row">
-        <div class="col-md-2">
-            <p>.</p>
-        </div>
-        <div class="col-md-3">
-            <p>.</p>
-        </div>
-        <div class="col-md-2">
-
-        </div>
-        <div class="col-md-3">
-
-        </div>
-    </div>
-
-    @* hr break *@
-    <div class="row">
-        <div class="col-md-12">
-            <hr />
-        </div>
-    </div>
 
 
