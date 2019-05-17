@@ -485,6 +485,7 @@
     <Content Include="Views\NotesFields\Details.cshtml" />
     <Content Include="Views\NotesFields\Edit.cshtml" />
     <Content Include="Views\NotesFields\Index.cshtml" />
+    <Content Include="Views\AreasOfCare\Details - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
