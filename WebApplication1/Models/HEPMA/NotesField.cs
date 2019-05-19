@@ -11,7 +11,7 @@ namespace WebApplication1.Models.HEPMA
     {
 
         public int Id { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
         public string CreatedBy { get; set; }
         public string NoteType { get; set; }
         public string Note { get; set; }
@@ -19,6 +19,6 @@ namespace WebApplication1.Models.HEPMA
 
         public AreaOfCare AreaOfCare { get; set; }
 
-        public List<AreaOfCare> AreasOfCare { get; set; }
+        //public List<AreaOfCare> AreasOfCare { get; set; }
     }
 }

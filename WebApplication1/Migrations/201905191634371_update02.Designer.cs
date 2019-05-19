@@ -7,13 +7,13 @@ namespace WebApplication1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class INitialBuild : IMigrationMetadata
+    public sealed partial class update02 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(INitialBuild));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(update02));
         
         string IMigrationMetadata.Id
         {
-            get { return "201905130732537_INitialBuild"; }
+            get { return "201905191634371_update02"; }
         }
         
         string IMigrationMetadata.Source

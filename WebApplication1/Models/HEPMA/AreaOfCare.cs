@@ -8,7 +8,6 @@ namespace WebApplication1.Models.HEPMA
 {
     public class AreaOfCare
     {
-        
 
         
         [Key]
@@ -20,21 +19,35 @@ namespace WebApplication1.Models.HEPMA
 
         // General data section /////////////////////////////////////////
         [Display(Name = "Name")]
-        public string AoCName { get; set; } 
+        public string AoCName { get; set; }
+        [Display(Name = "Type")]
         public string AoCType { get; set; }
-        public string AocDescription { get; set; }
+        [Display(Name = "Description")]
+        public string AoCDescription { get; set; }
 
         // Project data section /////////////////////////////////////////
-        public int AoCAoCImplementationOrder { get; set; }
+        [Display(Name = "Imp. order")]
+        public int AoCImplementationOrder { get; set; }
+        [Display(Name = "Record opened")]
         public DateTime? AoCRecordOpened { get; set; }
+        [Display(Name = "Record closed")]
         public DateTime? AoCRecordClosed { get; set; }
+        [Display(Name = "First contact")]
         public bool AoCFirstContact { get; set; }
-        public DateTime AoCFirstContactDate { get; set; }
+        [Display(Name = "Date")]
+        public DateTime? AoCFirstContactDate { get; set; }
+        [Display(Name = "Live")]
         public bool AoCLive { get; set; }
+        [Display(Name = "Live date")]
         public DateTime? AoCLiveDate { get; set; }
+        [Display(Name = "BaU")]
         public bool AoCBaU { get; set; }
+        [Display(Name = "BU date")]
         public DateTime? AoCBaUDate { get; set; }
+
+        [Display(Name = "On hold")]
         public bool AoCOnHold { get; set; }
+        [Display(Name = "Reason")]
         public string AoConHoldReason { get; set; }
 
         // Trak Use data section /////////////////////////////////////////

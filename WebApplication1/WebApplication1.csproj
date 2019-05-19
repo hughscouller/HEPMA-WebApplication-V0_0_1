@@ -194,9 +194,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905130732537_INitialBuild.cs" />
-    <Compile Include="Migrations\201905130732537_INitialBuild.Designer.cs">
-      <DependentUpon>201905130732537_INitialBuild.cs</DependentUpon>
+    <Compile Include="Migrations\201905191625206_InitialCreate.cs" />
+    <Compile Include="Migrations\201905191625206_InitialCreate.Designer.cs">
+      <DependentUpon>201905191625206_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191632509_update01.cs" />
+    <Compile Include="Migrations\201905191632509_update01.Designer.cs">
+      <DependentUpon>201905191632509_update01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191634371_update02.cs" />
+    <Compile Include="Migrations\201905191634371_update02.Designer.cs">
+      <DependentUpon>201905191634371_update02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191719067_update3.cs" />
+    <Compile Include="Migrations\201905191719067_update3.Designer.cs">
+      <DependentUpon>201905191719067_update3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905191725145_update4.cs" />
+    <Compile Include="Migrations\201905191725145_update4.Designer.cs">
+      <DependentUpon>201905191725145_update4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -504,8 +520,20 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905130732537_INitialBuild.resx">
-      <DependentUpon>201905130732537_INitialBuild.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905191625206_InitialCreate.resx">
+      <DependentUpon>201905191625206_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191632509_update01.resx">
+      <DependentUpon>201905191632509_update01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191634371_update02.resx">
+      <DependentUpon>201905191634371_update02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191719067_update3.resx">
+      <DependentUpon>201905191719067_update3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905191725145_update4.resx">
+      <DependentUpon>201905191725145_update4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

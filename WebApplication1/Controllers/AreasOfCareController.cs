@@ -36,7 +36,7 @@ namespace WebApplication1.Controllers
             }
 
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
-            HospitalSite hospitalSite = db.HospitalSite.Find(siteLocation.Id);
+            HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
             ViewBag.HospitalSite = hospitalSite.Name;
 
             return View(areaOfCare);

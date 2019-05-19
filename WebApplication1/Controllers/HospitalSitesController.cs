@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
         //[Authorize]
         public ActionResult Index()
         {
-            return View(db.HospitalSite.ToList());
+            return View(db.HospitalSites.ToList());
         }
 
         // GET: HospitalSites/Details/5
@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSite.Find(id);
+            HospitalSite hospitalSite = db.HospitalSites.Find(id);
 
             if (hospitalSite == null)
             {
@@ -62,7 +62,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.HospitalSite.Add(hospitalSite);
+                db.HospitalSites.Add(hospitalSite);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -77,7 +77,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSite.Find(id);
+            HospitalSite hospitalSite = db.HospitalSites.Find(id);
             if (hospitalSite == null)
             {
                 return HttpNotFound();
@@ -108,7 +108,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HospitalSite hospitalSite = db.HospitalSite.Find(id);
+            HospitalSite hospitalSite = db.HospitalSites.Find(id);
             if (hospitalSite == null)
             {
                 return HttpNotFound();
@@ -121,8 +121,8 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            HospitalSite hospitalSite = db.HospitalSite.Find(id);
-            db.HospitalSite.Remove(hospitalSite);
+            HospitalSite hospitalSite = db.HospitalSites.Find(id);
+            db.HospitalSites.Remove(hospitalSite);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

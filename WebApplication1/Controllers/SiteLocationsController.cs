@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
             }
             SiteLocation siteLocation = db.SiteLocations.Find(id);
             // ////////////////////////////////////////////////
-            var hospitalSiteName = db.HospitalSite
+            var hospitalSiteName = db.HospitalSites
                     .Where(HS => HS.Id == siteLocation.HospitalSiteId);
 
             ViewBag.HospitalSiteName = hospitalSiteName.First().Name;
@@ -58,7 +58,7 @@ namespace WebApplication1.Controllers
         public ActionResult Create(int? id)
         {
             // ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name");  // required for the HospitalSite dropdown form field
-            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name");
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name");
 
 
 
@@ -83,7 +83,7 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 
@@ -99,7 +99,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 
@@ -116,7 +116,7 @@ namespace WebApplication1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.HospitalSiteId = new SelectList(db.HospitalSite, "Id", "Name", siteLocation.HospitalSiteId);
+            ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
         }
 
