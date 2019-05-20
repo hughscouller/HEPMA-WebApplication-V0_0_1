@@ -56,18 +56,43 @@
                         </div>
                     </div>
                     @*-------------------------------------------------------------------------------------------*@
-                    @*</div>
-        </div>
 
-        <div class="panel">
 
-            <div class="panel-heading bg-primary">
-                <h5>Project Information</h5>
-            </div>
 
-            <div class="panel-body">*@
 
                     @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCName, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCType, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCType, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCDescription, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+
+
+
+
+
+
+
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.AoCImplementationOrder, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-8">
@@ -77,12 +102,34 @@
                     </div>
                     @*-------------------------------------------------------------------------------------------*@
                     <div class="form-group">
-                        @Html.LabelFor(model => model.AoCRecordOpened, htmlAttributes: new { @class = "control-label col-md-4" })
+                        @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-8">
-                            @Html.EditorFor(model => model.AoCRecordOpened, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.AoCRecordOpened, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                            @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control dp datepicker" } })
+                            @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                </div>
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-heading bg-primary">
+                <h5>Project Information</h5>
+            </div>
+
+            <div class="panel-body">
+
+                    
+                    
                 
                     @*-------------------------------------------------------------------------------------------*@
                     
@@ -111,7 +158,39 @@
 
         <div class="col-lg-4">
             @* start 4 cal //////////////////////////////////////////////////////////////////////////////////////*@
+            <div class="panel">
 
+                <div class="panel-heading bg-primary">
+                    <h5>Project Information</h5>
+                </div>
+
+                <div class="panel-body">
+
+
+
+
+                    @*-------------------------------------------------------------------------------------------*@
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCImplementationOrder, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCImplementationOrder, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCImplementationOrder, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    @*-------------------------------------------------------------------------------------------*@
+
+                </div>
+            </div>
         </div>                  @* end 4 col ////////////////////////////////////////////////////////////////////////////////////////*@
         <div class="col-lg-4">
             @* start 4 cal //////////////////////////////////////////////////////////////////////////////////////*@
