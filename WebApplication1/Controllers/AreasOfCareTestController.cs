@@ -11,18 +11,18 @@ using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
-    public class AreasOfCareController : Controller
+    public class AreasOfCareTestController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();
 
-        // GET: AreasOfCare
+        // GET: AreasOfCareTest
         public ActionResult Index()
         {
             var areasOfCare = db.AreasOfCare.Include(a => a.SiteLocation);
             return View(areasOfCare.ToList());
         }
 
-        // GET: AreasOfCare/Details/5
+        // GET: AreasOfCareTest/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,22 +34,17 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
-
-            SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
-            HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
-            ViewBag.HospitalSite = hospitalSite.Name;
-
             return View(areaOfCare);
         }
 
-        // GET: AreasOfCare/Create
+        // GET: AreasOfCareTest/Create
         public ActionResult Create()
         {
             ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name");
             return View();
         }
 
-        // POST: AreasOfCare/Create
+        // POST: AreasOfCareTest/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +62,7 @@ namespace WebApplication1.Controllers
             return View(areaOfCare);
         }
 
-        // GET: AreasOfCare/Edit/5
+        // GET: AreasOfCareTest/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,12 +78,12 @@ namespace WebApplication1.Controllers
             return View(areaOfCare);
         }
 
-        // POST: AreasOfCare/Edit/5
+        // POST: AreasOfCareTest/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,AocType,Name,Description,Notes,Status,FirstContactDate,FirstContactNotes,PlannedGoLiveDate,PlannedGoLiveNotes,ActualGoLiveDate,ActualGoLiveNotes,BauHandoverDate,BauHandoverNotes,AoCGeneralNotes,SiteLocationId,ADTs,ADTsRealTime,ADTsNotes,OPCLinic,OPClinicRealTIme,OPClinicNotes,MedRec,MedRecWho,MedRecWhere,MedRecWhen,MedRecNotes,PrescWardRounds,PrescWardRoundsNotes,PrescMDTs,PrescMDTsNotes,PrescNursesOffice,PrescNursesOfficeNotes,PrescOther,PrescOtherNotes,PrescUsersEpr,PrescUsersEprNotes,PrescGeneralNotes,DrugRoundBedsideRecording,DrugRoundCentralPoint,PatToCentralPoint,Other,MedAdminNotes,MedAdminUsersEpr,MedAdminUsersEprNotes,PharmCheck,PharmCheckBedsite,PharmCheckOther,PharmCheckNotes,PharmChecUsersEpr,PharmChecEprNotes")] AreaOfCare areaOfCare)
+        public ActionResult Edit([Bind(Include = "AoCId,SiteLocationId,AoCName,AoCType,AoCDescription,AoCImplementationOrder,AoCRecordOpened,AoCRecordClosed,AoCFirstContact,AoCFirstContactDate,AoCLive,AoCLiveDate,AoCBaU,AoCBaUDate,AoCOnHold,AoConHoldReason,AoCMedicinesReconciliation,AoCMedicinesReconciliationRealTime,AoCOutpatientClinicManagedOnTrak,AoCOutpatientClinicManagedOnTrakInRealTime,AoCADTsManagedOnTrak,AoCADTsManagedOnTraIInRealTime,AoCIDLsProducedInTrak,AoCIDLsProducedInTrakInRealTime,AoCWardRounds,AoCDoctorsRoom,AoCNursesStation,AoCOffice,AoCOfficeText,AoCPOther,AoCPOtherText,AoCDrugRoundAtBedside,AoCDrugRoundFromCentralPoint,AoCPatientComesToCentralPoint,AoCMAOther,AoCMAOtherText,AoCBedside,AoCCentralPointInWard,AoCPCOher,AoCPCOtherText")] AreaOfCare areaOfCare)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +95,7 @@ namespace WebApplication1.Controllers
             return View(areaOfCare);
         }
 
-        // GET: AreasOfCare/Delete/5
+        // GET: AreasOfCareTest/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,7 +110,7 @@ namespace WebApplication1.Controllers
             return View(areaOfCare);
         }
 
-        // POST: AreasOfCare/Delete/5
+        // POST: AreasOfCareTest/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

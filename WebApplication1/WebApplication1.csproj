@@ -185,6 +185,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
+    <Compile Include="Controllers\AreasOfCareTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -502,6 +503,11 @@
     <Content Include="Views\NotesFields\Edit.cshtml" />
     <Content Include="Views\NotesFields\Index.cshtml" />
     <Content Include="Views\AreasOfCare\Details - Copy.cshtml" />
+    <Content Include="Views\AreasOfCareTest\Create.cshtml" />
+    <Content Include="Views\AreasOfCareTest\Delete.cshtml" />
+    <Content Include="Views\AreasOfCareTest\Details.cshtml" />
+    <Content Include="Views\AreasOfCareTest\Edit.cshtml" />
+    <Content Include="Views\AreasOfCareTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

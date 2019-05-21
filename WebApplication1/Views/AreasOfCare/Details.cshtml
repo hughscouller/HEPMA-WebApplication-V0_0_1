@@ -7,10 +7,10 @@
 <h2>Area Of Care Details</h2>
 
 <div>
-    <h4><strong>@ViewBag.HospitalSite - @Model.Name</strong></h4>
+    <h4><strong>@ViewBag.HospitalSite - @Model.AoCName</strong></h4>
 
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AoCId }) |
         @Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })
     </p>
     <hr />
