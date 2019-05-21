@@ -16,10 +16,11 @@ namespace WebApplication1.Models.HEPMA
         // EF Navigation items section /////////////////////////////////////////
         public virtual SiteLocation SiteLocation { get; set; }
 
+        public virtual ICollection<SiteLocation> SiteLocations { get; set; }
+
         public int SiteLocationId { get; set; }
 
         // General data section /////////////////////////////////////////
-
         [Display(Name = "Name")]
         public string AoCName { get; set; }
 
@@ -34,7 +35,7 @@ namespace WebApplication1.Models.HEPMA
         public int AoCImplementationOrder { get; set; }
 
         [Display(Name = "Record opened")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]     
         [DataType(DataType.Date)]
         public DateTime? AoCRecordOpened { get; set; }
 
@@ -78,22 +79,22 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Med Rec - real time")]
         public bool AoCMedicinesReconciliationRealTime { get; set; }
 
-        [Display(Name = "OP managed on Trak")]
+        [Display(Name = "OP on Trak")]
         public bool AoCOutpatientClinicManagedOnTrak { get; set; }
 
-        [Display(Name = "OP managed on Trak - real time")]
+        [Display(Name = "OP on Trak - real time")]
         public bool AoCOutpatientClinicManagedOnTrakInRealTime { get; set; }
 
-        [Display(Name = "ADTs managed on Trak")]
+        [Display(Name = "ADTs on Trak")]
         public bool AoCADTsManagedOnTrak { get; set; }
 
-        [Display(Name = "ADTs managed on Trak - real time")]
+        [Display(Name = "ADTs on Trak - real time")]
         public bool AoCADTsManagedOnTraIInRealTime { get; set; }
 
-        [Display(Name = "IDLs managed on Trak")]
+        [Display(Name = "IDLs on Trak")]
         public bool AoCIDLsProducedInTrak { get; set; }
 
-        [Display(Name = "IDLs managed on Trak - real time")]
+        [Display(Name = "IDLs on Trak - real time")]
         public bool AoCIDLsProducedInTrakInRealTime { get; set; }
 
 
@@ -130,7 +131,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Drug round - central point")]
         public bool AoCDrugRoundFromCentralPoint { get; set; }
 
-        [Display(Name = "Patient to central point")]
+        [Display(Name = "Pat. to central point")]
         public bool AoCPatientComesToCentralPoint { get; set; }
 
         [Display(Name = "Other")]

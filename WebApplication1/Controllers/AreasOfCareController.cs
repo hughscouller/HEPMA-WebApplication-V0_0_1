@@ -43,16 +43,17 @@ namespace WebApplication1.Controllers
         }
 
         // GET: AreasOfCare/Create
+
         public ActionResult Create(int? id)
         {
             ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name");
 
-            //AreaOfCareNew areaOfCareNew = db.AreaOfCare.Find(id);
-            var SL = new AreaOfCare();
+            AreaOfCare areaOfCareNew = db.AreasOfCare.Find(id);
+            var AoC = new AreaOfCare();
 
-            SL = db.AreasOfCare.Find(id); ;
+            AoC = db.AreasOfCare.Find(id); ;
 
-            return View(SL);
+            return View(AoC);
         }
 
         // POST: AreasOfCare/Create
@@ -60,17 +61,19 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,AocType,Name,Description,Notes,Status,FirstContactDate,FirstContactNotes,PlannedGoLiveDate,PlannedGoLiveNotes,ActualGoLiveDate,ActualGoLiveNotes,BauHandoverDate,BauHandoverNotes,AoCGeneralNotes,SiteLocationId,ADTs,ADTsRealTime,ADTsNotes,OPCLinic,OPClinicRealTIme,OPClinicNotes,MedRec,MedRecWho,MedRecWhere,MedRecWhen,MedRecNotes,PrescWardRounds,PrescWardRoundsNotes,PrescMDTs,PrescMDTsNotes,PrescNursesOffice,PrescNursesOfficeNotes,PrescOther,PrescOtherNotes,PrescUsersEpr,PrescUsersEprNotes,PrescGeneralNotes,DrugRoundBedsideRecording,DrugRoundCentralPoint,PatToCentralPoint,Other,MedAdminNotes,MedAdminUsersEpr,MedAdminUsersEprNotes,PharmCheck,PharmCheckBedsite,PharmCheckOther,PharmCheckNotes,PharmChecUsersEpr,PharmChecEprNotes")] AreaOfCare areaOfCare)
+        //public ActionResult Create([Bind(Include = "SiteLocationId, AoCName, AoCType, AoCDescription, AoCImplementationOrder, AoCRecordOpened, AoCRecordClosed, AoCFirstContact, AoCFirstContactDate, AoCLive, AoCLiveDate, AoCBaU, AoCBaUDate, AoCOnHold, AoConHoldReason, AoCMedicinesReconciliation, AoCMedicinesReconciliationRealTime, AoCOutpatientClinicManagedOnTrak, AoCOutpatientClinicManagedOnTrakInRealTime, AoCADTsManagedOnTrak, AoCADTsManagedOnTraIInRealTime, AoCIDLsProducedInTrak, AoCIDLsProducedInTrakInRealTime, AoCWardRounds, AoCDoctorsRoom, AoCNursesStation, AoCOffice, AoCOfficeText, AoCPOther, AoCPOtherText, AoCDrugRoundAtBedside, AoCDrugRoundFromCentralPoint, AoCPatientComesToCentralPoint, AoCMAOther, AoCMAOtherText, AoCBedside, AoCCentralPointInWard, AoCPCOher, AoCPCOtherText")] AreaOfCare areaOfCare)
+        //
+        public ActionResult Create(AreaOfCare AoC)
         {
             if (ModelState.IsValid)
             {
-                db.AreasOfCare.Add(areaOfCare);
+                db.AreasOfCare.Add(AoC);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", areaOfCare.SiteLocationId);
-            return View(areaOfCare);
+            ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", AoC.SiteLocationId);
+            return View(AoC);
         }
 
         // GET: AreasOfCare/Edit/5
