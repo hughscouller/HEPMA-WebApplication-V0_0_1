@@ -64,7 +64,7 @@ namespace WebApplication1.Controllers
             {
                 db.AreasOfCare.Add(areaOfCare);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../SiteLocations/Details", new { id = areaOfCare.SiteLocationId });
             }
 
             ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", areaOfCare.SiteLocationId);
@@ -98,10 +98,11 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(areaOfCare).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../SiteLocations/Details", new { id = areaOfCare.SiteLocationId });
             }
             ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", areaOfCare.SiteLocationId);
             return View(areaOfCare);
+            //return RedirectToAction("../SiteLocation/Details", new { id = areaOfCare.SiteLocationId });
         }
 
         // GET: AreasOfCare/Delete/5
@@ -127,7 +128,8 @@ namespace WebApplication1.Controllers
             AreaOfCare areaOfCare = db.AreasOfCare.Find(id);
             db.AreasOfCare.Remove(areaOfCare);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../SiteLocations/Details", new { id = areaOfCare.SiteLocationId });
+            //return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
