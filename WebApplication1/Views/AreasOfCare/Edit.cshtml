@@ -11,456 +11,472 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>AreaOfCare</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AocType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AocType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AocType, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstContactDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstContactDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstContactDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstContactNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstContactNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstContactNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlannedGoLiveDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlannedGoLiveDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlannedGoLiveDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlannedGoLiveNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PlannedGoLiveNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PlannedGoLiveNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ActualGoLiveDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ActualGoLiveDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ActualGoLiveDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ActualGoLiveNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ActualGoLiveNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ActualGoLiveNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BauHandoverDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BauHandoverDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BauHandoverDate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.BauHandoverNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BauHandoverNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.BauHandoverNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.AoCGeneralNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.AoCGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.AoCGeneralNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ADTs, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.ADTs)
-                    @Html.ValidationMessageFor(model => model.ADTs, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ADTsRealTime, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.ADTsRealTime)
-                    @Html.ValidationMessageFor(model => model.ADTsRealTime, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ADTsNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ADTsNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ADTsNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OPCLinic, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.OPCLinic)
-                    @Html.ValidationMessageFor(model => model.OPCLinic, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OPClinicRealTIme, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.OPClinicRealTIme)
-                    @Html.ValidationMessageFor(model => model.OPClinicRealTIme, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.OPClinicNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OPClinicNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OPClinicNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedRec, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.MedRec)
-                    @Html.ValidationMessageFor(model => model.MedRec, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedRecWho, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedRecWho, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedRecWho, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedRecWhere, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedRecWhere, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedRecWhere, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedRecWhen, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedRecWhen, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedRecWhen, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedRecNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedRecNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedRecNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescWardRounds, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PrescWardRounds)
-                    @Html.ValidationMessageFor(model => model.PrescWardRounds, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescWardRoundsNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescWardRoundsNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescWardRoundsNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescMDTs, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PrescMDTs)
-                    @Html.ValidationMessageFor(model => model.PrescMDTs, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescMDTsNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescMDTsNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescMDTsNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescNursesOffice, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PrescNursesOffice)
-                    @Html.ValidationMessageFor(model => model.PrescNursesOffice, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescNursesOfficeNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescNursesOfficeNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescNursesOfficeNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescOther, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PrescOther)
-                    @Html.ValidationMessageFor(model => model.PrescOther, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescOtherNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescOtherNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescOtherNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescUsersEpr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PrescUsersEpr)
-                    @Html.ValidationMessageFor(model => model.PrescUsersEpr, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescUsersEprNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescUsersEprNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescUsersEprNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PrescGeneralNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PrescGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PrescGeneralNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DrugRoundBedsideRecording, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.DrugRoundBedsideRecording)
-                    @Html.ValidationMessageFor(model => model.DrugRoundBedsideRecording, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DrugRoundCentralPoint, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.DrugRoundCentralPoint)
-                    @Html.ValidationMessageFor(model => model.DrugRoundCentralPoint, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PatToCentralPoint, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PatToCentralPoint)
-                    @Html.ValidationMessageFor(model => model.PatToCentralPoint, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Other, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Other)
-                    @Html.ValidationMessageFor(model => model.Other, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedAdminNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedAdminNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedAdminNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedAdminUsersEpr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.MedAdminUsersEpr)
-                    @Html.ValidationMessageFor(model => model.MedAdminUsersEpr, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MedAdminUsersEprNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MedAdminUsersEprNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MedAdminUsersEprNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmCheck, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PharmCheck)
-                    @Html.ValidationMessageFor(model => model.PharmCheck, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmCheckBedsite, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PharmCheckBedsite)
-                    @Html.ValidationMessageFor(model => model.PharmCheckBedsite, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmCheckOther, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PharmCheckOther)
-                    @Html.ValidationMessageFor(model => model.PharmCheckOther, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmCheckNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PharmCheckNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PharmCheckNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmChecUsersEpr, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PharmChecUsersEpr)
-                    @Html.ValidationMessageFor(model => model.PharmChecUsersEpr, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PharmChecEprNotes, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.PharmChecEprNotes, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PharmChecEprNotes, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4>AreaOfCare</h4>
+    <div>
+        @Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })
     </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.AoCId)
+
+
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            @* start 4 col ///////////////////////////////////////////////////////////////////////////////////*@
+
+            <div class="panel">
+
+                <div class="panel-heading bg-primary">
+                    <h5>Project Information</h5>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        @*--SiteLocationId----------------------------------------------------------------------------------*@
+                        @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCName----------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCName, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCType----------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCType, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCType, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCDescription---------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCDescription, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCDescription, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+                    &nbsp;
+                    @*-------------------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCImplementationOrder, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCImplementationOrder, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCImplementationOrder, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCRecordOpened--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCRecordOpened, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCRecordOpened, new { htmlAttributes = new { @class = "datetimepicker  form-control" } })
+
+                            @Html.ValidationMessageFor(model => model.AoCRecordOpened, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCRecordClosed--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCFirstContact--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCFirstContact, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.AoCFirstContact, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCFirstContact, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCFirstContactDate----------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCFirstContactDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCFirstContactDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCFirstContactDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCLive----------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCLive, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.AoCLive, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCLive, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCLiveDate------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCLiveDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCLiveDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCBaU-----------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCBaU, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.AoCBaU, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCBaU, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCBaUDate-------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCBaUDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCBaUDate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCBaUDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCOnHold--------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCOnHold, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.AoCOnHold, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCOnHold, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoConHoldReason--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoConHoldReason, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoConHoldReason, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoConHoldReason, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+
+                </div>   @*end panel body*@
+            </div>   @*end panel*@
+        </div>   @* end 6 col ///////////////////////////////////////////////////////////////////////////////////*@
+
+        <div class="col-lg-6">
+            @* start 6 cal //////////////////////////////////////////////////////////////////////////////////////*@
+
+            <div class="panel">
+                <div class="panel-heading bg-primary">
+                    <h5>Use of Trak</h5>
+                </div>
+                <div class="panel-body">
+
+                    <div class="table">
+
+                        @*--AoCMedicinesReconciliation---------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCMedicinesReconciliation, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCMedicinesReconciliation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliation, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCMedicinesReconciliationRealTime-------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCMedicinesReconciliationRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCMedicinesReconciliationRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliationRealTime, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*----AoCOutpatientClinicManagedOnTrak-------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrak, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCOutpatientClinicManagedOnTrakInRealTime-----------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCADTsManagedOnTrak---------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCADTsManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCADTsManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTrak, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @*--AoCADTsManagedOnTraIInRealTime-----------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCADTsManagedOnTraIInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCADTsManagedOnTraIInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTraIInRealTime, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCIDLsProducedInTrak--------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCIDLsProducedInTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrak, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCIDLsProducedInTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrakInRealTime, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>   @*end table---------------------------------*@
+                    &nbsp;
+
+                </div>   @*end panel body*@
+            </div>   @*end panel*@
+
+            <div class="panel">
+
+                <div class="panel-heading bg-primary">
+                    <h5>Prescribing</h5>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="table">
+
+                        @*--AoCWardRounds-----------------------------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCWardRounds, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCWardRounds, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCWardRounds, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCDoctorsRoom----------------------------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCDoctorsRoom, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCDoctorsRoom, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCDoctorsRoom, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCNursesStation--------------------------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCNursesStation, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCNursesStation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCNursesStation, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-6">
+                                &nbsp;
+                            </div>
+                        </div>
+
+                        &nbsp;
+                        <div class="table">
+                            @*--AoCOffice-----------------------------------------------------------------------------------------*@
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.AoCOffice, htmlAttributes: new { @class = "control-label col-md-5" })
+                                <div class="col-md-1">
+                                    @Html.CheckBoxFor(model => model.AoCOffice, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.AoCOffice, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        &nbsp;
+
+                        @*--AoCOfficeText----------------------------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCOfficeText, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.AoCOfficeText, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCOfficeText, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>   @*end table*@
+
+                    <div class="col-lg-12">
+                        <p>&nbsp;</p>
+                    </div>
+
+                    @*--AoCPOther----------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPOther, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-1">
+                            @Html.CheckBoxFor(model => model.AoCPOther, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCPOther, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <p>&nbsp;</p>
+                    </div>
+
+                    @*--AoCPOtherText----------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.AoCPOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCPOtherText, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*-------------------------------------------------------------------------------------------*@
+
+                </div>   @*end panel body*@
+            </div>   @*end panel*@
+
+            <div class="panel">
+
+                <div class="panel-heading bg-primary">
+                    <h5>Medicines Administration</h5>
+                </div>
+
+                <div class="panel-body">
+                    <div class="table">
+                        @*--AoCDrugRoundAtBedside-------------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCDrugRoundAtBedside, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCDrugRoundAtBedside, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCDrugRoundAtBedside, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        @*--AoCDrugRoundFromCentralPoint------------------------------------------------------------*@
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AoCDrugRoundFromCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
+                            <div class="col-md-1">
+                                @Html.CheckBoxFor(model => model.AoCDrugRoundFromCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.AoCDrugRoundFromCentralPoint, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>   @*end table*@
+                    &nbsp;
+                    @*--AoCPatientComesToCentralPoint-----------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPatientComesToCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-1">
+                            @Html.CheckBoxFor(model => model.AoCPatientComesToCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCPatientComesToCentralPoint, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        &nbsp;
+                    </div>
+                    &nbsp;
+                    @*--AoCMAOther------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCMAOther, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-1">
+                            @Html.CheckBoxFor(model => model.AoCMAOther, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCMAOther, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        &nbsp;
+                    </div>
+
+                    @*--AoCMAOtherText--------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCMAOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-7">
+                            @Html.EditorFor(model => model.AoCMAOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                </div>   @*end panel body*@
+            </div>   @*end panel*@
+            <div class="panel">
+                <div class="panel-heading bg-primary">
+                    <h5>Pharmacy check</h5>
+                </div>
+                <div class="panel-body">
+                    @*--AoCBedside------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCBedside, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-7">
+                            @Html.CheckBoxFor(model => model.AoCBedside, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    &nbsp;
+                    @*--AoCCentralPointInWard-------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCCentralPointInWard, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-7">
+                            @Html.CheckBoxFor(model => model.AoCCentralPointInWard, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCCentralPointInWard, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    &nbsp;
+                    @*--AoCPCOher-------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPCOher, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-7">
+                            @Html.CheckBoxFor(model => model.AoCPCOher, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCPCOher, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    &nbsp;
+                    @*--AoCPCOher-------------------------------------------------------------------------------*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPCOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
+                        <div class="col-md-7">
+                            @Html.EditorFor(model => model.AoCPCOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.AoCPCOtherText, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    &nbsp;
+                    @*------------------------------------------------------------------------------------------*@
+
+                </div>   @*end panel body*@
+            </div>   @*end panel*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </div>
+
+
+        </div>@* end 6 col ////////////////////////////////////////////////////////////////////////////////////*@
+    </div>
+
+</div>
 }
 
 <div>

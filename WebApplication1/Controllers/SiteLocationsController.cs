@@ -84,7 +84,8 @@ namespace WebApplication1.Controllers
             }
 
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
-            return View(siteLocation);
+            //return View(siteLocation);
+            return RedirectToAction("../HospitalSites/Details", new { id = siteLocation.Id });
         }
 
         // GET: SiteLocations/Edit/5

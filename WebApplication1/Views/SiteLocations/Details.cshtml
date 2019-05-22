@@ -12,7 +12,7 @@
         <h4><strong>@Model.HospitalSite.Name - @Model.Name</strong></h4>
 
                 @Html.ActionLink("Back to List of Hospitals", "Index") |
-                @Html.ActionLink("Back to Hospital Site & locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
+                @Html.ActionLink("Back to List of Site Locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
 
                 <hr />
 
@@ -80,30 +80,30 @@
                     <td>&nbsp</td>
                 </tr>
 
-                @foreach (var SL in ViewBag.AreasOfCare)
+                @foreach (var ListOfAoC in ViewBag.AreasOfCare)
                 {
 
                     <tr>
 
                         <td>
-                            @SL.Id
+                            @ListOfAoC.AoCId
                         </td>
 
                         <td>
-                            @SL.Name
+                            @ListOfAoC.AoCName
                         </td>
 
                         <td>
-                            @SL.Description
+                            @ListOfAoC.AoCDescription
                         </td>
 
                         <td>
-                            @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = SL.Id })
+                            @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = ListOfAoC.AoCId })
                             
                         </td>
                         <td>
-                            | @Html.ActionLink("Edit", "../AreasOfCare/Edit", new { id = SL.Id })
-                            | @Html.ActionLink("Delete", "../AreasOfCare/Delete", new { id = SL.Id }) |
+                            | @Html.ActionLink("Edit", "../AreasOfCare/Edit", new { id = ListOfAoC.AoCId })
+                            | @Html.ActionLink("Delete", "../AreasOfCare/Delete", new { id = ListOfAoC.AoCId }) |
                         </td>
                     </tr>
 
