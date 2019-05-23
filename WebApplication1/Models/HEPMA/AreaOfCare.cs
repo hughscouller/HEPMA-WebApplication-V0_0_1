@@ -30,9 +30,15 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Description")]
         public string AoCDescription { get; set; }
 
+        //// Project data section /////////////////////////////////////////
+        //[Display(Name = "Imp. order")]
+        //public int AoCImplementationOrder { get; set; }
+
         // Project data section /////////////////////////////////////////
-        [Display(Name = "Imp. order")]
-        public int AoCImplementationOrder { get; set; }
+        [Display(Name = "Planned go-live date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public DateTime? AoCPlannedGoLiveDate { get; set; }
 
         [Display(Name = "Record opened")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]     

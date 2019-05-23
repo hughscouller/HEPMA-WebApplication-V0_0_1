@@ -43,7 +43,6 @@ namespace WebApplication1.Controllers
             ViewBag.SiteLocations = x;
             ViewBag.SiteLocationsCount = x.Count();
 
-
             return View(hospitalSite);
         }
 

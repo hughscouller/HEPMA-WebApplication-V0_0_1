@@ -57,10 +57,10 @@
                     <p>&nbsp;</p>
                     @*--AoCImplementationOrder----------------------------------------------------------------------------------*@
                     <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCImplementationOrder)
+                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
                     </div>
                     <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCImplementationOrder)
+                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)
                     </div>
                     <p>&nbsp;</p>
                     @*--AoCRecordOpened----------------------------------------------------------------------------------*@
@@ -332,6 +332,48 @@
 
             </div>
         </div>
-        
+        <div class="panel">
+
+            <div class="panel-heading bg-primary">
+                <h5>Pharmacy Check</h5>
+            </div>
+            <div class="panel-body">
+
+                @*--AoCBedside----------------------------------------------------------------------------------*@
+                <div class="col-lg-5">
+                    @Html.DisplayNameFor(model => model.AoCBedside)
+                </div>
+                <div class="col-lg-1">
+                    @Html.DisplayFor(model => model.AoCBedside)
+                </div>
+                @*--AoCCentralPointInWard----------------------------------------------------------------------------------*@
+                <div class="col-lg-5">
+                    @Html.DisplayNameFor(model => model.AoCCentralPointInWard)
+                </div>
+                <div class="col-lg-1">
+                    @Html.DisplayFor(model => model.AoCCentralPointInWard)
+                </div>
+                @*--AoCPOther----------------------------------------------------------------------------------*@
+
+                <div class="col-lg-5">
+                    @Html.DisplayNameFor(model => model.AoCPOther)
+                </div>
+                <div class="col-lg-1">
+                    @Html.DisplayFor(model => model.AoCPOther)
+                </div>
+                <div class="col-lg-6">
+                    <p>&nbsp;</p>
+                </div>
+
+                @*--AoCPOtherText----------------------------------------------------------------------------------*@
+                <div class="col-lg-5">
+                    @Html.DisplayNameFor(model => model.AoCPOtherText)
+                </div>
+                <div class="col-lg-7">
+                    @Html.DisplayFor(model => model.AoCPOtherText)
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

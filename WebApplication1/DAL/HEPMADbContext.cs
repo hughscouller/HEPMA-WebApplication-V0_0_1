@@ -13,5 +13,7 @@ namespace WebApplication1.DAL
         public DbSet<SiteLocation> SiteLocations { get; set; }
         public DbSet<AreaOfCare> AreasOfCare { get; set; }
         public DbSet<NotesField> NotesFields { get; set; }
+
+        
     }
 }

@@ -185,7 +185,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
-    <Compile Include="Controllers\AreasOfCareTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -215,10 +214,23 @@
     <Compile Include="Migrations\201905211302008_data03.Designer.cs">
       <DependentUpon>201905211302008_data03.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905231346585_PlannedGoLiveChange.cs" />
+    <Compile Include="Migrations\201905231346585_PlannedGoLiveChange.Designer.cs">
+      <DependentUpon>201905231346585_PlannedGoLiveChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231353317_PlannedGoLive02.cs" />
+    <Compile Include="Migrations\201905231353317_PlannedGoLive02.Designer.cs">
+      <DependentUpon>201905231353317_PlannedGoLive02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905231417221_update.cs" />
+    <Compile Include="Migrations\201905231417221_update.Designer.cs">
+      <DependentUpon>201905231417221_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
+    <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
     <Compile Include="Models\HEPMA\NotesField.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -503,11 +515,6 @@
     <Content Include="Views\NotesFields\Edit.cshtml" />
     <Content Include="Views\NotesFields\Index.cshtml" />
     <Content Include="Views\AreasOfCare\Details - Copy.cshtml" />
-    <Content Include="Views\AreasOfCareTest\Create.cshtml" />
-    <Content Include="Views\AreasOfCareTest\Delete.cshtml" />
-    <Content Include="Views\AreasOfCareTest\Details.cshtml" />
-    <Content Include="Views\AreasOfCareTest\Edit.cshtml" />
-    <Content Include="Views\AreasOfCareTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -540,6 +547,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905211302008_data03.resx">
       <DependentUpon>201905211302008_data03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231346585_PlannedGoLiveChange.resx">
+      <DependentUpon>201905231346585_PlannedGoLiveChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231353317_PlannedGoLive02.resx">
+      <DependentUpon>201905231353317_PlannedGoLive02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905231417221_update.resx">
+      <DependentUpon>201905231417221_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

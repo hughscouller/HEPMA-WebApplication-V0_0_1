@@ -80,12 +80,13 @@ namespace WebApplication1.Controllers
             {
                 db.SiteLocations.Add(siteLocation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("../HospitalSites/Details", new { id = siteLocation.HospitalSiteId });
             }
 
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
-            //return View(siteLocation);
-            return RedirectToAction("../HospitalSites/Details", new { id = siteLocation.Id });
+            return View(siteLocation);
+            //return RedirectToAction("../HospitalSites/Details", new { id = siteLocation.Id });
         }
 
         // GET: SiteLocations/Edit/5
@@ -102,6 +103,7 @@ namespace WebApplication1.Controllers
             }
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
+            
         }
 
         // POST: SiteLocations/Edit/5
@@ -115,13 +117,15 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(siteLocation).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return RedirectToAction("../HospitalSites/Details/", new { id = siteLocation.HospitalSiteId });
             }
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
+            
         }
 
-        // GET: SiteLocations/Delete/5
+        // GET: AreasOfCare/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -136,15 +140,17 @@ namespace WebApplication1.Controllers
             return View(siteLocation);
         }
 
-        // POST: SiteLocations/Delete/5
+        // POST: AreasOfCare/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             SiteLocation siteLocation = db.SiteLocations.Find(id);
+            var HSid = siteLocation.HospitalSiteId;
             db.SiteLocations.Remove(siteLocation);
             db.SaveChanges();
-            return RedirectToAction("Index");
+
+            return RedirectToAction("../HospitalSites/Details/", new { id = HSid });
         }
 
         protected override void Dispose(bool disposing)
