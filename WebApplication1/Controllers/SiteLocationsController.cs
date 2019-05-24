@@ -39,7 +39,9 @@ namespace WebApplication1.Controllers
             // ////////////////////////////////////////////////
             // find all SiteLocations where HospitalSiteId = id
             var AreasOfCare = db.AreasOfCare
-                    .Where(AoC => AoC.SiteLocationId == id);
+                    .Where(AoC => AoC.SiteLocationId == id)
+                    .OrderBy(g => g.AoCPlannedGoLiveDate);
+
 
             ViewBag.AreasOfCare = AreasOfCare;
 

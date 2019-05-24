@@ -226,6 +226,26 @@
     <Compile Include="Migrations\201905231417221_update.Designer.cs">
       <DependentUpon>201905231417221_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905240700124_updateAoCDates.cs" />
+    <Compile Include="Migrations\201905240700124_updateAoCDates.Designer.cs">
+      <DependentUpon>201905240700124_updateAoCDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240742487_AoCFieldAdded.cs" />
+    <Compile Include="Migrations\201905240742487_AoCFieldAdded.Designer.cs">
+      <DependentUpon>201905240742487_AoCFieldAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240823321_addScopeFieldsToAoC.cs" />
+    <Compile Include="Migrations\201905240823321_addScopeFieldsToAoC.Designer.cs">
+      <DependentUpon>201905240823321_addScopeFieldsToAoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240905209_update1.cs" />
+    <Compile Include="Migrations\201905240905209_update1.Designer.cs">
+      <DependentUpon>201905240905209_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905240912413_update2.cs" />
+    <Compile Include="Migrations\201905240912413_update2.Designer.cs">
+      <DependentUpon>201905240912413_update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
@@ -514,7 +534,6 @@
     <Content Include="Views\NotesFields\Details.cshtml" />
     <Content Include="Views\NotesFields\Edit.cshtml" />
     <Content Include="Views\NotesFields\Index.cshtml" />
-    <Content Include="Views\AreasOfCare\Details - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -556,6 +575,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905231417221_update.resx">
       <DependentUpon>201905231417221_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240700124_updateAoCDates.resx">
+      <DependentUpon>201905240700124_updateAoCDates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240742487_AoCFieldAdded.resx">
+      <DependentUpon>201905240742487_AoCFieldAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240823321_addScopeFieldsToAoC.resx">
+      <DependentUpon>201905240823321_addScopeFieldsToAoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240905209_update1.resx">
+      <DependentUpon>201905240905209_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905240912413_update2.resx">
+      <DependentUpon>201905240912413_update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

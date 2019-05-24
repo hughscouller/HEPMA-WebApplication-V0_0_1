@@ -21,6 +21,10 @@ namespace WebApplication1.Models.HEPMA
         public int SiteLocationId { get; set; }
 
         // General data section /////////////////////////////////////////
+
+        [Display(Name = "In scope")]
+        public bool InScope { get; set; }
+
         [Display(Name = "Name")]
         public string AoCName { get; set; }
 
@@ -40,6 +44,10 @@ namespace WebApplication1.Models.HEPMA
         [DataType(DataType.Date)]
         public DateTime? AoCPlannedGoLiveDate { get; set; }
 
+        // Project data section /////////////////////////////////////////
+        [Display(Name = "GL date agreed AoC")]
+        public bool AoCPlannedGoLiveDateAgreedAoC { get; set; }
+
         [Display(Name = "Record opened")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]     
         [DataType(DataType.Date)]
@@ -55,6 +63,7 @@ namespace WebApplication1.Models.HEPMA
 
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? AoCFirstContactDate { get; set; }
 
         [Display(Name = "Live")]
@@ -62,6 +71,7 @@ namespace WebApplication1.Models.HEPMA
 
         [Display(Name = "Live date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? AoCLiveDate { get; set; }
 
         [Display(Name = "BaU")]
@@ -69,6 +79,7 @@ namespace WebApplication1.Models.HEPMA
 
         [Display(Name = "BU date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? AoCBaUDate { get; set; }
 
         [Display(Name = "On hold")]
@@ -76,6 +87,12 @@ namespace WebApplication1.Models.HEPMA
 
         [Display(Name = "Reason")]
         public string AoConHoldReason { get; set; }
+
+        [Display(Name = "Out of scope")]
+        public bool NoLongerInScope { get; set; }
+
+        [Display(Name = "Reason")]
+        public string NoLongerInScopeReason { get; set; }
 
         // Trak Use data section /////////////////////////////////////////
 

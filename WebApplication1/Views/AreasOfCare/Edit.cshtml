@@ -34,6 +34,17 @@
                 </div>
 
                 <div class="panel-body">
+
+                    @*--InScope--------------------------------------------------------------------------*@
+                    <div class="form-group bg-success">
+                        @Html.LabelFor(model => model.InScope, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.InScope, new { htmlAttributes = new { @class = "form-control" } })
+
+                            @Html.ValidationMessageFor(model => model.InScope, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         @*--SiteLocationId----------------------------------------------------------------------------------*@
                         @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-4" })
@@ -69,14 +80,23 @@
                             @Html.ValidationMessageFor(model => model.AoCDescription, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    @*-------------------------------------------------------------------------------------------*@
                     &nbsp;
-                    @*-------------------------------------------------------------------------------------------*@
+                    @*--AoCPlannedGoLiveDate-----------------------------------------------------------------------------------------*@
                     <div class="form-group">
                         @Html.LabelFor(model => model.AoCPlannedGoLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="col-md-8">
                             @Html.EditorFor(model => model.AoCPlannedGoLiveDate, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--AoCPlannedGoLiveDateAgreedAoC--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.AoCPlannedGoLiveDateAgreedAoC, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.AoCPlannedGoLiveDateAgreedAoC, new { htmlAttributes = new { @class = "form-control" } })
+
+                            @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDateAgreedAoC, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     @*--AoCRecordOpened--------------------------------------------------------------------------*@
@@ -170,6 +190,29 @@
                             @Html.ValidationMessageFor(model => model.AoConHoldReason, "", new { @class = "text-danger" })
                         </div>
                     </div>
+                    @*--NoLongerInScope--------------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NoLongerInScope, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.CheckBoxFor(model => model.NoLongerInScope, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NoLongerInScope, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    @*--NoLongerInScopeReason--------------------------------------------------------------------------*@
+                    &nbsp;
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NoLongerInScopeReason, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.NoLongerInScopeReason, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.NoLongerInScopeReason, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+
                     @*-------------------------------------------------------------------------------------------*@
 
                 </div>   @*end panel body*@
@@ -480,9 +523,6 @@
 </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId})
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

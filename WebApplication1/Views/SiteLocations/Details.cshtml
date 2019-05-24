@@ -11,74 +11,72 @@
     <div>
         <h4><strong>@Model.HospitalSite.Name - @Model.Name</strong></h4>
 
-                @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index") |
-                @Html.ActionLink("Back to List of Site Locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
+        @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index") |
+        @Html.ActionLink("Back to List of Site Locations", "../HospitalSites/Details", new { id = Model.HospitalSiteId }) |
 
-                <hr />
+        <hr />
 
 
 
-                <div class="col-md-3">
+        <div class="col-md-3">
 
-                    <div class="panel">
+            <div class="panel">
 
-                        <div class="panel-heading bg-primary">
-                            <h5>@ViewBag.HospitalSiteName</h5>
-                            <h3>@Html.DisplayFor(model => model.Name)</h3>
-                            <h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>
+                <div class="panel-heading bg-primary">
+                    <h5>@ViewBag.HospitalSiteName</h5>
+                    <h3>@Html.DisplayFor(model => model.Name)</h3>
+                    <h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>
                             
-                            @*<hr />*@
-                        </div>
-
-                        <div class="panel-body">
-                            <p>
-                                <strong>Desctiption:</strong>
-                            </p>
-                            <p>
-                                @Html.DisplayFor(model => model.Descrption)
-                            </p>
-                            <p>
-                                <strong>Notes:</strong>
-                            </p>
-                            <p>
-                                @Html.DisplayFor(model => model.Notes)
-                            </p>
-                        </div>
-                        <div class="panel-footer">
-                            <p>
-                                Areas of Care:
-                                @ViewBag.AreasOfCareCount
-                            </p>
-                        </div>
-                    </div>
-
-                    <table class="table">
-
-                        <tr class="alert-info">
-                            <td>&nbsp</td>
-                            <td>
-                                <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
-                            </td>
-                        </tr>
-
-                    </table>
-
-
-
+                    @*<hr />*@
                 </div>
+
+                <div class="panel-body">
+                    <p>
+                        <strong>Desctiption:</strong>
+                    </p>
+                    <p>
+                        @Html.DisplayFor(model => model.Name)
+                    </p>
+                    <p>
+                        <strong>Notes:</strong>
+                    </p>
+                    <p>
+                        @Html.DisplayFor(model => model.Notes)
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    <p>
+                        Areas of Care:
+                        @ViewBag.AreasOfCareCount
+                    </p>
+                </div>
+            </div>
+
+            <table class="table">
+
+                <tr class="alert-info">
+                    <td>&nbsp</td>
+                    <td>
+                        <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
     </div>
 
     <div class="col-md-9">
 
         <table class="table">
 
-                <tr class="bg-primary">
-                    <td><strong>ID</strong></td>
-                    <td><strong>Areas of Care</strong></td>
-                    <td><strong>Description</strong></td>
-                    <td>@*<strong>@Html.ActionLink("Create", "../AreasOfCare/Create")</strong>*@</td>
-                    <td>&nbsp</td>
-                </tr>
+            <tr class="bg-primary">
+                <td><strong>InScope</strong></td>
+                <td><strong>Areas of Care</strong></td>
+                <td><strong>Planned go-live</strong></td>
+                <td><strong>No longer in scope</strong></td>
+                <td>@*<strong>@Html.ActionLink("Create", "../AreasOfCare/Create")</strong>*@</td>
+                <td>&nbsp</td>
+            </tr>
 
                 @foreach (var ListOfAoC in ViewBag.AreasOfCare)
                 {
@@ -86,7 +84,7 @@
                     <tr>
 
                         <td>
-                            @ListOfAoC.AoCId
+                            @if(ListOfAoC.InScope == true) { @ListOfAoC.InScope; }
                         </td>
 
                         <td>
@@ -94,9 +92,14 @@
                         </td>
 
                         <td>
-                            @ListOfAoC.AoCDescription
+                            @if(ListOfAoC.AoCPlannedGoLiveDate != null) { @ListOfAoC.AoCPlannedGoLiveDate.ToString("dd/MM/yyyy"); }
                         </td>
-
+                        <td>
+                            @if (ListOfAoC.NoLongerInScope == true)
+                            {
+                                @ListOfAoC.NoLongerInScope;
+                            }
+                        </td>
                         <td>
                             @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = ListOfAoC.AoCId })
                             
@@ -110,16 +113,17 @@
                 }
 
                     <tr class="alert-info">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>&nbsp</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                         <td><strong>@Html.ActionLink("Create New AoC", "../AreasOfCare/Create", new { id = Model.Id })</strong></td>
                     </tr>
             </table>
 
 
-        @*</div>*@
+    @*</div>*@
 
 
     </div>

@@ -25,9 +25,21 @@
             </div>
             <div class="panel-body">
                 <div class="table">
+
+                    @*--InScope----------------------------------------------------------------------------------*@
+                    <div class="col-lg-12 bg-success">
+                        <div class="col-lg-4">
+                            @Html.DisplayNameFor(model => model.InScope)
+                        </div>
+                        <div class="col-lg-8">
+                            @Html.DisplayFor(model => model.InScope)
+                        </div>
+                    </div>
+                    <p>&nbsp;</p>
                     @*--SiteLocation.Name----------------------------------------------------------------------------------*@
                     <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.SiteLocation.Name)
+                        @*@Html.DisplayNameFor(model => model.SiteLocation.Name)*@
+                        Site location name
                     </div>
                     <div class="col-lg-8">
                         @Html.DisplayFor(model => model.SiteLocation.Name)
@@ -55,14 +67,23 @@
                         @Html.DisplayFor(model => model.AoCDescription)
                     </div>
                     <p>&nbsp;</p>
-                    @*--AoCImplementationOrder----------------------------------------------------------------------------------*@
+                    @*--AoCPlannedGoLiveDate----------------------------------------------------------------------------------*@
                     <div class="col-lg-4">
                         @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
                     </div>
                     <div class="col-lg-8">
                         @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)
                     </div>
+
+                    @*--AoCPlannedGoLiveDateAgreedAoC----------------------------------------------------------------------------------*@
+                    <div class="col-lg-4">
+                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
+                    </div>
+                    <div class="col-lg-8">
+                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
+                    </div>
                     <p>&nbsp;</p>
+
                     @*--AoCRecordOpened----------------------------------------------------------------------------------*@
                     <div class="col-lg-4">
                         @Html.DisplayNameFor(model => model.AoCRecordOpened)
@@ -137,10 +158,27 @@
                     @*<p>&nbsp;</p>*@
                     @*--AoConHoldReason----------------------------------------------------------------------------------*@
                     <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoConHoldReason)
+                        @*@Html.DisplayNameFor(model => model.AoConHoldReason)*@
+                        Reason
                     </div>
                     <div class="col-lg-8">
                         @Html.DisplayFor(model => model.AoConHoldReason)
+                    </div>
+                    <p>&nbsp;</p>
+                    @*--NoLongerInScope----------------------------------------------------------------------------------*@
+                    <div class="col-lg-4">
+                        @Html.DisplayNameFor(model => model.NoLongerInScope)
+                    </div>
+                    <div class="col-lg-8">
+                        @Html.DisplayFor(model => model.NoLongerInScope)
+                    </div>
+                    
+                    @*--NoLongerInScopeReason----------------------------------------------------------------------------------*@
+                    <div class="col-lg-4">
+                        @Html.DisplayNameFor(model => model.NoLongerInScopeReason)
+                    </div>
+                    <div class="col-lg-8">
+                        @Html.DisplayFor(model => model.NoLongerInScopeReason)
                     </div>
                 </div>
             </div>
