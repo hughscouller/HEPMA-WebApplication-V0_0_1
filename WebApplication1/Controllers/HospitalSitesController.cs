@@ -37,12 +37,12 @@ namespace WebApplication1.Controllers
             }
 
             // find all SiteLocations where HospitalSiteId = id
-            var x = db.SiteLocations
+            var siteLocations = db.SiteLocations
                     .Where(sl => sl.HospitalSiteId == id);
 
-            ViewBag.SiteLocations = x;
-            ViewBag.SiteLocationsCount = x.Count();
-
+            ViewBag.SiteLocations = siteLocations;
+            ViewBag.SiteLocationsCount = siteLocations.Count();
+            
             return View(hospitalSite);
         }
 

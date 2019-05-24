@@ -26,42 +26,41 @@
                     <h5>@ViewBag.HospitalSiteName</h5>
                     <h3>@Html.DisplayFor(model => model.Name)</h3>
                     <h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>
-                            
-                    @*<hr />*@
-                </div>
+                    
+                    <div class="bg-info text-center">
 
+                                <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
+
+                    </div>
+                </div>
                 <div class="panel-body">
                     <p>
-                        <strong>Desctiption:</strong>
+                        Areas of Care: @ViewBag.AreasOfCareCount
                     </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Name)
-                    </p>
-                    <p>
-                        <strong>Notes:</strong>
-                    </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Notes)
-                    </p>
-                </div>
+                        <p>
+                            <strong>Desctiption:</strong>
+                        </p>
+                        <p>
+                            @Html.DisplayFor(model => model.Name)
+                        </p>
+                        <p>
+                            <strong>Notes:</strong>
+                        </p>
+                        <p>
+                            @Html.DisplayFor(model => model.Notes)
+                        </p>
+                    </div>
+
                 <div class="panel-footer">
                     <p>
-                        Areas of Care:
-                        @ViewBag.AreasOfCareCount
+                        &nbsp;
                     </p>
                 </div>
             </div>
 
-            <table class="table">
-
-                <tr class="alert-info">
-                    <td>&nbsp</td>
-                    <td>
-                        <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
-                    </td>
-                </tr>
-
-            </table>
+            @*<div class="bg-info">
+                <p>&nbsp;</p>
+            </div>*@
         </div>
     </div>
 
@@ -73,42 +72,55 @@
                 <td><strong>InScope</strong></td>
                 <td><strong>Areas of Care</strong></td>
                 <td><strong>Planned go-live</strong></td>
+                <td><strong>Agreed</strong></td>
                 <td><strong>No longer in scope</strong></td>
-                <td>@*<strong>@Html.ActionLink("Create", "../AreasOfCare/Create")</strong>*@</td>
+                <td>&nbsp</td>
                 <td>&nbsp</td>
             </tr>
 
                 @foreach (var ListOfAoC in ViewBag.AreasOfCare)
                 {
 
-                    <tr>
+            <tr>
 
-                        <td>
-                            @if(ListOfAoC.InScope == true) { @ListOfAoC.InScope; }
-                        </td>
+                <td>
+                    @if (ListOfAoC.InScope == true)
+                    {<p class="bg-success">@ListOfAoC.InScope</p>}
+                </td>
 
-                        <td>
-                            @ListOfAoC.AoCName
-                        </td>
+                <td>
+                    @ListOfAoC.AoCName
+                </td>
 
-                        <td>
-                            @if(ListOfAoC.AoCPlannedGoLiveDate != null) { @ListOfAoC.AoCPlannedGoLiveDate.ToString("dd/MM/yyyy"); }
-                        </td>
-                        <td>
-                            @if (ListOfAoC.NoLongerInScope == true)
-                            {
-                                @ListOfAoC.NoLongerInScope;
-                            }
-                        </td>
-                        <td>
-                            @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = ListOfAoC.AoCId })
-                            
-                        </td>
-                        <td>
-                            | @Html.ActionLink("Edit", "../AreasOfCare/Edit", new { id = ListOfAoC.AoCId })
-                            | @Html.ActionLink("Delete", "../AreasOfCare/Delete", new { id = ListOfAoC.AoCId }) |
-                        </td>
-                    </tr>
+                <td>
+                    @if (ListOfAoC.AoCPlannedGoLiveDate != null)
+                    {@ListOfAoC.AoCPlannedGoLiveDate.ToString("dd/MM/yyyy")}
+                </td>
+
+                <td>
+                    @if (ListOfAoC.AoCPlannedGoLiveDateAgreedAoC == true)
+                    {
+                        <p class="bg-success">@ListOfAoC.AoCPlannedGoLiveDateAgreedAoC</p>}
+                </td>
+
+                <td>
+                    @if (ListOfAoC.NoLongerInScope == true)
+                    {
+                    <p class="bg-danger">
+                        @*@ListOfAoC.NoLongerInScope*@
+                        @ListOfAoC.NoLongerInScopeReason
+                    </p>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = ListOfAoC.AoCId })
+
+                </td>
+                <td>
+                    | @Html.ActionLink("Edit", "../AreasOfCare/Edit", new { id = ListOfAoC.AoCId })
+                    | @Html.ActionLink("Delete", "../AreasOfCare/Delete", new { id = ListOfAoC.AoCId }) |
+                </td>
+            </tr>
 
                 }
 
@@ -118,13 +130,10 @@
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                         <td><strong>@Html.ActionLink("Create New AoC", "../AreasOfCare/Create", new { id = Model.Id })</strong></td>
                     </tr>
             </table>
-
-
-    @*</div>*@
-
 
     </div>
 </div>

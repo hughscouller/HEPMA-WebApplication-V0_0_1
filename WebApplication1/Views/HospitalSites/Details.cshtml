@@ -17,14 +17,18 @@
         <hr />
         <div class="col-md-3">
             <div class="panel">
-
+                
                 <div class="panel-heading bg-primary">
                     <h3>@Html.DisplayFor(model => model.Name)</h3>
-                    @*<hr />*@
+                    <p class="bg-info text-center">
+                        <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
+                    </p>
                 </div>
 
                 <div class="panel-body">
-
+                    <p>
+                        Site Locations: @ViewBag.SiteLocationsCount
+                    </p>
                     <p>
                         <strong>Desctiption:</strong>
                         @Html.DisplayFor(model => model.Description)
@@ -36,20 +40,12 @@
                 </div>
                 <div class="panel-footer">
                     <p>
-                        Site Locations:
-                        @ViewBag.SiteLocationsCount
+                        &nbsp;
                     </p>
                 </div>
             </div>
 
-            <table class="table">
-                <tr class="alert-info">
-                    <td>&nbsp</td>
-                    <td>
-                        <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
-                    </td>
-                </tr>
-            </table>
+            
 
         </div>
     </div>
