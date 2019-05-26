@@ -84,19 +84,25 @@
                         @*<td><strong>@Html.ActionLink("Create New", "../SiteLocations/Create")</strong></td>*@
                     </tr>
 
+                    @{ 
+                        int i = 0;
+                    }
                     @foreach (var siteLocation in ViewBag.SiteLocations)
                     {
-                        <tr>
-                            <td>@siteLocation.Name</td>
-                            <td>@siteLocation.Descrption</td>
-                            <td>@siteLocation.Notes</td>
+                    <tr>
+                        <td>@siteLocation.Name</td>
+                        <td>@siteLocation.Descrption</td>
+                        @*<td>@siteLocation.Notes</td>*@
+                        @*<td>@ViewBag.AreaOfCareCount[i].ToString() - @i</td>*@
+                        <td>@ViewBag.AreaOfCareCount[i] - @i</td>
 
-                            <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
-                            <td>
-                                | @Html.ActionLink("Edit", "../SiteLocations/Edit", new { id = siteLocation.Id })
-                                | @Html.ActionLink("Delete", "../SiteLocations/Delete", new { id = siteLocation.Id }) |
-                            </td>
-                        </tr>
+                        <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
+                        <td>
+                            | @Html.ActionLink("Edit", "../SiteLocations/Edit", new { id = siteLocation.Id })
+                            | @Html.ActionLink("Delete", "../SiteLocations/Delete", new { id = siteLocation.Id }) |
+                        </td>
+                    </tr>
+                        i++;
                     } @*---------------------close offor each----------------------------*@
                     <tr class="alert-info">
                         <td></td>
@@ -110,51 +116,7 @@
             </div>
         </div>
         
-        
-        
-        
-        
-        
-        
-        @*<div class="panel">
-
-            <div class="panel-heading bg-primary">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <p>Site location</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>Site location</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>Site location</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>Site location</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <p>@Html.DisplayFor(model => model.Name)</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>@Html.DisplayFor(model => model.Description)</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>@Html.DisplayFor(model => model.Notes)</p>
-                    </div>
-                    <div class="col-lg-3">
-                        <p>Site location</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>*@
     </div>
-
 
 </div>@*end of class row*@
 
@@ -172,6 +134,9 @@
                 <h4 class="modal-title">Hospital Site Notes</h4>
             </div>
             <div class="modal-body">
+
+                @Model.Notes
+
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>

@@ -23,6 +23,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Note)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoteContext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoteContextIdId)
+        </th>
         <th></th>
     </tr>
 
@@ -39,6 +45,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoteContext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoteContextIdId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

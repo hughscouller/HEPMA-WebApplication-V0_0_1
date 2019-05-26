@@ -47,7 +47,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Created,CreatedBy,NoteType,Note")] NotesField notesField)
+        public ActionResult Create([Bind(Include = "Id,Created,CreatedBy,NoteType,Note,NoteContext,NoteContextIdId")] NotesField notesField)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Created,CreatedBy,NoteType,Note")] NotesField notesField)
+        public ActionResult Edit([Bind(Include = "Id,Created,CreatedBy,NoteType,Note,NoteContext,NoteContextIdId")] NotesField notesField)
         {
             if (ModelState.IsValid)
             {

@@ -15,9 +15,10 @@ namespace WebApplication1.Models.HEPMA
         public string CreatedBy { get; set; }
         public string NoteType { get; set; }
         public string Note { get; set; }
-        public int AreaOfCareId { get; set; }
+        public string NoteContext { get; set; }
+        public int NoteContextIdId { get; set; }
 
-        public AreaOfCare AreaOfCare { get; set; }
+        // public AreaOfCare AreaOfCare { get; set; }
 
         //public List<AreaOfCare> AreasOfCare { get; set; }
     }

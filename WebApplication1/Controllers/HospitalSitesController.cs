@@ -40,17 +40,51 @@ namespace WebApplication1.Controllers
             var siteLocations = db.SiteLocations
                     .Where(sl => sl.HospitalSiteId == id);
 
+            List<AreaOfCare> areasOfCare = db.AreasOfCare.ToList();
+
+            
+
+            //db.Database.Connection.Close();
+
+
             ViewBag.SiteLocations = siteLocations;
             ViewBag.SiteLocationsCount = siteLocations.Count();
 
+            List<int> aocCount = new List<int>();
+            foreach(var sl in siteLocations)
+            {
+                //aocCount.Add(siteLocationAoCsCount(areasOfCare, sl.Id));
+                aocCount.Add(areasOfCare.Count());
+            }
+            ViewBag.AreaOfCareCount = aocCount;
+            
 
-            //ViewBag.SiteLocationListPlus = db.( = "SELECT SiteLocations.Name, SiteLocations.Descrption, SiteLocations.Notes, COUNT(AreaOfCares.AoCId) FROM SiteLocations LEFT JOIN AreaOfCares ON SiteLocations.id = AreaOfCares.SiteLocationID WHERE SiteLocations.HospitalSiteId = 1 Group BY SiteLocations.Name,SiteLocations.Descrption, SiteLocations.Notes");
 
-            
-            
-            
             return View(hospitalSite);
         }
+
+        // helper functions ////////////////////////////////////////////////////
+        // count of AoCs in given SiteLocation ////////////////////////////////
+        private int siteLocationAoCsCount(List<AreaOfCare> aocs, int SLId)
+        {
+            int count = 0;
+
+            foreach(var aoc in aocs)
+            {
+                if(aoc.SiteLocationId == SLId)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
+
+        // end helper functions ////////////////////////////////////////////////
+        // ////////////////////////////////////////////////////////////////////
+
 
         // GET: HospitalSites/Create
         public ActionResult Create()
