@@ -132,10 +132,10 @@
                 @foreach(var note in ViewBag.HospitalNotes)
                 {
                     <div class="panel">
+                        <div class="panel-heading bg-info">
+                            <p>@note.CreatedBy --- @note.CreatedOn --- @note.NoteType</p>
+                        </div>
                         <div class="panel-body">
-                            <p>@note.CreatedBy</p>
-                            <p>@note.CreatedOn</p>
-                            <p>@note.NoteType</p>
                             <p>@note.Note</p>
                         </div>
                     </div>
