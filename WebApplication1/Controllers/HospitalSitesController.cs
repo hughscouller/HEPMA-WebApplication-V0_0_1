@@ -42,9 +42,7 @@ namespace WebApplication1.Controllers
 
             List<AreaOfCare> areasOfCare = db.AreasOfCare.ToList();
 
-            
-
-            //db.Database.Connection.Close();
+           
 
 
             ViewBag.SiteLocations = siteLocations;
@@ -53,8 +51,8 @@ namespace WebApplication1.Controllers
             List<int> aocCount = new List<int>();
             foreach(var sl in siteLocations)
             {
-                //aocCount.Add(siteLocationAoCsCount(areasOfCare, sl.Id));
-                aocCount.Add(areasOfCare.Count());
+                aocCount.Add(siteLocationAoCsCount(areasOfCare, sl.Id));
+                //aocCount.Add(areasOfCare.Count());
             }
             ViewBag.AreaOfCareCount = aocCount;
             
