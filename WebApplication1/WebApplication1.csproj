@@ -188,7 +188,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NotesFieldsController.cs" />
+    <Compile Include="Controllers\NotesFieldHospitalSitesController.cs" />
     <Compile Include="Controllers\SiteLocationsController.cs" />
     <Compile Include="DAL\HEPMADbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,12 +250,18 @@
     <Compile Include="Migrations\201905261040324_NoteDataUpdate.Designer.cs">
       <DependentUpon>201905261040324_NoteDataUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905270827474_AddedNotesFields.cs" />
+    <Compile Include="Migrations\201905270827474_AddedNotesFields.Designer.cs">
+      <DependentUpon>201905270827474_AddedNotesFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
-    <Compile Include="Models\HEPMA\NotesField.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldAreaOfCare.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -533,11 +539,11 @@
     <Content Include="Views\AreasOfCare\Details.cshtml" />
     <Content Include="Views\AreasOfCare\Edit.cshtml" />
     <Content Include="Views\AreasOfCare\Index.cshtml" />
-    <Content Include="Views\NotesFields\Create.cshtml" />
-    <Content Include="Views\NotesFields\Delete.cshtml" />
-    <Content Include="Views\NotesFields\Details.cshtml" />
-    <Content Include="Views\NotesFields\Edit.cshtml" />
-    <Content Include="Views\NotesFields\Index.cshtml" />
+    <Content Include="Views\NotesFieldHospitalSites\Create.cshtml" />
+    <Content Include="Views\NotesFieldHospitalSites\Delete.cshtml" />
+    <Content Include="Views\NotesFieldHospitalSites\Details.cshtml" />
+    <Content Include="Views\NotesFieldHospitalSites\Edit.cshtml" />
+    <Content Include="Views\NotesFieldHospitalSites\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -597,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905261040324_NoteDataUpdate.resx">
       <DependentUpon>201905261040324_NoteDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905270827474_AddedNotesFields.resx">
+      <DependentUpon>201905270827474_AddedNotesFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

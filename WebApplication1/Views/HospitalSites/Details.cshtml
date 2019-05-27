@@ -64,6 +64,9 @@
             <div class="panel-footer">
                 <!-- Trigger the modal notes area -->
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
+
+                @*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*@
+                @Html.ActionLink("Add Hospital Site Note", "../NotesFieldHospitalSites/create", new { id = Model.Id }) 
             </div>
 
         </div>
@@ -76,12 +79,11 @@
                 <table class="table table-dark">
 
                     <tr class="bg-primary">
-                        <td><strong>Name</strong></td>
+                        <td><strong>Site Locations</strong></td>
                         <td><strong>Description</strong></td>
-                        <td><strong>Notes</strong></td>
+                        <td><strong>No. AoCs</strong></td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        @*<td><strong>@Html.ActionLink("Create New", "../SiteLocations/Create")</strong></td>*@
                     </tr>
 
                     @{ 
@@ -92,10 +94,7 @@
                     <tr>
                         <td>@siteLocation.Name</td>
                         <td>@siteLocation.Descrption</td>
-                        @*<td>@siteLocation.Notes</td>*@
-                        @*<td>@ViewBag.AreaOfCareCount[i].ToString() - @i</td>*@
-                        <td>@ViewBag.AreaOfCareCount[i] - @i</td>
-
+                        <td>@ViewBag.AreaOfCareCount[i]</td>
                         <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
                         <td>
                             | @Html.ActionLink("Edit", "../SiteLocations/Edit", new { id = siteLocation.Id })

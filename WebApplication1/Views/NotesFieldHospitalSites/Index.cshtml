@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.HEPMA.NotesField>
+﻿@model IEnumerable<WebApplication1.Models.HEPMA.NotesFieldHospitalSite>
 
 @{
     ViewBag.Title = "Index";
@@ -24,10 +24,7 @@
             @Html.DisplayNameFor(model => model.Note)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NoteContext)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NoteContextIdId)
+            @Html.DisplayNameFor(model => model.HospitalSiteId)
         </th>
         <th></th>
     </tr>
@@ -47,10 +44,7 @@
             @Html.DisplayFor(modelItem => item.Note)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NoteContext)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NoteContextIdId)
+            @Html.DisplayFor(modelItem => item.HospitalSiteId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
