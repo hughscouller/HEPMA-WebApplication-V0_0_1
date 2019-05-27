@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebApplication1.Models.HEPMA
 {
-    public class NotesFieldHospitalSite
+    public class NotesFieldSiteLocation
     {
         public int Id { get; set; }
 
@@ -17,9 +17,9 @@ namespace WebApplication1.Models.HEPMA
         [DataType(DataType.Date)]
         public DateTime? CreatedOn { get; set; }
         public string NoteType { get; set; }
-        public int HospitalId { get; set; }
+        public int SiteLocationId { get; set; }
         public string Note { get; set; }
 
-        public virtual HospitalSite HospitalSite { get; set; }
+        public virtual SiteLocation SiteLocation { get; set; }
     }
 }

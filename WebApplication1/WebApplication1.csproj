@@ -189,82 +189,23 @@
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotesFieldsHospitalSiteController.cs" />
+    <Compile Include="Controllers\NotesFieldsSiteLocationController.cs" />
     <Compile Include="Controllers\SiteLocationsController.cs" />
     <Compile Include="DAL\HEPMADbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905200856376_InitialCreate.cs" />
-    <Compile Include="Migrations\201905200856376_InitialCreate.Designer.cs">
-      <DependentUpon>201905200856376_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201905271746573_initialCreate.cs" />
+    <Compile Include="Migrations\201905271746573_initialCreate.Designer.cs">
+      <DependentUpon>201905271746573_initialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905200929173_update01.cs" />
-    <Compile Include="Migrations\201905200929173_update01.Designer.cs">
-      <DependentUpon>201905200929173_update01.cs</DependentUpon>
+    <Compile Include="Migrations\201905271858508_SiteLocationNotes.cs" />
+    <Compile Include="Migrations\201905271858508_SiteLocationNotes.Designer.cs">
+      <DependentUpon>201905271858508_SiteLocationNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905210806145_dateField.cs" />
-    <Compile Include="Migrations\201905210806145_dateField.Designer.cs">
-      <DependentUpon>201905210806145_dateField.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905210947094_data01.cs" />
-    <Compile Include="Migrations\201905210947094_data01.Designer.cs">
-      <DependentUpon>201905210947094_data01.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905211302008_data03.cs" />
-    <Compile Include="Migrations\201905211302008_data03.Designer.cs">
-      <DependentUpon>201905211302008_data03.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905231346585_PlannedGoLiveChange.cs" />
-    <Compile Include="Migrations\201905231346585_PlannedGoLiveChange.Designer.cs">
-      <DependentUpon>201905231346585_PlannedGoLiveChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905231353317_PlannedGoLive02.cs" />
-    <Compile Include="Migrations\201905231353317_PlannedGoLive02.Designer.cs">
-      <DependentUpon>201905231353317_PlannedGoLive02.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905231417221_update.cs" />
-    <Compile Include="Migrations\201905231417221_update.Designer.cs">
-      <DependentUpon>201905231417221_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905240700124_updateAoCDates.cs" />
-    <Compile Include="Migrations\201905240700124_updateAoCDates.Designer.cs">
-      <DependentUpon>201905240700124_updateAoCDates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905240742487_AoCFieldAdded.cs" />
-    <Compile Include="Migrations\201905240742487_AoCFieldAdded.Designer.cs">
-      <DependentUpon>201905240742487_AoCFieldAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905240823321_addScopeFieldsToAoC.cs" />
-    <Compile Include="Migrations\201905240823321_addScopeFieldsToAoC.Designer.cs">
-      <DependentUpon>201905240823321_addScopeFieldsToAoC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905240905209_update1.cs" />
-    <Compile Include="Migrations\201905240905209_update1.Designer.cs">
-      <DependentUpon>201905240905209_update1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905240912413_update2.cs" />
-    <Compile Include="Migrations\201905240912413_update2.Designer.cs">
-      <DependentUpon>201905240912413_update2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271055506_update3.cs" />
-    <Compile Include="Migrations\201905271055506_update3.Designer.cs">
-      <DependentUpon>201905271055506_update3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271150166_notes.cs" />
-    <Compile Include="Migrations\201905271150166_notes.Designer.cs">
-      <DependentUpon>201905271150166_notes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271155082_notesupdate.cs" />
-    <Compile Include="Migrations\201905271155082_notesupdate.Designer.cs">
-      <DependentUpon>201905271155082_notesupdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271218047_update4.cs" />
-    <Compile Include="Migrations\201905271218047_update4.Designer.cs">
-      <DependentUpon>201905271218047_update4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271241243_updaet.cs" />
-    <Compile Include="Migrations\201905271241243_updaet.Designer.cs">
-      <DependentUpon>201905271241243_updaet.cs</DependentUpon>
+    <Compile Include="Migrations\201905271907354_update.cs" />
+    <Compile Include="Migrations\201905271907354_update.Designer.cs">
+      <DependentUpon>201905271907354_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -272,6 +213,7 @@
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -554,6 +496,11 @@
     <Content Include="Views\NotesFieldsHospitalSite\Details.cshtml" />
     <Content Include="Views\NotesFieldsHospitalSite\Edit.cshtml" />
     <Content Include="Views\NotesFieldsHospitalSite\Index.cshtml" />
+    <Content Include="Views\NotesFieldsSiteLocation\Create.cshtml" />
+    <Content Include="Views\NotesFieldsSiteLocation\Delete.cshtml" />
+    <Content Include="Views\NotesFieldsSiteLocation\Details.cshtml" />
+    <Content Include="Views\NotesFieldsSiteLocation\Edit.cshtml" />
+    <Content Include="Views\NotesFieldsSiteLocation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -572,59 +519,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905200856376_InitialCreate.resx">
-      <DependentUpon>201905200856376_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905271746573_initialCreate.resx">
+      <DependentUpon>201905271746573_initialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905200929173_update01.resx">
-      <DependentUpon>201905200929173_update01.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905271858508_SiteLocationNotes.resx">
+      <DependentUpon>201905271858508_SiteLocationNotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905210806145_dateField.resx">
-      <DependentUpon>201905210806145_dateField.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905210947094_data01.resx">
-      <DependentUpon>201905210947094_data01.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905211302008_data03.resx">
-      <DependentUpon>201905211302008_data03.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905231346585_PlannedGoLiveChange.resx">
-      <DependentUpon>201905231346585_PlannedGoLiveChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905231353317_PlannedGoLive02.resx">
-      <DependentUpon>201905231353317_PlannedGoLive02.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905231417221_update.resx">
-      <DependentUpon>201905231417221_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905240700124_updateAoCDates.resx">
-      <DependentUpon>201905240700124_updateAoCDates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905240742487_AoCFieldAdded.resx">
-      <DependentUpon>201905240742487_AoCFieldAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905240823321_addScopeFieldsToAoC.resx">
-      <DependentUpon>201905240823321_addScopeFieldsToAoC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905240905209_update1.resx">
-      <DependentUpon>201905240905209_update1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905240912413_update2.resx">
-      <DependentUpon>201905240912413_update2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271055506_update3.resx">
-      <DependentUpon>201905271055506_update3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271150166_notes.resx">
-      <DependentUpon>201905271150166_notes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271155082_notesupdate.resx">
-      <DependentUpon>201905271155082_notesupdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271218047_update4.resx">
-      <DependentUpon>201905271218047_update4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271241243_updaet.resx">
-      <DependentUpon>201905271241243_updaet.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905271907354_update.resx">
+      <DependentUpon>201905271907354_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

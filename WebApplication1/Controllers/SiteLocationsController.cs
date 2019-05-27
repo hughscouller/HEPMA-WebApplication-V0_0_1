@@ -53,6 +53,15 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+
+
+            // ////////////////////////////////////////////////////
+
+            List<NotesFieldSiteLocation> LocationNotesBag = new List<NotesFieldSiteLocation>(db.LocationNotes.Where(sl => sl.SiteLocationId == siteLocation.Id).ToList().OrderByDescending(sl => sl.CreatedOn));
+
+            ViewBag.LocationNotes = LocationNotesBag;
+
+
             return View(siteLocation);
         }
 

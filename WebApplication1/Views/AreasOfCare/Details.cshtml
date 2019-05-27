@@ -9,15 +9,31 @@
 <div>
     <h4><strong>@ViewBag.HospitalSite - @Model.SiteLocation.Name - @Model.AoCName</strong></h4>
 
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.AoCId }) |
-        @Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })
-    </p>
+
+        
+        <div class="row">
+            <div>@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })</div> 
+            <div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div>
+        </div>
+
     <hr />
 </div>
 
+<!-- tab navigation block - start-->
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">AoC information gathering</a></li>
+    <li><a data-toggle="tab" href="#menu1">AoC assessment</a></li>
+    <li><a data-toggle="tab" href="#menu2">AoC go-live checklist</a></li>
+    <li><a data-toggle="tab" href="@Url.Action("Edit", "Edit", new { id = Model.AoCId })">AoC BaU checklist</a></li>
+    
+</ul>
+<!-- tab navigation block - end-->
 
+<!--Area of Care information gathering -- start ////////////////////////////////////////////////////////////-->
+<!--left column - start-->
 <div class="row">
+    <!--left column - start-->
+
     <div class="col-lg-6">
         <div class="panel">
             <div class="panel-heading bg-primary">
@@ -181,9 +197,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
     </div>
+    <!--left column - end-->
+    <!--right column - start-->
     <div class="col-lg-6">
 
         <div class="panel">
@@ -413,4 +431,6 @@
         </div>
 
     </div>
+    <!--right column - end-->
 </div>
+<!--Area of Care information gathering -- start ////////////////////////////////////////////////////////////-->
