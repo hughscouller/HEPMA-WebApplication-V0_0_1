@@ -19,11 +19,9 @@
 
             <div class="panel-heading bg-primary">
                 <h3>@Html.DisplayFor(model => model.Name)</h3>
-
                 <p class="bg-info text-center">
                     <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
                 </p>
-
             </div>
 
             <div class="panel-body">
@@ -57,18 +55,15 @@
                 <div class="col-lg-8">
                     @ViewBag.SiteLocationsCount
                 </div>
-
-
             </div>@*end of panel-body*@
 
             <div class="panel-footer">
                 <!-- Trigger the modal notes area -->
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
 
-                @*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*@
-                @Html.ActionLink("Add Hospital Site Note", "../NotesFieldHospitalSites/create", new { id = Model.Id }) 
+                <!--Link to hospital notes create page -->
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.Id })
             </div>
-
         </div>
     </div>
 
@@ -134,12 +129,18 @@
             </div>
             <div class="modal-body">
 
-                @Model.Notes
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum.</p>
+                @foreach(var note in ViewBag.HospitalNotes)
+                {
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p>@note.CreatedBy</p>
+                            <p>@note.CreatedOn</p>
+                            <p>@note.NoteType</p>
+                            <p>@note.Note</p>
+                        </div>
+                    </div>
+                    
+                }
 
             </div>
             <div class="modal-footer">

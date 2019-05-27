@@ -36,27 +36,28 @@ namespace WebApplication1.Controllers
                 return HttpNotFound();
             }
 
-            // find all SiteLocations where HospitalSiteId = id
+            // find all SiteLocations where HospitalSiteId = id ////
             var siteLocations = db.SiteLocations
                     .Where(sl => sl.HospitalSiteId == id);
 
-            List<AreaOfCare> areasOfCare = db.AreasOfCare.ToList();
-
-           
-
-
             ViewBag.SiteLocations = siteLocations;
             ViewBag.SiteLocationsCount = siteLocations.Count();
+            ////////////////////////////////////////////////////////
+            
+            // Areas of Care information //////////////////////////
+            List<AreaOfCare> areasOfCare = db.AreasOfCare.ToList();
 
             List<int> aocCount = new List<int>();
             foreach(var sl in siteLocations)
             {
                 aocCount.Add(siteLocationAoCsCount(areasOfCare, sl.Id));
-                //aocCount.Add(areasOfCare.Count());
             }
             ViewBag.AreaOfCareCount = aocCount;
-            
+            // ////////////////////////////////////////////////////
 
+            List<NotesFieldHospitalSite> HospitalNotesBag = new List<NotesFieldHospitalSite> (db.HospitalNotes.Where(hn => hn.HospitalId == hospitalSite.Id ).ToList().OrderByDescending(hn => hn.CreatedOn) );
+
+            ViewBag.HospitalNotes = HospitalNotesBag;
 
             return View(hospitalSite);
         }
@@ -78,9 +79,7 @@ namespace WebApplication1.Controllers
             return count;
         }
 
-
-
-        // end helper functions ////////////////////////////////////////////////
+        // end helper function - Details Post ////////////////////////////////////////////////
         // ////////////////////////////////////////////////////////////////////
 
 
@@ -121,8 +120,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: HospitalSites/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Notes")] HospitalSite hospitalSite)
