@@ -27,14 +27,14 @@
             @Html.DisplayNameFor(model => model.Notes)
         </th>
         <th>&nbsp;</th>
-        <th>&nbsp;</th>
+        @*<th>&nbsp;</th>*@
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
+            <strong>@Html.DisplayFor(modelItem => item.Name)</strong>
+</td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
@@ -44,17 +44,17 @@
         <td>
             @Html.ActionLink("Details", "Details", new { id = item.Id })
         </td>
-        <td>
+        @*<td>
             | @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
             | @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
-        </td>
+        </td>*@
     </tr>
 }
     <tr class="bg-info">
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
+        @*<td></td>*@
         <td><strong>@Html.ActionLink("Create New", "Create")</strong></td>
     </tr>
 </table>
