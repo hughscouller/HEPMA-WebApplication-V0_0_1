@@ -207,6 +207,18 @@
     <Compile Include="Migrations\201905271907354_update.Designer.cs">
       <DependentUpon>201905271907354_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905290856092_HSDatasetUpdate.cs" />
+    <Compile Include="Migrations\201905290856092_HSDatasetUpdate.Designer.cs">
+      <DependentUpon>201905290856092_HSDatasetUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905291011567_data.cs" />
+    <Compile Include="Migrations\201905291011567_data.Designer.cs">
+      <DependentUpon>201905291011567_data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905291337487_HSdataUpdate.cs" />
+    <Compile Include="Migrations\201905291337487_HSdataUpdate.Designer.cs">
+      <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
@@ -527,6 +539,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905271907354_update.resx">
       <DependentUpon>201905271907354_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905290856092_HSDatasetUpdate.resx">
+      <DependentUpon>201905290856092_HSDatasetUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291011567_data.resx">
+      <DependentUpon>201905291011567_data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291337487_HSdataUpdate.resx">
+      <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

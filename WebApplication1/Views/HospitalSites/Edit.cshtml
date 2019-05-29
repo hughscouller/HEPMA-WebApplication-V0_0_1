@@ -47,6 +47,51 @@
                     @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <!-- contact dates ////////////////////////////////////////////////////////////////////  -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.PlannedStart, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.PlannedStart, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PlannedStart, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PlannedComplete, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.PlannedComplete, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PlannedComplete, "", new { @class = "text-danger" })
+            </div>
+            <!-- Accommodation //////////////////////////////////////////////////////////////// -->
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccommodationComplimentStandardBed, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.AccommodationComplimentStandardBed, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccommodationComplimentStandardBed, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccommodationComplimentDaySurgeryBed, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.AccommodationComplimentDaySurgeryBed, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccommodationComplimentDaySurgeryBed, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccommodationComplimentTrolly, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.AccommodationComplimentTrolly, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccommodationComplimentTrolly, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccommodationComplimentChair, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.AccommodationComplimentChair, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccommodationComplimentChair, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AccommodationComplimentChair, htmlAttributes: new { @class = "control-label" })
+
+                @Html.EditorFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot, "", new { @class = "text-danger" })
+            </div>
+            <!-- End /////////////////////////////////////////////////////////////-->
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

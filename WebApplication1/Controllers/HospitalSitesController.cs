@@ -92,7 +92,7 @@ namespace WebApplication1.Controllers
         // POST: HospitalSites/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,Notes")] HospitalSite hospitalSite)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,Notes,PlannedStart, PlannedComplete, AccommodationComplimentStandardBed, AccommodationComplimentDaySurgeryBed, AccommodationComplimentTrolly, AccommodationComplimentChair, AccommodationComplimentSpecialCareBabyUnitCot")] HospitalSite hospitalSite)
         {
             if (ModelState.IsValid)
             {
@@ -122,7 +122,7 @@ namespace WebApplication1.Controllers
         // POST: HospitalSites/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,Notes")] HospitalSite hospitalSite)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,Notes,PlannedStart, PlannedComplete, AccommodationComplimentStandardBed, AccommodationComplimentDaySurgeryBed, AccommodationComplimentTrolly, AccommodationComplimentChair, AccommodationComplimentSpecialCareBabyUnitCot")] HospitalSite hospitalSite)
         {
             if (ModelState.IsValid)
             {
