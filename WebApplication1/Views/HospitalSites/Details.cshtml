@@ -26,35 +26,86 @@
 
             <div class="panel-body">
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     @Html.DisplayNameFor(model => model.Name) :
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     @Html.DisplayFor(model => model.Name)
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     @Html.DisplayNameFor(model => model.Description) :
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     @Html.DisplayFor(model => model.Description)
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     @Html.DisplayNameFor(model => model.Notes) :
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     @Html.DisplayFor(model => model.Notes)
+                </div>
+                <p>&nbsp;</p>
+                <div class="col-lg-6">
+                    @Html.DisplayNameFor(model => model.PlannedStart) :
+                </div>
+                <div class="col-lg-6">
+                    @Html.DisplayFor(model => model.PlannedStart)
+                </div>
+                <p>&nbsp;</p>
+                <div class="col-lg-6">
+                    @Html.DisplayNameFor(model => model.PlannedComplete) :
+                </div>
+                <div class="col-lg-6">
+                    @Html.DisplayFor(model => model.PlannedComplete)
                 </div>
 
                 <p>&nbsp;</p>
 
-                <div class="col-lg-4">
+                <div class="col-lg-7">
                     Site locations :
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-5">
                     @ViewBag.SiteLocationsCount
                 </div>
+
+                <p>&nbsp;</p>
+
+                <div class="col-lg-7">
+                    @Html.DisplayNameFor(model => model.AccommodationComplimentStandardBed) :
+                </div>
+                <div class="col-lg-5">
+                    @Html.DisplayFor(model => model.AccommodationComplimentStandardBed)
+                </div>
+                <div class="col-lg-7">
+                    @Html.DisplayNameFor(model => model.AccommodationComplimentDaySurgeryBed) :
+                </div>
+                <div class="col-lg-5">
+                    @Html.DisplayFor(model => model.AccommodationComplimentDaySurgeryBed)
+                </div>
+
+                <div class="col-lg-7">
+                    @Html.DisplayNameFor(model => model.AccommodationComplimentTrolly) :
+                </div>
+                <div class="col-lg-5">
+                    @Html.DisplayFor(model => model.AccommodationComplimentTrolly)
+                </div>
+                <div class="col-lg-7">
+                    @Html.DisplayNameFor(model => model.AccommodationComplimentChair) :
+                </div>
+                <div class="col-lg-5">
+                    @Html.DisplayFor(model => model.AccommodationComplimentChair)
+                </div>
+                <div class="col-lg-7">
+                    @Html.DisplayNameFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot) :
+                </div>
+                <div class="col-lg-5">
+                    @Html.DisplayFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot)
+                </div>
+
+
+
             </div>@*end of panel-body*@
 
             <div class="panel-footer">
