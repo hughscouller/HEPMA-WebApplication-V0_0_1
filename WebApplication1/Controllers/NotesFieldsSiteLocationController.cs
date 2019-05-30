@@ -38,10 +38,11 @@ namespace WebApplication1.Controllers
         }
 
         // GET: NotesFieldsSiteLocation/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name");
-            return View();
+            NotesFieldSiteLocation LocationNotes = new NotesFieldSiteLocation();
+            LocationNotes.SiteLocationId = id;
+            return View(LocationNotes);
         }
 
         // POST: NotesFieldsSiteLocation/Create
@@ -55,10 +56,9 @@ namespace WebApplication1.Controllers
             {
                 db.LocationNotes.Add(notesFieldSiteLocation);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../SiteLocations/Details/", new { id = notesFieldSiteLocation.SiteLocationId });
             }
 
-            ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", notesFieldSiteLocation.SiteLocationId);
             return View(notesFieldSiteLocation);
         }
 

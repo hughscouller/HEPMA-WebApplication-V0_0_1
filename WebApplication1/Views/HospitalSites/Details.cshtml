@@ -25,87 +25,67 @@
             </div>
 
             <div class="panel-body">
-
-                <div class="col-lg-6">
-                    @Html.DisplayNameFor(model => model.Name) :
-                </div>
-                <div class="col-lg-6">
-                    @Html.DisplayFor(model => model.Name)
-                </div>
-
-                <div class="col-lg-6">
+                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.Description) :
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.Description)
                 </div>
-
-                <div class="col-lg-6">
+                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.Notes) :
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12" style="background :#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.Notes)
                 </div>
-                <p>&nbsp;</p>
-                <div class="col-lg-6">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.PlannedStart) :
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.PlannedStart)
                 </div>
-                <p>&nbsp;</p>
-                <div class="col-lg-6">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.PlannedComplete) :
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.PlannedComplete)
                 </div>
-
-                <p>&nbsp;</p>
-
-                <div class="col-lg-7">
-                    Site locations :
-                </div>
-                <div class="col-lg-5">
-                    @ViewBag.SiteLocationsCount
-                </div>
-
-                <p>&nbsp;</p>
-
-                <div class="col-lg-7">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentStandardBed) :
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentStandardBed)
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentDaySurgeryBed) :
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentDaySurgeryBed)
                 </div>
-
-                <div class="col-lg-7">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentTrolly) :
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentTrolly)
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentChair) :
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentChair)
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot) :
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot)
                 </div>
-
-
-
+            <p>&nbsp;</p>
+                <div class="col-lg-6" >
+                    Site locations :
+                </div>
+                <div class="col-lg-6"">
+                    @ViewBag.SiteLocationsCount
+                </div>
             </div>@*end of panel-body*@
 
             <div class="panel-footer">
@@ -125,11 +105,10 @@
                 <table class="table table-dark">
 
                     <tr class="bg-primary">
-                        <td><strong>Site Locations</strong></td>
-                        <td><strong>Description</strong></td>
-                        <td><strong>No. AoCs</strong></td>
-                        @*<td>&nbsp;</td>*@
-                        <td>&nbsp;</td>
+                        <td class="col-lg-5" style="padding:5px; border-style: solid; border-color: white"><strong>Site Locations</strong></td>
+                        <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>Description</strong></td>
+                        <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>No. AoCs</strong></td>
+                        <td class="col-lg-2"style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                     </tr>
 
                     @{ 
@@ -138,7 +117,7 @@
                     @foreach (var siteLocation in ViewBag.SiteLocations)
                     {
                     <tr>
-                        <td>@siteLocation.Name</td>
+                        <td style="background:#fac808; padding:5px; border-style: solid; border-color: white"><strong>@siteLocation.Name</strong></td>
                         <td>@siteLocation.Descrption</td>
                         <td>@ViewBag.AreaOfCareCount[i]</td>
                         <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
@@ -150,13 +129,14 @@
 
                     </tr>
                         i++;
-                    } @*---------------------close offor each----------------------------*@
-                    <tr class="alert-info">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    } @*---------------------close offor each loop ----------------------------*@
+
+                    <tr class="alert-info" style="padding:5px; border-style: solid; border-color: white">
+                        <td style="padding:5px; border-style: solid; border-color: white"></td>
+                        <td style="padding:5px; border-style: solid; border-color: white"></td>
+                        <td style="padding:5px; border-style: solid; border-color: white"></td>
                         @*<td></td>*@
-                        <td><strong>@Html.ActionLink("Create New", "../SiteLocations/Create", new { id = Model.Id })</strong></td>
+                        <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong>@Html.ActionLink("Create New", "../SiteLocations/Create", new { id = Model.Id })</strong></td>
                     </tr>
                 </table>
 
@@ -185,8 +165,8 @@
                 @foreach(var note in ViewBag.HospitalNotes)
                 {
                     <div class="panel">
-                        <div class="panel-heading bg-info">
-                            <p>@note.CreatedBy --- @note.CreatedOn --- @note.NoteType</p>
+                        <div class="panel-heading" style="background:#fac808">
+                            <p>@note.CreatedBy - @note.CreatedOn - @note.NoteType</p>
                         </div>
                         <div class="panel-body">
                             <p>@note.Note</p>

@@ -12,124 +12,55 @@
     @*@Html.ActionLink("Create New", "Create")*@
 </p>
 
-<div class="row">
-    
-        @foreach (var item in Model)
-        {   
-            <div class="col-lg-7">
-    <div class="table">
-        <table>
-            @*<table class="table-bordered">*@
-                <thead>
-                    <tr class="p-5 bg-primary">
-                        <td class="col-lg-1">&nbsp;</td>
-                        <td class="col-lg-3"><h5>@Html.DisplayFor(modelItem => item.Name)</h5></td>
-                        <td class="col-lg-2">&nbsp;</td>
-                        <td class="col-lg-1 bg-success">@Html.ActionLink("Details", "Details", new { id = item.Id })</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="padding: 35px">
-                        <td class="col-lg-1">&nbsp;</td>
-                        <td class="col-lg-3">&nbsp;</td>
-                        <td class="col-lg-2">Standard bed</td>
-                        <td class="col-lg-1">@Html.DisplayFor(modelItem => item.AccommodationComplimentStandardBed)</td>
-                    </tr>
-                    <tr class="padding: 35px">
-                        <td class="col-lg-1">Description</td>
-                        <td class="col-lg-3">@Html.DisplayFor(modelItem => item.Description)</td>
-                        <td class="col-lg-2">Surgery Day bed</td>
-                        <td class="col-lg-1">@Html.DisplayFor(modelItem => item.AccommodationComplimentDaySurgeryBed)</td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-1">1st contact</td>
-                        <td class="col-lg-3">@Html.DisplayFor(modelItem => item.PlannedStart) PS</td>
-                        <td class="col-lg-2">Trolly</td>
-                        <td class="col-lg-1">@Html.DisplayFor(modelItem => item.AccommodationComplimentTrolly)</td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-1">Complete</td>
-                        <td class="col-lg-3">@Html.DisplayFor(modelItem => item.PlannedComplete)</td>
-                        <td class="col-lg-2">Chair</td>
-                        <td class="col-lg-1">@Html.DisplayFor(modelItem => item.AccommodationComplimentChair)</td>
-                    </tr>
-                    <tr>
-                        <td class="col-lg-1">&nbsp;</td>
-                        <td class="col-lg-3">&nbsp;</td>
-                        <td class="col-lg-2">cot</td>
-                        <td class="col-lg-1">@Html.DisplayFor(modelItem => item.AccommodationComplimentSpecialCareBabyUnitCot)</td>
-                    </tr>
-                </tbody>
-            </table>
-    </div>
-</div>
-
-
-        <div class="col-lg-5">
-            <div class="table">
-                <table>
-                    <thead>
-                        <tr class="p-5 bg-success">
-                            <td>Notes</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Notes)</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    }
-    </div>
-<p><strong>@Html.ActionLink("Create New", "Create")</strong></p>
-<p>&nbsp;</p>
-
 
 <table class="table">
     <tr class="bg-primary">
-        <th>
+        <th class="col-lg-3" style="padding:5px; border-style: solid; border-color: white">
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <th>
+        <th class="col-lg-2" style="padding:5px; border-style: solid; border-color: white">
             @Html.DisplayNameFor(model => model.PlannedStart)
         </th>
-        <th>
+        <th class="col-lg-2" style="padding:5px; border-style: solid; border-color: white">
             @Html.DisplayNameFor(model => model.PlannedComplete)
         </th>
-        <th>&nbsp;</th>
-        @*<th>&nbsp;</th>*@
+        <th class="col-lg-4" style="padding:5px; border-style: solid; border-color: white">
+            &nbsp;
+        </th>
+        <th class="col-lg-1" style="padding:5px; border-style: solid; border-color: white">
+            &nbsp;
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td style="background:#fac808; padding:5px; border-style: solid; border-color: white">
             <strong>@Html.DisplayFor(modelItem => item.Name)</strong>
-</td>
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlannedStart)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PlannedComplete)
         </td>
+        <th>
+            &nbsp;
+        </th>
         <td>
             @Html.ActionLink("Details", "Details", new { id = item.Id })
         </td>
         @*<td>
-            | @Html.ActionLink("Edit", "Edit", new { id = item.Id }) 
+            | @Html.ActionLink("Edit", "Edit", new { id = item.Id })
             | @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
         </td>*@
     </tr>
 }
     <tr class="bg-info">
-        <td></td>
-        <td></td>
-        <td></td>
-        @*<td></td>*@
-        <td><strong>@Html.ActionLink("Create New", "Create")</strong></td>
+        <td style="padding:5px; border-style: solid; border-color: white"></td>
+        <td style="padding:5px; border-style: solid; border-color: white"></td>
+        <td style="padding:5px; border-style: solid; border-color: white"></td>
+
+        <td style="padding:5px; border-style: solid; border-color: white"></td>
+        <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong>@Html.ActionLink("Create New", "Create")</strong></td>
     </tr>
 </table>

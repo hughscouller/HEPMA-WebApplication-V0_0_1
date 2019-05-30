@@ -16,16 +16,14 @@
 
         <hr />
 
-
-
-        <div class="col-md-3">
+        <div class="col-md-4">
 
             <div class="panel">
 
                 <div class="panel-heading bg-primary">
                     <h5>@ViewBag.HospitalSiteName</h5>
                     <h3>@Html.DisplayFor(model => model.Name)</h3>
-                    <h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>
+                    @*<h5>Areas of Care: @ViewBag.AreasOfCareCount</h5>*@
 
                     <div class="bg-info text-center">
 
@@ -34,104 +32,110 @@
                     </div>
                 </div>
                 <div class="panel-body">
+                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.Descrption) :
+                    </div>
+                    <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.Descrption)
+                    </div>
+
+                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.Notes) :
+                    </div>
+
+                    <div class="col-lg-12" style="padding:5px; background :#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.Notes)
+                    </div>
+                    <p>&nbsp;</p>
                     <p>
                         Areas of Care: @ViewBag.AreasOfCareCount
                     </p>
-                    <p>
-                        <strong>Desctiption:</strong>
-                    </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Name)
-                    </p>
-                    <p>
-                        <strong>Notes:</strong>
-                    </p>
-                    <p>
-                        @Html.DisplayFor(model => model.Notes)
-                    </p>
+
+
                 </div>
 
-                <div class="panel-footer">
-                    <!-- Trigger the modal notes area -->
-                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Site Location Notes</button>
 
-                    <!--Link to hospital notes create page -->
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Add Note", "../NotesFieldsSiteLocation/create", new { id = Model.Id })
-                </div>
+                    <div class="panel-footer">
+                        <!-- Trigger the modal notes area -->
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Site Location Notes</button>
+
+                        <!--Link to hospital notes create page -->
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Add Site Location Note", "../NotesFieldsSiteLocation/create", new { id = Model.Id })
+                    </div>
             </div>
-
-
         </div>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8">
 
         <table class="table">
 
             <tr class="bg-primary">
-                <td><strong>InScope</strong></td>
-                <td><strong>Areas of Care</strong></td>
-                <td><strong>Planned go-live</strong></td>
-                <td><strong>Agreed</strong></td>
-                <td><strong>No longer in scope</strong></td>
-                <td>&nbsp</td>
-                @*<td>&nbsp</td>*@
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>InScope</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Areas of Care</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Planned go-live</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Agreed</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>No longer in scope</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp</td>
             </tr>
 
             @foreach (var ListOfAoC in ViewBag.AreasOfCare)
             {
-
-                <tr>
-
-                    <td>
-                        @if (ListOfAoC.InScope == true)
-                        {<p class="bg-success">@ListOfAoC.InScope</p>}
-                    </td>
-
-                    <td>
+            <tr>
+                @if (ListOfAoC.InScope == true)
+                {
+                <td class="bg-success" style="border-style: solid; border-color: white">
+                    <p>@ListOfAoC.InScope</p>
+                </td>
+                }
+                else
+                {
+                <td>&nbsp;</td>
+                }
+                    <td style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                         @ListOfAoC.AoCName
                     </td>
-
                     <td>
                         @if (ListOfAoC.AoCPlannedGoLiveDate != null)
                         {@ListOfAoC.AoCPlannedGoLiveDate.ToString("dd/MM/yyyy")}
                     </td>
 
-                    <td>
-                        @if (ListOfAoC.AoCPlannedGoLiveDateAgreedAoC == true)
-                        {
-                            <p class="bg-success">@ListOfAoC.AoCPlannedGoLiveDateAgreedAoC</p>}
-                    </td>
-
-                    <td>
-                        @if (ListOfAoC.NoLongerInScope == true)
-                        {
-                            <p class="bg-danger">
-                                @*@ListOfAoC.NoLongerInScope*@
+                    @if (ListOfAoC.AoCPlannedGoLiveDateAgreedAoC == true)
+                    {
+                        <td class="bg-success">
+                            <p>@ListOfAoC.AoCPlannedGoLiveDateAgreedAoC</p>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>&nbsp;</td>
+                    }
+                    @if (ListOfAoC.NoLongerInScope == true)
+                    {
+                        <td class="bg-danger" style="border-style: solid; border-color: white">
+                            <p>
                                 @ListOfAoC.NoLongerInScopeReason
                             </p>
-                        }
-                    </td>
+                        </td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
                     <td>
                         @Html.ActionLink("Details", "../AreasOfCare/Details", new { id = ListOfAoC.AoCId })
-
                     </td>
-                    @*<td>
-                        | @Html.ActionLink("Edit", "../AreasOfCare/Edit", new { id = ListOfAoC.AoCId })
-                        | @Html.ActionLink("Delete", "../AreasOfCare/Delete", new { id = ListOfAoC.AoCId }) |
-                    </td>*@
                 </tr>
 
             }
-
                 <tr class="alert-info">
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                    <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                    <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                    <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                    <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                     @*<td>&nbsp;</td>*@
-                    <td><strong>@Html.ActionLink("Create New AoC", "../AreasOfCare/Create", new { id = Model.Id })</strong></td>
+                    <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong>@Html.ActionLink("Create New AoC", "../AreasOfCare/Create", new { id = Model.Id })</strong></td>
                 </tr>
         </table>
 
@@ -147,15 +151,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Site Location Notes</h4>
+                <h4 class="modal-title">Site Location Notes - @Model.Name</h4>
             </div>
             <div class="modal-body">
 
                 @foreach (var note in ViewBag.LocationNotes)
                 {
                     <div class="panel">
-                        <div class="panel-heading bg-info">
-                            <p>@note.CreatedBy --- @note.CreatedOn --- @note.NoteType</p>
+                        <div class="panel-heading bg-info" style="background:#fac808">
+                            <p>@note.CreatedBy - @note.CreatedOn.ToString("dd/MM/yyyy") - @note.NoteType</p>
                         </div>
                         <div class="panel-body">
                             <p>@note.Note</p>
