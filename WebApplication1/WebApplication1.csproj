@@ -184,7 +184,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AoCAssessmentsController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
+    <Compile Include="Controllers\BaUChecklistsController.cs" />
+    <Compile Include="Controllers\GoliveChecklistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -219,9 +222,16 @@
     <Compile Include="Migrations\201905291337487_HSdataUpdate.Designer.cs">
       <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905310922517_addOtherAoCClasses.cs" />
+    <Compile Include="Migrations\201905310922517_addOtherAoCClasses.Designer.cs">
+      <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HEPMA\AoCAssessment.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
+    <Compile Include="Models\HEPMA\BaUChecklist.cs" />
+    <Compile Include="Models\HEPMA\GoliveChecklist.cs" />
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
@@ -513,6 +523,21 @@
     <Content Include="Views\NotesFieldsSiteLocation\Details.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Edit.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Index.cshtml" />
+    <Content Include="Views\AoCAssessments\Create.cshtml" />
+    <Content Include="Views\AoCAssessments\Delete.cshtml" />
+    <Content Include="Views\AoCAssessments\Details.cshtml" />
+    <Content Include="Views\AoCAssessments\Edit.cshtml" />
+    <Content Include="Views\AoCAssessments\Index.cshtml" />
+    <Content Include="Views\GoliveChecklists\Create.cshtml" />
+    <Content Include="Views\GoliveChecklists\Delete.cshtml" />
+    <Content Include="Views\GoliveChecklists\Details.cshtml" />
+    <Content Include="Views\GoliveChecklists\Edit.cshtml" />
+    <Content Include="Views\GoliveChecklists\Index.cshtml" />
+    <Content Include="Views\BaUChecklists\Create.cshtml" />
+    <Content Include="Views\BaUChecklists\Delete.cshtml" />
+    <Content Include="Views\BaUChecklists\Details.cshtml" />
+    <Content Include="Views\BaUChecklists\Edit.cshtml" />
+    <Content Include="Views\BaUChecklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -548,6 +573,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905291337487_HSdataUpdate.resx">
       <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905310922517_addOtherAoCClasses.resx">
+      <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

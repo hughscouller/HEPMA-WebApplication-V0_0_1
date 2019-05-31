@@ -1,0 +1,226 @@
+﻿@model WebApplication1.Models.HEPMA.GoliveChecklist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GoliveChecklist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteLocation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteLocation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersIdentified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersIdentifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrained)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersTrained)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrainedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersTrainedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersSetup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetupDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistUsersSetupDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistIdentified)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistIdentified)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistIdentifiedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistIdentifiedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistAgreedUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistAgreedUseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistSetupCurrent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistSetupCurrentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupNew)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistSetupNew)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupNewDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistSetupNewDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPrescribing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistPrescribing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPrescribingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistPrescribingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistMedAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistMedAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistMedAdminDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistMedAdminDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheck)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistPharmCheck)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheckDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistPharmCheckDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGo_Nogo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistGo_Nogo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGo_NogoDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistGo_NogoDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGeneralNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoliveChecklistGeneralNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GoliveChecklistId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

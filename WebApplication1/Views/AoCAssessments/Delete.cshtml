@@ -1,0 +1,104 @@
+﻿@model WebApplication1.Models.HEPMA.AoCAssessment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AoCAssessment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SiteLocation.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SiteLocation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentGoodToGo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGoDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentGoodToGoDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentITLiteracy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentITLiteracy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentUseOfTrak)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentUseOfTrak)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentHardwareQuality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentHardwareQuality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentHardwareQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentHardwareQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentHardwareLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentHardwareLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentBusinessProcessDifference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentBusinessProcessDifference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AoCAssessmentGeneralNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoCAssessmentGeneralNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

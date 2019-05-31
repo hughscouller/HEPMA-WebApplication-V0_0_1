@@ -1,0 +1,183 @@
+﻿@model IEnumerable<WebApplication1.Models.HEPMA.GoliveChecklist>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteLocation.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrained)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrainedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetupDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistIdentified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistIdentifiedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupNew)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistSetupNewDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPrescribing)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPrescribingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistMedAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistMedAdminDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheck)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheckDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGo_Nogo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGo_NogoDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoliveChecklistGeneralNotes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteLocation.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersIdentified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersIdentifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersTrained)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersTrainedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersSetup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistUsersSetupDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistIdentified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistIdentifiedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistAgreedUse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistAgreedUseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistSetupCurrent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistSetupCurrentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistSetupNew)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistSetupNewDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistPrescribing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistPrescribingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistMedAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistMedAdminDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistPharmCheck)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistPharmCheckDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistContingencyAgreed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistContingencyAgreedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistGo_Nogo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistGo_NogoDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoliveChecklistGeneralNotes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.GoliveChecklistId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.GoliveChecklistId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.GoliveChecklistId })
+        </td>
+    </tr>
+}
+
+</table>
