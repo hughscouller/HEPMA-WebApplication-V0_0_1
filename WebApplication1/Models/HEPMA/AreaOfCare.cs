@@ -9,7 +9,6 @@ namespace WebApplication1.Models.HEPMA
     public class AreaOfCare
     {
 
-        
         [Key]
         public int AoCId { get; set; }
 
@@ -20,7 +19,7 @@ namespace WebApplication1.Models.HEPMA
 
         public int SiteLocationId { get; set; }
 
-        // General data section /////////////////////////////////////////
+        // General data section ////////////////////////////////////////////////
 
         [Display(Name = "In scope")]
         public bool InScope { get; set; }
@@ -34,17 +33,15 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Description")]
         public string AoCDescription { get; set; }
 
-        //// Project data section /////////////////////////////////////////
-        //[Display(Name = "Imp. order")]
-        //public int AoCImplementationOrder { get; set; }
+        //// Project data ////// ///////////////////////////////////////////////
 
-        // Project data section /////////////////////////////////////////
         [Display(Name = "Planned go-live date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? AoCPlannedGoLiveDate { get; set; }
 
-        // Project data section /////////////////////////////////////////
+        // Project data section ////////////////////////////////////////////////
+
         [Display(Name = "GL date agreed AoC")]
         public bool AoCPlannedGoLiveDateAgreedAoC { get; set; }
 
@@ -94,7 +91,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Reason")]
         public string NoLongerInScopeReason { get; set; }
 
-        // Trak Use data section /////////////////////////////////////////
+        // Trak Use data section //////////////////////////////////////////////
 
         [Display(Name = "Med Rec")]
         public bool AoCMedicinesReconciliation { get; set; }
@@ -120,7 +117,6 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "IDLs on Trak - real time")]
         public bool AoCIDLsProducedInTrakInRealTime { get; set; }
 
-
         // Prescribing (recording) data section /////////////////////////////////////////
 
         [Display(Name = "Ward rounds")]
@@ -144,9 +140,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Other location where")]
         public string AoCPOtherText { get; set; }
 
-
         // Medicines Administration (recording) data section /////////////////////////////////////////
-
 
         [Display(Name = "Drug round - bedside")]
         public bool AoCDrugRoundAtBedside { get; set; }
@@ -163,7 +157,6 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Other notes")]
         public string AoCMAOtherText { get; set; }
 
-
         // Pharmacy Checking (recording) data section /////////////////////////////////////////
 
         [Display(Name = "Bedside")]
@@ -178,6 +171,80 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Other where")]
         public string AoCPCOtherText { get; set; }
 
+        // ///////////////////////////////////////////////////////////////////
+        // tab 2 - AoC Assessment ////////////////////////////////////////////
+        // ///////////////////////////////////////////////////////////////////
+
+        public bool AoCAssessmentGoodToGo { get; set; }
+        public DateTime? AoCAssessmentGoodToGoDate { get; set; }
+
+        public string AoCAssessmentITLiteracy { get; set; }
+        public string AoCAssessmentUseOfTrak { get; set; }
+
+        public string AoCAssessmentHardwareQuality { get; set; }
+        public string AoCAssessmentHardwareQuantity { get; set; }
+        public string AoCAssessmentHardwareLocation { get; set; }
+
+        public string AoCAssessmentBusinessProcessDifference { get; set; }
+
+        public string AoCAssessmentGeneralNotes { get; set; }
+
+        // ///////////////////////////////////////////////////////////////////
+        // tab 3 - AoC Go live checklist  ////////////////////////////////////////////
+        // ///////////////////////////////////////////////////////////////////
+
+        public bool GoliveChecklistUsersIdentified { get; set; }
+        public DateTime? GoliveChecklistUsersIdentifiedDate { get; set; }
+        public bool GoliveChecklistUsersTrained { get; set; }
+        public DateTime? GoliveChecklistUsersTrainedDate { get; set; }
+        public bool GoliveChecklistUsersSetup { get; set; }
+        public DateTime? GoliveChecklistUsersSetupDate { get; set; }
+
+        public bool GoliveChecklistIdentified { get; set; }
+        public DateTime? GoliveChecklistIdentifiedDate { get; set; }
+        public bool GoliveChecklistAgreedUse { get; set; }
+        public DateTime? GoliveChecklistAgreedUseDate { get; set; }
+        public bool GoliveChecklistSetupCurrent { get; set; }
+        public DateTime? GoliveChecklistSetupCurrentDate { get; set; }
+        public bool GoliveChecklistSetupNew { get; set; }
+        public DateTime? GoliveChecklistSetupNewDate { get; set; }
+
+        public bool GoliveChecklistPrescribing { get; set; }
+        public DateTime? GoliveChecklistPrescribingDate { get; set; }
+        public bool GoliveChecklistMedAdmin { get; set; }
+        public DateTime GoliveChecklistMedAdminDate { get; set; }
+        public bool GoliveChecklistPharmCheck { get; set; }
+        public DateTime GoliveChecklistPharmCheckDate { get; set; }
+
+        public bool GoliveChecklistContingencyAgreed { get; set; }
+        public DateTime? GoliveChecklistContingencyAgreedDate { get; set; }
+
+        public bool GoliveChecklistGo_Nogo { get; set; }
+        public DateTime? GoliveChecklistGo_NogoDate { get; set; }
+
+        public string GoliveChecklistGeneralNotes { get; set; }
+
+        // ///////////////////////////////////////////////////////////////////
+        // tab 4 - AoC BaU checklist  ////////////////////////////////////////////
+        // ///////////////////////////////////////////////////////////////////
+
+        public bool BaUChecklistSuccessfulGoLive { get; set; }
+        public string BaUChecklistSuccessfulGoliveNotes { get; set; }
+
+        public bool BaUChecklistTrainingComplete { get; set; }
+        public string BaUChecklistTrainingCompleteNotes { get; set; }
+
+        public bool BaUChecklistUserSetup { get; set; }
+        public string BaUChecklisUserSetupNotes { get; set; }
+
+        public bool BaUChecklistHardwareSetup { get; set; }
+        public string BaUChecklistHardwareSetupNotes { get; set; }
+
+        public bool BaUChecklistHardwareUseAgreed { get; set; }
+        public string BaUChecklistHardwareUseAgreedNotes { get; set; }
+
+        public bool BaUChecklistContingencyAgreed { get; set; }
+        public string BaUChecklistContingencyAgreedNotes { get; set; }
 
     }
 }

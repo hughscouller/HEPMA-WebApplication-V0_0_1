@@ -10,427 +10,450 @@
     <h4><strong>@ViewBag.HospitalSite - @Model.SiteLocation.Name - @Model.AoCName</strong></h4>
 
 
-        
-        <div class="row">
-            <div>@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })</div> 
-            <div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div>
-        </div>
+
+    <div class="row">
+        <div>@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })</div>
+        <div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div>
+    </div>
 
     <hr />
 </div>
 
-<!-- tab navigation block - start-->
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">AoC information gathering</a></li>
-    <li><a data-toggle="tab" href="#menu1">AoC assessment</a></li>
-    <li><a data-toggle="tab" href="#menu2">AoC go-live checklist</a></li>
-    <li><a data-toggle="tab" href="@Url.Action("Edit", "Edit", new { id = Model.AoCId })">AoC BaU checklist</a></li>
-    
-</ul>
-<!-- tab navigation block - end-->
 
-<!--Area of Care information gathering -- start ////////////////////////////////////////////////////////////-->
-<!--left column - start-->
-<div class="row">
-    <!--left column - start-->
+<div class="container">
 
-    <div class="col-lg-6">
-        <div class="panel">
-            <div class="panel-heading bg-primary">
-                <h5>Project Information</h5>
-            </div>
-            <div class="panel-body">
-                <div class="table">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Project Information</a></li>
+        <li><a data-toggle="tab" href="#menu1">AoC Assessment</a></li>
+        <li><a data-toggle="tab" href="#menu2">AoC Go-live Checklist</a></li>
+        <li><a data-toggle="tab" href="#menu3">AoC BaU Checklist</a></li>
+    </ul>
 
-                    @*--InScope----------------------------------------------------------------------------------*@
-                    <div class="col-lg-12 bg-success">
-                        <div class="col-lg-4">
-                            @Html.DisplayNameFor(model => model.InScope)
+    <div class="tab-content">
+        
+        <div id="home" class="tab-pane fade in active">
+            
+            <div class="row">
+                <!--left column - start-->
+                <div class="col-lg-6">
+                    <div class="panel">
+                        <div class="panel-heading bg-primary">
+                            <h5>Project Information</h5>
                         </div>
-                        <div class="col-lg-8">
-                            @Html.DisplayFor(model => model.InScope)
+                        <div class="panel-body">
+                            <div class="table">
+
+                                @*--InScope----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12 bg-success">
+                                    <div class="col-lg-4">
+                                        @Html.DisplayNameFor(model => model.InScope)
+                                    </div>
+                                    <div class="col-lg-8">
+                                        @Html.DisplayFor(model => model.InScope)
+                                    </div>
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--SiteLocation.Name----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @*@Html.DisplayNameFor(model => model.SiteLocation.Name)*@
+                                    Site location name
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.SiteLocation.Name)
+                                </div>
+                                @*--AoCName----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCName)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCName)
+                                </div>
+                                @*--AoCType----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCType)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCType)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCDescription----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCDescription)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCDescription)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCPlannedGoLiveDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCPlannedGoLiveDateAgreedAoC----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCRecordOpened----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCRecordOpened)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCRecordOpened)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCRecordClosed----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCRecordClosed)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCRecordClosed)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCFirstContact----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCFirstContact)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCFirstContact)
+                                </div>
+                                @*<p>&nbsp;</p>*@
+                                @*--AoCFirstContactDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCFirstContactDate)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCFirstContactDate)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCLive----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCLive)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCLive)
+                                </div>
+                                @*<p>&nbsp;</p>*@
+                                @*--AoCLiveDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCLiveDate)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCLiveDate)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCBaU----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCBaU)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCBaU)
+                                </div>
+                                @*<p>&nbsp;</p>*@
+                                @*--AoCBaUDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCBaUDate)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCBaUDate)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCOnHold----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCOnHold)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoCOnHold)
+                                </div>
+                                @*<p>&nbsp;</p>*@
+                                @*--AoConHoldReason----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @*@Html.DisplayNameFor(model => model.AoConHoldReason)*@
+                                    Reason
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.AoConHoldReason)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--NoLongerInScope----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.NoLongerInScope)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.NoLongerInScope)
+                                </div>
+
+                                @*--NoLongerInScopeReason----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.NoLongerInScopeReason)
+                                </div>
+                                <div class="col-lg-8">
+                                    @Html.DisplayFor(model => model.NoLongerInScopeReason)
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <p>&nbsp;</p>
-                    @*--SiteLocation.Name----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @*@Html.DisplayNameFor(model => model.SiteLocation.Name)*@
-                        Site location name
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.SiteLocation.Name)
-                    </div>
-                    @*--AoCName----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCName)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCName)
-                    </div>
-                    @*--AoCType----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCType)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCType)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCDescription----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCDescription)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCDescription)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCPlannedGoLiveDate----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCPlannedGoLiveDateAgreedAoC----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCRecordOpened----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCRecordOpened)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCRecordOpened)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCRecordClosed----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCRecordClosed)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCRecordClosed)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCFirstContact----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCFirstContact)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCFirstContact)
-                    </div>
-                    @*<p>&nbsp;</p>*@
-                    @*--AoCFirstContactDate----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCFirstContactDate)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCFirstContactDate)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCLive----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCLive)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCLive)
-                    </div>
-                    @*<p>&nbsp;</p>*@
-                    @*--AoCLiveDate----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCLiveDate)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCLiveDate)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCBaU----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCBaU)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCBaU)
-                    </div>
-                    @*<p>&nbsp;</p>*@
-                    @*--AoCBaUDate----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCBaUDate)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCBaUDate)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--AoCOnHold----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.AoCOnHold)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoCOnHold)
-                    </div>
-                    @*<p>&nbsp;</p>*@
-                    @*--AoConHoldReason----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @*@Html.DisplayNameFor(model => model.AoConHoldReason)*@
-                        Reason
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.AoConHoldReason)
-                    </div>
-                    <p>&nbsp;</p>
-                    @*--NoLongerInScope----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.NoLongerInScope)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.NoLongerInScope)
-                    </div>
 
-                    @*--NoLongerInScopeReason----------------------------------------------------------------------------------*@
-                    <div class="col-lg-4">
-                        @Html.DisplayNameFor(model => model.NoLongerInScopeReason)
-                    </div>
-                    <div class="col-lg-8">
-                        @Html.DisplayFor(model => model.NoLongerInScopeReason)
-                    </div>
                 </div>
-            </div>
-        </div>
+                <!--left column - end-->
+                <!--right column - start-->
+                <div class="col-lg-6">
 
+                    <div class="panel">
+                        <div class="panel-heading bg-primary">
+                            <h5>Use of Trak</h5>
+                        </div>
+                        <div class="panel-body">
+                            @*--AoCMedicinesReconciliation----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCMedicinesReconciliation)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCMedicinesReconciliation)
+                            </div>
+                            @*--AoCMedicinesReconciliationRealTime----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCMedicinesReconciliationRealTime)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCMedicinesReconciliationRealTime)
+                            </div>
+                            @*--AoCOutpatientClinicManagedOnTrak----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCOutpatientClinicManagedOnTrak)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCOutpatientClinicManagedOnTrak)
+                            </div>
+                            @*--AoCOutpatientClinicManagedOnTrakInRealTime----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime)
+                            </div>
+                            @*--AoCADTsManagedOnTrak----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCADTsManagedOnTrak)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCADTsManagedOnTrak)
+                            </div>
+                            @*--AoCADTsManagedOnTraIInRealTime----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCADTsManagedOnTraIInRealTime)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCADTsManagedOnTraIInRealTime)
+                            </div>
+                            @*--AoCIDLsProducedInTrak----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCIDLsProducedInTrak)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCIDLsProducedInTrak)
+                            </div>
+                            @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCIDLsProducedInTrakInRealTime)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCIDLsProducedInTrakInRealTime)
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-heading bg-primary">
+                            <h5>Prescribing</h5>
+                        </div>
+                        <div class="panel-body">
+                            @*--AoCWardRounds----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCWardRounds)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCWardRounds)
+                            </div>
+                            @*--AoCDoctorsRoom----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCDoctorsRoom)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCDoctorsRoom)
+                            </div>
+                            @*--AoCNursesStation----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCNursesStation)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCNursesStation)
+                            </div>
+                            <p>&nbsp;</p>
+                            @*--AoCOffice----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCOffice)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCOffice)
+                            </div>
+                            <div class="col-lg-6">
+                                <p>&nbsp;</p>
+                            </div>
+                            @*--AoCOfficeText----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCOfficeText)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCOfficeText)
+                            </div>
+                            <p>&nbsp;</p>
+                            @*--AoCPOther----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCPOther)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCPOther)
+                            </div>
+                            <div class="col-lg-6">
+                                <p>&nbsp;</p>
+                            </div>
+                            @*--AoCPOtherText----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCPOtherText)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCPOtherText)
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-heading bg-primary">
+                            <h5>Medicines Administration</h5>
+                        </div>
+                        <div class="panel-body">
+                            @*--AoCDrugRoundAtBedside----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCDrugRoundAtBedside)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCDrugRoundAtBedside)
+                            </div>
+                            @*--AoCDrugRoundFromCentralPoint----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCDrugRoundFromCentralPoint)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCDrugRoundFromCentralPoint)
+                            </div>
+                            @*--AoCPatientComesToCentralPoint----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCPatientComesToCentralPoint)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCPatientComesToCentralPoint)
+                            </div>
+                            <div class="col-lg-6">
+                                <p>&nbsp;</p>
+                            </div>
+                            @*--AoCMAOther----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCMAOther)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCMAOther)
+                            </div>
+                            <div class="col-lg-6">
+                                <p>&nbsp;</p>
+                            </div>
+                            @*--AoCMAOtherText----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCMAOtherText)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCMAOtherText)
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel">
+
+                        <div class="panel-heading bg-primary">
+                            <h5>Pharmacy Check</h5>
+                        </div>
+                        <div class="panel-body">
+
+                            @*--AoCBedside----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCBedside)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCBedside)
+                            </div>
+                            @*--AoCCentralPointInWard----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCCentralPointInWard)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCCentralPointInWard)
+                            </div>
+                            @*--AoCPOther----------------------------------------------------------------------------------*@
+
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCPOther)
+                            </div>
+                            <div class="col-lg-1">
+                                @Html.DisplayFor(model => model.AoCPOther)
+                            </div>
+                            <div class="col-lg-6">
+                                <p>&nbsp;</p>
+                            </div>
+
+                            @*--AoCPOtherText----------------------------------------------------------------------------------*@
+                            <div class="col-lg-5">
+                                @Html.DisplayNameFor(model => model.AoCPOtherText)
+                            </div>
+                            <div class="col-lg-7">
+                                @Html.DisplayFor(model => model.AoCPOtherText)
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--right column - end-->
+            </div>
+
+
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            
+
+            AoC Assessment
+
+        </div>
+        <div id="menu2" class="tab-pane fade">
+
+            AoC Go-live checklist
+
+
+        </div>
+        <div id="menu3" class="tab-pane fade">
+            
+
+            AoC BaU checklist
+        
+        </div>
     </div>
-    <!--left column - end-->
-    <!--right column - start-->
-    <div class="col-lg-6">
-
-        <div class="panel">
-            <div class="panel-heading bg-primary">
-                <h5>Use of Trak</h5>
-            </div>
-            <div class="panel-body">
-                @*--AoCMedicinesReconciliation----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCMedicinesReconciliation)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCMedicinesReconciliation)
-                </div>
-                @*--AoCMedicinesReconciliationRealTime----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCMedicinesReconciliationRealTime)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCMedicinesReconciliationRealTime)
-                </div>
-                @*--AoCOutpatientClinicManagedOnTrak----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCOutpatientClinicManagedOnTrak)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCOutpatientClinicManagedOnTrak)
-                </div>
-                @*--AoCOutpatientClinicManagedOnTrakInRealTime----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime)
-                </div>
-                @*--AoCADTsManagedOnTrak----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCADTsManagedOnTrak)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCADTsManagedOnTrak)
-                </div>
-                @*--AoCADTsManagedOnTraIInRealTime----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCADTsManagedOnTraIInRealTime)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCADTsManagedOnTraIInRealTime)
-                </div>
-                @*--AoCIDLsProducedInTrak----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCIDLsProducedInTrak)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCIDLsProducedInTrak)
-                </div>
-                @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCIDLsProducedInTrakInRealTime)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCIDLsProducedInTrakInRealTime)
-                </div>
-
-            </div>
-        </div>
-
-        <div class="panel">
-
-            <div class="panel-heading bg-primary">
-                <h5>Prescribing</h5>
-            </div>
-            <div class="panel-body">
-                @*--AoCWardRounds----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCWardRounds)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCWardRounds)
-                </div>
-                @*--AoCDoctorsRoom----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCDoctorsRoom)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCDoctorsRoom)
-                </div>
-                @*--AoCNursesStation----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCNursesStation)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCNursesStation)
-                </div>
-                <p>&nbsp;</p>
-                @*--AoCOffice----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCOffice)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCOffice)
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                </div>
-                @*--AoCOfficeText----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCOfficeText)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCOfficeText)
-                </div>
-                <p>&nbsp;</p>
-                @*--AoCPOther----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCPOther)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCPOther)
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                </div>
-                @*--AoCPOtherText----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCPOtherText)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCPOtherText)
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="panel">
-
-            <div class="panel-heading bg-primary">
-                <h5>Medicines Administration</h5>
-            </div>
-            <div class="panel-body">
-                @*--AoCDrugRoundAtBedside----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCDrugRoundAtBedside)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCDrugRoundAtBedside)
-                </div>
-                @*--AoCDrugRoundFromCentralPoint----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCDrugRoundFromCentralPoint)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCDrugRoundFromCentralPoint)
-                </div>
-                @*--AoCPatientComesToCentralPoint----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCPatientComesToCentralPoint)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCPatientComesToCentralPoint)
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                </div>
-                @*--AoCMAOther----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCMAOther)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCMAOther)
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                </div>
-                @*--AoCMAOtherText----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCMAOtherText)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCMAOtherText)
-                </div>
-
-            </div>
-        </div>
-        <div class="panel">
-
-            <div class="panel-heading bg-primary">
-                <h5>Pharmacy Check</h5>
-            </div>
-            <div class="panel-body">
-
-                @*--AoCBedside----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCBedside)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCBedside)
-                </div>
-                @*--AoCCentralPointInWard----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCCentralPointInWard)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCCentralPointInWard)
-                </div>
-                @*--AoCPOther----------------------------------------------------------------------------------*@
-
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCPOther)
-                </div>
-                <div class="col-lg-1">
-                    @Html.DisplayFor(model => model.AoCPOther)
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                </div>
-
-                @*--AoCPOtherText----------------------------------------------------------------------------------*@
-                <div class="col-lg-5">
-                    @Html.DisplayNameFor(model => model.AoCPOtherText)
-                </div>
-                <div class="col-lg-7">
-                    @Html.DisplayFor(model => model.AoCPOtherText)
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--right column - end-->
 </div>
-<!--Area of Care information gathering -- start ////////////////////////////////////////////////////////////-->

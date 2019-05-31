@@ -64,6 +64,23 @@ namespace WebApplication1.Controllers
             {
                 db.AreasOfCare.Add(areaOfCare);
                 db.SaveChanges();
+                //// /////////////////////////////////////////////////
+                //AoCAssessment AoCA = new AoCAssessment();
+                //AoCA.AoCAssessmentId = areaOfCare.SiteLocationId;
+                //db.AoCAssessments.Add(AoCA);
+                //// ///////////////////////////////////////////////////
+                //// /////////////////////////////////////////////////
+                //GoliveChecklist GLCL = new GoliveChecklist();
+                //GLCL.GoliveChecklistId = areaOfCare.SiteLocationId;
+                //db.AoCAssessments.Add(AoCA);
+                //// ///////////////////////////////////////////////////
+                //// /////////////////////////////////////////////////
+                //BaUChecklist BaUC = new BaUChecklist();
+                //GLCL.SiteLocationId = areaOfCare.SiteLocationId;
+                //db.AoCAssessments.Add(AoCA);
+                //// ///////////////////////////////////////////////////
+
+
                 return RedirectToAction("../SiteLocations/Details", new { id = areaOfCare.SiteLocationId });
             }
 

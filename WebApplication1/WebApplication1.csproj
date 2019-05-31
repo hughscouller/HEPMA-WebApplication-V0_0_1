@@ -184,10 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AoCAssessmentsController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
-    <Compile Include="Controllers\BaUChecklistsController.cs" />
-    <Compile Include="Controllers\GoliveChecklistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -226,12 +223,13 @@
     <Compile Include="Migrations\201905310922517_addOtherAoCClasses.Designer.cs">
       <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905311359449_dataUpdate.cs" />
+    <Compile Include="Migrations\201905311359449_dataUpdate.Designer.cs">
+      <DependentUpon>201905311359449_dataUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\HEPMA\AoCAssessment.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
-    <Compile Include="Models\HEPMA\BaUChecklist.cs" />
-    <Compile Include="Models\HEPMA\GoliveChecklist.cs" />
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
@@ -576,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905310922517_addOtherAoCClasses.resx">
       <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905311359449_dataUpdate.resx">
+      <DependentUpon>201905311359449_dataUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

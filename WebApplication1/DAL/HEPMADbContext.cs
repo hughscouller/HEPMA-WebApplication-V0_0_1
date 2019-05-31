@@ -13,10 +13,6 @@ namespace WebApplication1.DAL
         public DbSet<SiteLocation> SiteLocations { get; set; }
         public DbSet<AreaOfCare> AreasOfCare { get; set; }
 
-        public DbSet<AoCAssessment> AoCAssessments { get; set; }
-        public DbSet<GoliveChecklist> GoliveChecklists { get; set; }
-        public DbSet<BaUChecklist> BaUChecklists { get; set; }
-
         public DbSet<NotesFieldHospitalSite> HospitalNotes { get; set; }
 
         public DbSet<NotesFieldSiteLocation> LocationNotes { get; set; }
