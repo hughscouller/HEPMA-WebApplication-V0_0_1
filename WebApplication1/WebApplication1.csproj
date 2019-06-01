@@ -223,9 +223,9 @@
     <Compile Include="Migrations\201905310922517_addOtherAoCClasses.Designer.cs">
       <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905311359449_dataUpdate.cs" />
-    <Compile Include="Migrations\201905311359449_dataUpdate.Designer.cs">
-      <DependentUpon>201905311359449_dataUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\201906011631018_dataupdate.cs" />
+    <Compile Include="Migrations\201906011631018_dataupdate.Designer.cs">
+      <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -523,7 +523,6 @@
     <Content Include="Views\NotesFieldsSiteLocation\Index.cshtml" />
     <Content Include="Views\AoCAssessments\Create.cshtml" />
     <Content Include="Views\AoCAssessments\Delete.cshtml" />
-    <Content Include="Views\AoCAssessments\Details.cshtml" />
     <Content Include="Views\AoCAssessments\Edit.cshtml" />
     <Content Include="Views\AoCAssessments\Index.cshtml" />
     <Content Include="Views\GoliveChecklists\Create.cshtml" />
@@ -575,8 +574,8 @@
     <EmbeddedResource Include="Migrations\201905310922517_addOtherAoCClasses.resx">
       <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905311359449_dataUpdate.resx">
-      <DependentUpon>201905311359449_dataUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906011631018_dataupdate.resx">
+      <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

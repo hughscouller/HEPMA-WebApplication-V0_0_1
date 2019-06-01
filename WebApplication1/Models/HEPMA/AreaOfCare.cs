@@ -11,16 +11,18 @@ namespace WebApplication1.Models.HEPMA
 
         [Key]
         public int AoCId { get; set; }
-
+        
         // EF Navigation items section /////////////////////////////////////////
         public virtual SiteLocation SiteLocation { get; set; }
-
+        
         public virtual ICollection<SiteLocation> SiteLocations { get; set; }
 
         public int SiteLocationId { get; set; }
 
+        // ///////////////////////////////////////////////////////////////////
         // General data section ////////////////////////////////////////////////
-
+        // //////////////////////////////////////////////////////////////////
+        #region
         [Display(Name = "In scope")]
         public bool InScope { get; set; }
 
@@ -170,64 +172,131 @@ namespace WebApplication1.Models.HEPMA
 
         [Display(Name = "Other where")]
         public string AoCPCOtherText { get; set; }
-
+        #endregion
         // ///////////////////////////////////////////////////////////////////
         // tab 2 - AoC Assessment ////////////////////////////////////////////
         // ///////////////////////////////////////////////////////////////////
-
+        #region
+        [Display(Name = "Good to go")]
         public bool AoCAssessmentGoodToGo { get; set; }
+
+        [Display(Name = "Good to Go date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? AoCAssessmentGoodToGoDate { get; set; }
 
+        [Display(Name = "IT Literacy")]
         public string AoCAssessmentITLiteracy { get; set; }
+        [Display(Name = "Use of Trak")]
         public string AoCAssessmentUseOfTrak { get; set; }
-
+        [Display(Name = "Hardware Quality")]
         public string AoCAssessmentHardwareQuality { get; set; }
-        public string AoCAssessmentHardwareQuantity { get; set; }
+        
+        [Display(Name = "Hardware Location")]
         public string AoCAssessmentHardwareLocation { get; set; }
-
+        [Display(Name = "Business Process")]
         public string AoCAssessmentBusinessProcessDifference { get; set; }
-
+        [Display(Name = "General Note")]
         public string AoCAssessmentGeneralNotes { get; set; }
-
+        #endregion
         // ///////////////////////////////////////////////////////////////////
         // tab 3 - AoC Go live checklist  ////////////////////////////////////////////
         // ///////////////////////////////////////////////////////////////////
-
+        #region
+        [Display(Name = "Users Identified")]
         public bool GoliveChecklistUsersIdentified { get; set; }
+
+        [Display(Name = "Users Identified")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersIdentifiedDate { get; set; }
+
+        [Display(Name = "Users Trained")]
         public bool GoliveChecklistUsersTrained { get; set; }
+
+        [Display(Name = "Users Trained Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersTrainedDate { get; set; }
+        [Display(Name = "Users Setup")]
         public bool GoliveChecklistUsersSetup { get; set; }
+        [Display(Name = "Users Setup Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersSetupDate { get; set; }
+        
+
 
         public bool GoliveChecklistIdentified { get; set; }
+
         public DateTime? GoliveChecklistIdentifiedDate { get; set; }
+
+
+
+        [Display(Name = "Agreed Business Process")]
         public bool GoliveChecklistAgreedUse { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistAgreedUseDate { get; set; }
+
+        [Display(Name = "Setup Current Users")]
         public bool GoliveChecklistSetupCurrent { get; set; }
+        [Display(Name = "Setup Current Users")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistSetupCurrentDate { get; set; }
+
+        [Display(Name = "Setup New")]
         public bool GoliveChecklistSetupNew { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistSetupNewDate { get; set; }
 
+        [Display(Name = "Prescribing")]
         public bool GoliveChecklistPrescribing { get; set; }
+
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistPrescribingDate { get; set; }
+
+        [Display(Name = "Med Admin")]
         public bool GoliveChecklistMedAdmin { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime GoliveChecklistMedAdminDate { get; set; }
+
+        [Display(Name = "pharm Check")]
         public bool GoliveChecklistPharmCheck { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime GoliveChecklistPharmCheckDate { get; set; }
 
+        [Display(Name = "Contingency Agreed")]
         public bool GoliveChecklistContingencyAgreed { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistContingencyAgreedDate { get; set; }
 
+        [Display(Name = "Go/No-go")]
         public bool GoliveChecklistGo_Nogo { get; set; }
+        [Display(Name = "Date")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime? GoliveChecklistGo_NogoDate { get; set; }
 
+        [Display(Name = "General Note")]
         public string GoliveChecklistGeneralNotes { get; set; }
-
+        #endregion
         // ///////////////////////////////////////////////////////////////////
         // tab 4 - AoC BaU checklist  ////////////////////////////////////////////
         // ///////////////////////////////////////////////////////////////////
-
+        #region
         public bool BaUChecklistSuccessfulGoLive { get; set; }
         public string BaUChecklistSuccessfulGoliveNotes { get; set; }
 
@@ -245,6 +314,6 @@ namespace WebApplication1.Models.HEPMA
 
         public bool BaUChecklistContingencyAgreed { get; set; }
         public string BaUChecklistContingencyAgreedNotes { get; set; }
-
+        #endregion
     }
 }
