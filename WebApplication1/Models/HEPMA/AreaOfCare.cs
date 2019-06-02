@@ -203,23 +203,27 @@ namespace WebApplication1.Models.HEPMA
         // tab 3 - AoC Go live checklist  ////////////////////////////////////////////
         // ///////////////////////////////////////////////////////////////////
         #region
+
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Users Identified
         [Display(Name = "Users Identified")]
         public bool GoliveChecklistUsersIdentified { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Users Identified Date
         [Display(Name = "Users Identified")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersIdentifiedDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist UsersTrained
         [Display(Name = "Users Trained")]
         public bool GoliveChecklistUsersTrained { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist UsersTrained Date
         [Display(Name = "Users Trained Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersTrainedDate { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Users Setup
         [Display(Name = "Users Setup")]
         public bool GoliveChecklistUsersSetup { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Users Setup date
         [Display(Name = "Users Setup Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
@@ -232,64 +236,71 @@ namespace WebApplication1.Models.HEPMA
         public DateTime? GoliveChecklistIdentifiedDate { get; set; }
 
 
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Agreed Use
         [Display(Name = "Agreed Business Process")]
         public bool GoliveChecklistAgreedUse { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Agreed Use Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistAgreedUseDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Setup Current
         [Display(Name = "Setup Current Users")]
         public bool GoliveChecklistSetupCurrent { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Setup Current Date
         [Display(Name = "Setup Current Users")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistSetupCurrentDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Setup New
         [Display(Name = "Setup New")]
         public bool GoliveChecklistSetupNew { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Setup New Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistSetupNewDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Prescribing
         [Display(Name = "Prescribing")]
         public bool GoliveChecklistPrescribing { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Prescribing Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistPrescribingDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Med Admin
         [Display(Name = "Med Admin")]
         public bool GoliveChecklistMedAdmin { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Med Admin Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime GoliveChecklistMedAdminDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Pharm Check
         [Display(Name = "pharm Check")]
         public bool GoliveChecklistPharmCheck { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Pharm Check
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime GoliveChecklistPharmCheckDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Contingency Agreed
         [Display(Name = "Contingency Agreed")]
         public bool GoliveChecklistContingencyAgreed { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Contingency Agreed Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistContingencyAgreedDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Go No-go
         [Display(Name = "Go/No-go")]
         public bool GoliveChecklistGo_Nogo { get; set; }
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Go No-go Date
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistGo_NogoDate { get; set; }
-
+        // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist General Notes
         [Display(Name = "General Note")]
         public string GoliveChecklistGeneralNotes { get; set; }
         #endregion
