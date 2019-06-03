@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AreaOfCaresTestController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
@@ -226,6 +227,14 @@
     <Compile Include="Migrations\201906011631018_dataupdate.cs" />
     <Compile Include="Migrations\201906011631018_dataupdate.Designer.cs">
       <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031207175_dataupdate1.cs" />
+    <Compile Include="Migrations\201906031207175_dataupdate1.Designer.cs">
+      <DependentUpon>201906031207175_dataupdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906031311116_x.cs" />
+    <Compile Include="Migrations\201906031311116_x.Designer.cs">
+      <DependentUpon>201906031311116_x.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -535,6 +544,11 @@
     <Content Include="Views\BaUChecklists\Details.cshtml" />
     <Content Include="Views\BaUChecklists\Edit.cshtml" />
     <Content Include="Views\BaUChecklists\Index.cshtml" />
+    <Content Include="Views\AreaOfCaresTest\Create.cshtml" />
+    <Content Include="Views\AreaOfCaresTest\Delete.cshtml" />
+    <Content Include="Views\AreaOfCaresTest\Details.cshtml" />
+    <Content Include="Views\AreaOfCaresTest\Edit.cshtml" />
+    <Content Include="Views\AreaOfCaresTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -576,6 +590,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906011631018_dataupdate.resx">
       <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031207175_dataupdate1.resx">
+      <DependentUpon>201906031207175_dataupdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906031311116_x.resx">
+      <DependentUpon>201906031311116_x.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
