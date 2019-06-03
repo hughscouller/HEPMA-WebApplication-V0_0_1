@@ -184,7 +184,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AreaOfCaresTestController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
@@ -196,45 +195,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905271746573_initialCreate.cs" />
-    <Compile Include="Migrations\201905271746573_initialCreate.Designer.cs">
-      <DependentUpon>201905271746573_initialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201906031358049_Initial.cs" />
+    <Compile Include="Migrations\201906031358049_Initial.Designer.cs">
+      <DependentUpon>201906031358049_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905271858508_SiteLocationNotes.cs" />
-    <Compile Include="Migrations\201905271858508_SiteLocationNotes.Designer.cs">
-      <DependentUpon>201905271858508_SiteLocationNotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905271907354_update.cs" />
-    <Compile Include="Migrations\201905271907354_update.Designer.cs">
-      <DependentUpon>201905271907354_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905290856092_HSDatasetUpdate.cs" />
-    <Compile Include="Migrations\201905290856092_HSDatasetUpdate.Designer.cs">
-      <DependentUpon>201905290856092_HSDatasetUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905291011567_data.cs" />
-    <Compile Include="Migrations\201905291011567_data.Designer.cs">
-      <DependentUpon>201905291011567_data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905291337487_HSdataUpdate.cs" />
-    <Compile Include="Migrations\201905291337487_HSdataUpdate.Designer.cs">
-      <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905310922517_addOtherAoCClasses.cs" />
-    <Compile Include="Migrations\201905310922517_addOtherAoCClasses.Designer.cs">
-      <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906011631018_dataupdate.cs" />
-    <Compile Include="Migrations\201906011631018_dataupdate.Designer.cs">
-      <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906031207175_dataupdate1.cs" />
-    <Compile Include="Migrations\201906031207175_dataupdate1.Designer.cs">
-      <DependentUpon>201906031207175_dataupdate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906031311116_x.cs" />
-    <Compile Include="Migrations\201906031311116_x.Designer.cs">
-      <DependentUpon>201906031311116_x.cs</DependentUpon>
+    <Compile Include="Migrations\201906031418598_dataupdate.cs" />
+    <Compile Include="Migrations\201906031418598_dataupdate.Designer.cs">
+      <DependentUpon>201906031418598_dataupdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -544,11 +511,6 @@
     <Content Include="Views\BaUChecklists\Details.cshtml" />
     <Content Include="Views\BaUChecklists\Edit.cshtml" />
     <Content Include="Views\BaUChecklists\Index.cshtml" />
-    <Content Include="Views\AreaOfCaresTest\Create.cshtml" />
-    <Content Include="Views\AreaOfCaresTest\Delete.cshtml" />
-    <Content Include="Views\AreaOfCaresTest\Details.cshtml" />
-    <Content Include="Views\AreaOfCaresTest\Edit.cshtml" />
-    <Content Include="Views\AreaOfCaresTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -567,35 +529,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905271746573_initialCreate.resx">
-      <DependentUpon>201905271746573_initialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906031358049_Initial.resx">
+      <DependentUpon>201906031358049_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271858508_SiteLocationNotes.resx">
-      <DependentUpon>201905271858508_SiteLocationNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905271907354_update.resx">
-      <DependentUpon>201905271907354_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905290856092_HSDatasetUpdate.resx">
-      <DependentUpon>201905290856092_HSDatasetUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905291011567_data.resx">
-      <DependentUpon>201905291011567_data.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905291337487_HSdataUpdate.resx">
-      <DependentUpon>201905291337487_HSdataUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905310922517_addOtherAoCClasses.resx">
-      <DependentUpon>201905310922517_addOtherAoCClasses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906011631018_dataupdate.resx">
-      <DependentUpon>201906011631018_dataupdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906031207175_dataupdate1.resx">
-      <DependentUpon>201906031207175_dataupdate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906031311116_x.resx">
-      <DependentUpon>201906031311116_x.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906031418598_dataupdate.resx">
+      <DependentUpon>201906031418598_dataupdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

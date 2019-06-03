@@ -275,7 +275,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public DateTime GoliveChecklistMedAdminDate { get; set; }
+        public DateTime? GoliveChecklistMedAdminDate { get; set; }
         // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Pharm Check
         [Display(Name = "pharm Check")]
         public bool GoliveChecklistPharmCheck { get; set; }
@@ -283,7 +283,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public DateTime GoliveChecklistPharmCheckDate { get; set; }
+        public DateTime? GoliveChecklistPharmCheckDate { get; set; }
         // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Contingency Agreed
         [Display(Name = "Contingency Agreed")]
         public bool GoliveChecklistContingencyAgreed { get; set; }
