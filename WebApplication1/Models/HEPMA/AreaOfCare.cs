@@ -231,9 +231,9 @@ namespace WebApplication1.Models.HEPMA
         
 
 
-        public bool GoliveChecklistIdentified { get; set; }
+        //public bool GoliveChecklistIdentified { get; set; }
 
-        public DateTime? GoliveChecklistIdentifiedDate { get; set; }
+        //public DateTime? GoliveChecklistIdentifiedDate { get; set; }
 
 
         // /////////////////////////////////////////////////////////////////////////////// GoliveChecklist Agreed Use
@@ -308,22 +308,34 @@ namespace WebApplication1.Models.HEPMA
         // tab 4 - AoC BaU checklist  ////////////////////////////////////////////
         // ///////////////////////////////////////////////////////////////////
         #region
+        [Display(Name = "Successful Go-live")]
         public bool BaUChecklistSuccessfulGoLive { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklistSuccessfulGoliveNotes { get; set; }
 
+        [Display(Name = "Training Complete")]
         public bool BaUChecklistTrainingComplete { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklistTrainingCompleteNotes { get; set; }
 
+        [Display(Name = "User Setup")]
         public bool BaUChecklistUserSetup { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklisUserSetupNotes { get; set; }
 
+        [Display(Name = "Hardware Setup")]
         public bool BaUChecklistHardwareSetup { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklistHardwareSetupNotes { get; set; }
 
+        [Display(Name = "Hardware Use Agreed")]
         public bool BaUChecklistHardwareUseAgreed { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklistHardwareUseAgreedNotes { get; set; }
 
+        [Display(Name = "Contingency Agreed")]
         public bool BaUChecklistContingencyAgreed { get; set; }
+        [Display(Name = "Notes")]
         public string BaUChecklistContingencyAgreedNotes { get; set; }
         #endregion
     }

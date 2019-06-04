@@ -86,6 +86,7 @@ namespace WebApplication1.Controllers
         // GET: HospitalSites/Create
         public ActionResult Create()
         {
+            //ViewBag.HospitalSiteIdForCreate = HSId;
             return View();
         }
 

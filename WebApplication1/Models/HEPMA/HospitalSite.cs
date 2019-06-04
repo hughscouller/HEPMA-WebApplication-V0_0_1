@@ -27,15 +27,15 @@ namespace WebApplication1.Models.HEPMA
         public DateTime? PlannedComplete { get; set; }
 
         [Display(Name = "Standard Bed")]
-        public int AccommodationComplimentStandardBed { get; set; }
+        public int? AccommodationComplimentStandardBed { get; set; }
         [Display(Name = "Day surgery bed")]
-        public int AccommodationComplimentDaySurgeryBed { get; set; }
+        public int? AccommodationComplimentDaySurgeryBed { get; set; }
         [Display(Name = "Trolly")]
-        public int AccommodationComplimentTrolly { get; set; }
+        public int? AccommodationComplimentTrolly { get; set; }
         [Display(Name = "Chair")]
-        public int AccommodationComplimentChair { get; set; }
+        public int? AccommodationComplimentChair { get; set; }
         [Display(Name = "Special care cot")]
-        public int AccommodationComplimentSpecialCareBabyUnitCot { get; set; }
+        public int? AccommodationComplimentSpecialCareBabyUnitCot { get; set; }
 
 
         public virtual ICollection<SiteLocation> SiteLocations { get; set; }

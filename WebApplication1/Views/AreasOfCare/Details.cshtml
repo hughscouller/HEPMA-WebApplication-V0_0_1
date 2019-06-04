@@ -12,6 +12,7 @@
 
     <div class="row">
         <div>@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })</div>
+
         <div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div>
     </div>
 
@@ -579,20 +580,24 @@
                             <div class="col-lg-12">
                                 @Html.DisplayFor(model => model.GoliveChecklistUsersSetupDate)
                             </div>
+
+
                             @*--GoliveChecklistIdentified----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
+                            @*<div class="col-lg-12">
                                 @Html.DisplayNameFor(model => model.GoliveChecklistIdentified)
                             </div>
                             <div class="col-lg-12">
                                 @Html.DisplayFor(model => model.GoliveChecklistIdentified)
-                            </div>
+                            </div>*@
                             @*--GoliveChecklistIdentifiedDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
+                            @*<div class="col-lg-12">
                                 @Html.DisplayNameFor(model => model.GoliveChecklistIdentifiedDate)
                             </div>
                             <div class="col-lg-12">
                                 @Html.DisplayFor(model => model.GoliveChecklistIdentifiedDate)
-                            </div>
+                            </div>*@
+
+
                             @*--GoliveChecklistAgreedUse----------------------------------------------------------------------------------*@
                             <div class="col-lg-12">
                                 @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUse)
@@ -778,6 +783,13 @@
                             <div class="col-lg-12">
                                 @Html.DisplayFor(model => model.BaUChecklistTrainingComplete)
                             </div>
+                            @*--BaUChecklistTrainingComplete----------------------------------------------------------------------------------*@
+                            <div class="col-lg-12">
+                                @Html.DisplayNameFor(model => model.BaUChecklistTrainingCompleteNotes)
+                            </div>
+                            <div class="col-lg-12">
+                                @Html.DisplayFor(model => model.BaUChecklistTrainingCompleteNotes)
+                            </div>
                             @*--BaUChecklistUserSetup----------------------------------------------------------------------------------*@
                             <div class="col-lg-12">
                                 @Html.DisplayNameFor(model => model.BaUChecklistUserSetup)
@@ -792,7 +804,7 @@
                             <div class="col-lg-12">
                                 @Html.DisplayFor(model => model.BaUChecklisUserSetupNotes)
                             </div>
-                            
+
 
 
 
