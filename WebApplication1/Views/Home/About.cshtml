@@ -2,186 +2,174 @@
     ViewBag.Title = "About";
 }
 
-        <h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title.</h2>
 
 
 <h3>@ViewBag.Message</h3>
 
-<hr/>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#PatientPathway">Patient Pathway</a></li>
+    <li><a data-toggle="tab" href="#PatientEpisode">Patient Episode</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+    <li><a data-toggle="tab" href="#menu4">Menu 4</a></li>
+</ul>
 
-<div class="row">
+<div class="tab-content">
+    @* Patinet pathway - tab 01 ///////////////////////////////////////////*@
+    <div id="PatientPathway" class="tab-pane fade in active">
 
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#PatientPathway">Patient Pathway</a></li>
-        <li><a data-toggle="tab" href="#PatientElectronicEpisode">Patient Electronic Episode</a></li>
-        <li><a data-toggle="tab" href="#MenueItem3">MenueItem3</a></li>
-        <li><a data-toggle="tab" href="#MenueItem4">MenueItem4</a></li>
-    </ul>
 
-    <div class="tab-content">
+        <div class="col-lg-12">
+            <p>&nbsp;</p>
+            <h2>Potential stops on a patient pathway</h2>
 
-        <!-- PatientPathway - tab - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="PatientPathway" class="tab-pane fade in active">
-
-            <div class="col-lg-12">
-                <img src="~/content/images/image294.png" class="img-responsive" alt="Patient Pathway"/>
-            </div>
-
-            <div class="col-md-4">
-                @*<p>&nbsp;</p>*@
-                <h2>High Level Process Map</h2>
-                <p>&nbsp;</p>
-
-                <p>
-                    A Ut maximus vehicula ullamcorper. In ornare tempus nunc vel fringilla. Maecenas non ullamcorper ligula. Etiam a tincidunt magna, nec hendrerit urna. Donec porta sem et justo viverra tincidunt. Nam sit amet maximus nibh, eu tempor quam. Vivamus blandit feugiat nisl, eget iaculis mi tempor sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas eget euismod lectus. Integer pharetra rhoncus lectus id mattis. Sed tincidunt eros eget velit imperdiet lobortis.
-                </p>
-                <img src="~/Content/images/1268658.png" class="img-rounded img-responsive" alt="Pharmacy" @*height="700"*@ style="opacity:0.9">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum. Donec a pharetra nibh. Suspendisse elit purus, laoreet vitae nisl venenatis, dignissim tristique augue. Nulla facilisi. Sed eleifend sem sed ligula ultricies dictum. Quisque risus nisl, egestas non lacus eu, lacinia volutpat est. Sed ullamcorper gravida leo. Proin pulvinar sed nisi vel pretium. Curabitur at aliquet dui, in tincidunt risus. Aliquam ut posuere dui.
-                </p>
-                <p>&nbsp;</p>
-                <p>
-                    A Ut maximus vehicula ullamcorper. In ornare tempus nunc vel fringilla. Maecenas non ullamcorper ligula. Etiam a tincidunt magna, nec hendrerit urna. Donec porta sem et justo viverra tincidunt. Nam sit amet maximus nibh, eu tempor quam. Vivamus blandit feugiat nisl, eget iaculis mi tempor sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas eget euismod lectus. Integer pharetra rhoncus lectus id mattis. Sed tincidunt eros eget velit imperdiet lobortis.
-                </p>
-            </div>
-
-            <div class="col-md-8">
-                <div>
-                    <h2 class="text-center">Patient Journey</h2>
-                    <img src="~/Content/images/image387.png" class="img-rounded img-responsive center-block" alt="Pharmacy" style="opacity:0.9">
-                </div>
-                <p>.</p>
-
-                <div class="col-lg-6">
-
-                    <p><strong>Entry Route</strong></p>
-                    <hr />
-                    <ul>
-                        <li>Emergency admission – From clinic/home/other</li>
-                        <li>Elective admission</li>
-                        <li>Transfer from other hospitals (NHSL/other health boards</li>
-                    </ul>
-                    <p>&nbsp;</p>
-                    <p><strong>Inpatient Episode</strong></p>
-                    <hr />
-                    <ul>
-                        <li><strong>Admission</strong></li>
-                        <ul>
-                            <li>Patient admitted to ward</li>
-                            <li>Nursing admission</li>
-                            <li>Patient clerking</li>
-                        </ul>
-                        <li><strong>Tests/Investigations</strong></li>
-                        <ul>
-                            <li>Order tests/investigations</li>
-                        </ul>
-                        <li><strong>Patient Review</strong></li>
-                        <ul>
-                            <li>Ward round/MDT/review</li>
-                        </ul>
-                        <li><strong>Treatment Plan</strong></li>
-                        <ul>
-                            <li>Treatment plan agreed at Ward round/MDT/review</li>
-                        </ul>
-                        <li><strong>Prescription Process</strong></li>
-                        <ul>
-                            <li>Writing an inpatient prescription</li>
-                            <li>Pass prescriptions</li>
-                            <li>Repeat prescriptions</li>
-                            <li>Verbal prescriptions</li>
-                            <li>Telephoned prescriptions</li>
-                            <li>Discharge prescriptions</li>
-                            <li>Supplementary charts</li>
-                            <li>Transcribing/Rewriting</li>
-                        </ul>
-                        <li><strong>Clinical Pharmacy Check</strong></li>
-                        <ul>
-                            <li>Reviews kardex </li>
-                            <li>Discharge prescriptions</li>
-                        </ul>
-                    </ul>
-
-                </div>
-                <div class="col-lg-6">
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <hr />
-                    <ul>
-                        <li><strong>Administer Medication</strong></li>
-                        <ul>
-                            <li>One Stop Prescribing</li>
-                            <li>Non One Stop Prescribing</li>
-                            <li>Self administration (at any of the above)</li>
-                            <li>Witnessing</li>
-                        </ul>
-                        <li><strong>Record Medication Given</strong></li>
-                        <ul>
-                            <li>Drug round - bedside</li>
-                            <li>Drug round - dispensary/ treatment room</li>
-                            <li>Other charts - infusions</li>
-                        </ul>
-                        <li><strong>Monitor Patient Progress</strong></li>
-                        <ul>
-                            <li>Bedside/tests/investigations</li>
-                            <li>Treatment effectiveness</li>
-                            <li>Adverse effects</li>
-                        </ul>
-                        <li><strong>Immediate Discharge Letter</strong></li>
-                        <ul>
-                            <li>Patients discharged home/elsewhere</li>
-                            <li>On pass</li>
-                        </ul>
-                        <li><strong>Discharge Drugs Dispensed (from)</strong></li>
-                        <ul>
-                            <li>Pharmacy dispensary</li>
-                            <li>Ward stock</li>
-                            <li>Return patient’s own supply</li>
-                        </ul>
-                        <li><strong>Dispensed Drugs Given to Patient</strong></li>
-                        <ul>
-                            <li>On ward</li>
-                            <li>Discharge lounge</li>
-                            <li>12.3	Pharmacy dispensary (out patient process only)</li>
-                        </ul>
-                        <li><strong>Discharge Patient</strong></li>
-                        <ul>
-                            <li>Patient discharged from Trak</li>
-                        </ul>
-                    </ul>
-
-                </div>
-
-            </div>
+            <img src="~/content/images/image294.png" class="img-responsive" alt="Patient Pathway" />
         </div>
 
-        <!-- PatientElectronicEpisode - tab - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="PatientElectronicEpisode" class="tab-pane fade in active">
+        @* spacer *@
+        <div class="col-lg-12">
+            <p>&nbsp;</p>
+        </div>
 
-            <div class="col-lg-12">
-                <p>&nbsp;</p>
 
-                <img src="~/Content/images/High level patient episode v0_1.jpg" class="img-responsive" alt="Patient Episode" />
-            </div>
+        <div class="col-lg-4">
+            <hr />
+            <p><strong>Entry Route</strong></p>
+            
+            <ul>
+                <li>Emergency admission – From clinic/home/other</li>
+                <li>Elective admission</li>
+                <li>Transfer from other hospitals (NHSL/other health boards</li>
+            </ul>
+
+            <hr />
+            <p><strong>Inpatient Episode</strong></p>
+            
+            <ul>
+                <li><strong>Admission</strong></li>
+                <ul>
+                    <li>Patient admitted to ward</li>
+                    <li>Nursing admission</li>
+                    <li>Patient clerking</li>
+                </ul>
+                <li><strong>Tests/Investigations</strong></li>
+                <ul>
+                    <li>Order tests/investigations</li>
+                </ul>
+                <li><strong>Patient Review</strong></li>
+                <ul>
+                    <li>Ward round/MDT/review</li>
+                </ul>
+            </ul>
 
         </div>
-        <!-- MenueItem3 - tab - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="MenueItem3" class="tab-pane fade in active">
 
+        <div class="col-lg-4">
+            <hr />
+            <p>&nbsp;</p>
+            
+
+            <ul>
+                <li><strong>Treatment Plan</strong></li>
+                <ul>
+                    <li>Treatment plan agreed at Ward round/MDT/review</li>
+                </ul>
+                <li><strong>Prescription Process</strong></li>
+                <ul>
+                    <li>Writing an inpatient prescription</li>
+                    <li>Pass prescriptions</li>
+                    <li>Repeat prescriptions</li>
+                    <li>Verbal prescriptions</li>
+                    <li>Telephoned prescriptions</li>
+                    <li>Discharge prescriptions</li>
+                    <li>Supplementary charts</li>
+                    <li>Transcribing/Rewriting</li>
+                </ul>
+                <li><strong>Clinical Pharmacy Check</strong></li>
+                <ul>
+                    <li>Reviews kardex </li>
+                    <li>Discharge prescriptions</li>
+                </ul>
+                <li><strong>Record Medication Given</strong></li>
+                <ul>
+                    <li>Drug round - bedside</li>
+                    <li>Drug round - dispensary/ treatment room</li>
+                    <li>Other charts - infusions</li>
+                </ul>
+            </ul>
+
+
+        </div>
+        <div class="col-lg-4">
+            <hr />
+            <p>&nbsp;</p>
+
+            <ul>
+                
+                <li><strong>Monitor Patient Progress</strong></li>
+                <ul>
+                    <li>Bedside/tests/investigations</li>
+                    <li>Treatment effectiveness</li>
+                    <li>Adverse effects</li>
+                </ul>
+                <li><strong>Immediate Discharge Letter</strong></li>
+                <ul>
+                    <li>Patients discharged home/elsewhere</li>
+                    <li>On pass</li>
+                </ul>
+                <li><strong>Discharge Drugs Dispensed (from)</strong></li>
+                <ul>
+                    <li>Pharmacy dispensary</li>
+                    <li>Ward stock</li>
+                    <li>Return patient’s own supply</li>
+                </ul>
+                <li><strong>Dispensed Drugs Given to Patient</strong></li>
+                <ul>
+                    <li>On ward</li>
+                    <li>Discharge lounge</li>
+                    <li>12.3	Pharmacy dispensary (out patient process only)</li>
+                </ul>
+                <li><strong>Discharge Patient</strong></li>
+                <ul>
+                    <li>Patient discharged from Trak</li>
+                </ul>
+
+            </ul>
 
 
         </div>
 
-        <!-- MenueItem4 - tab - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="MenueItem4" class="tab-pane fade in active">
-
-
+        <div class="col-lg-12">
+            <p>&nbsp;</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id ullamcorper ligula, non facilisis diam. Aenean eleifend est purus, in consectetur enim bibendum at. Nam ullamcorper pretium mauris. Vivamus diam odio, ullamcorper eu pharetra id, eleifend ut quam. Curabitur non placerat neque. Fusce porta sed eros sit amet bibendum. Donec a pharetra nibh. Suspendisse elit purus, laoreet vitae nisl venenatis, dignissim tristique augue. Nulla facilisi. Sed eleifend sem sed ligula ultricies dictum. Quisque risus nisl, egestas non lacus eu, lacinia volutpat est. Sed ullamcorper gravida leo. Proin pulvinar sed nisi vel pretium. Curabitur at aliquet dui, in tincidunt risus. Aliquam ut posuere dui.
+            </p>
 
         </div>
 
     </div>
+
+        @* Patinet episode - tab 02 ///////////////////////////////////////////*@
+    <div id="PatientEpisode" class="tab-pane fade">
+        <h3>Patient Episode</h3>
+        <p>Some content in menu 1.</p>
+        <img src="~/content/images/image2971.gif" class="img-responsive" alt="Patient Pathway" />
+    </div>
+        @* Menue 3 - tab 03 ///////////////////////////////////////////*@
+        <div id="menu3" class="tab-pane fade">
+            <h3>Menu 3</h3>
+            <p>Some content in menu 3.</p>
+        </div>
+        @* Menue 4 - tab 04 ///////////////////////////////////////////*@
+        <div id="menu4" class="tab-pane fade">
+            <h3>Menu 4</h3>
+            <p>Some content in menu 4.</p>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-lg-12">
+        <p>&nbsp;</p>
+    </div>
 </div>
+
+
