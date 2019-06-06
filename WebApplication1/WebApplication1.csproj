@@ -3,6 +3,7 @@
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
@@ -195,13 +196,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906040853565_Iniial.cs" />
-    <Compile Include="Migrations\201906040853565_Iniial.Designer.cs">
-      <DependentUpon>201906040853565_Iniial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906041150152_dataupdate.cs" />
-    <Compile Include="Migrations\201906041150152_dataupdate.Designer.cs">
-      <DependentUpon>201906041150152_dataupdate.cs</DependentUpon>
+    <Compile Include="Migrations\201906061940332_Initial.cs" />
+    <Compile Include="Migrations\201906061940332_Initial.Designer.cs">
+      <DependentUpon>201906061940332_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -343,7 +340,7 @@
     <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Content\images\1268658.eps" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\cyberstudioone.com - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -535,11 +532,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906040853565_Iniial.resx">
-      <DependentUpon>201906040853565_Iniial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906041150152_dataupdate.resx">
-      <DependentUpon>201906041150152_dataupdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906061940332_Initial.resx">
+      <DependentUpon>201906061940332_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
