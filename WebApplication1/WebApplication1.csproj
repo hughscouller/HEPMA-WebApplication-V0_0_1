@@ -500,20 +500,6 @@
     <Content Include="Views\NotesFieldsSiteLocation\Details.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Edit.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Index.cshtml" />
-    <Content Include="Views\AoCAssessments\Create.cshtml" />
-    <Content Include="Views\AoCAssessments\Delete.cshtml" />
-    <Content Include="Views\AoCAssessments\Edit.cshtml" />
-    <Content Include="Views\AoCAssessments\Index.cshtml" />
-    <Content Include="Views\GoliveChecklists\Create.cshtml" />
-    <Content Include="Views\GoliveChecklists\Delete.cshtml" />
-    <Content Include="Views\GoliveChecklists\Details.cshtml" />
-    <Content Include="Views\GoliveChecklists\Edit.cshtml" />
-    <Content Include="Views\GoliveChecklists\Index.cshtml" />
-    <Content Include="Views\BaUChecklists\Create.cshtml" />
-    <Content Include="Views\BaUChecklists\Delete.cshtml" />
-    <Content Include="Views\BaUChecklists\Details.cshtml" />
-    <Content Include="Views\BaUChecklists\Edit.cshtml" />
-    <Content Include="Views\BaUChecklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
