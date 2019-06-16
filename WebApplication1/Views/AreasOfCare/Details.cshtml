@@ -19,11 +19,16 @@
     <hr />
 </div>
 
+<div class="active">
+
+</div>
+
 <!-- AoC Details - tab options - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <div class="container">
 
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#generalInformation">Project Information</a></li>
+        <li class="active"><a data-toggle="tab" href="#ProjectInformation">Project Information</a></li>
+        <li><a data-toggle="tab" href="#BusinessProcess">Business process</a></li>
         <li><a data-toggle="tab" href="#AoCAssessment">AoC Assessment</a></li>
         <li><a data-toggle="tab" href="#AoCGoliveChecklist">AoC Go-live Checklist</a></li>
         <li><a data-toggle="tab" href="#AoCBaUChecklist">AoC BaU Checklist</a></li>
@@ -32,7 +37,7 @@
     <div class="tab-content">
 
         <!-- AoC Details - tab / general information - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="generalInformation" class="tab-pane fade in active">
+        <div id="ProjectInformation" class="tab-pane fade in active">
 
             <div class="row">
                 <!--left column - start-->
@@ -206,6 +211,19 @@
                 <!--right column - start-->
                 <div class="col-lg-6">
 
+                    
+
+                    
+
+                </div>
+                <!--right column - end-->
+            </div>
+
+        </div>
+        <!-- #BusinessProccess - tab / Business Proccess - start ///////////////////////////////////////////////////////////////////////////////-->
+        <div id="BusinessProcess" class="tab-pane fade">
+            <div class="row">
+                <div class="col-lg-6">
                     <div class="panel">
                         <div class="panel-heading bg-primary">
                             <h5>Use of Trak</h5>
@@ -270,7 +288,6 @@
 
                         </div>
                     </div>
-
                     <div class="panel">
 
                         <div class="panel-heading bg-primary">
@@ -338,7 +355,6 @@
 
                         </div>
                     </div>
-
                     <div class="panel">
 
                         <div class="panel-heading bg-primary">
@@ -433,450 +449,457 @@
                     </div>
 
                 </div>
-                <!--right column - end-->
-            </div>
-
-        </div>
-        <!-- AoC Details - tab / AoC Assessment - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="AoCAssessment" class="tab-pane fade">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC Assessment</h5>
-                        </div>
-                        <div class="panel-body">
-
-                            @*--AoCAssessmentGoodToGo----------------------------------------------------------------------------------*@
-                            <div class="col-lg-3">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGo)
-                            </div>
-                            <div class="col-lg-1">
-                                @Html.DisplayFor(model => model.AoCAssessmentGoodToGo)
-                            </div>
-                            @*--AoCAssessmentGoodToGoDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-4">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGoDate)
-                            </div>
-                            <div class="col-lg-4">
-                                @Html.DisplayFor(model => model.AoCAssessmentGoodToGoDate)
-                            </div>
-                            <p>&nbsp;</p>
-                            @*--AoCAssessmentITLiteracy----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentITLiteracy)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentITLiteracy)
-                            </div>
-                            @*--AoCAssessmentUseOfTrak----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentUseOfTrak)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentUseOfTrak)
-                            </div>
-                            @*--AoCAssessmentHardwareQuality----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentHardwareQuality)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentHardwareQuality)
-                            </div>
-
-                            @*--AoCAssessmentHardwareLocation----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentHardwareLocation)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentHardwareLocation)
-                            </div>
-                            @*--AoCAssessmentBusinessProcessDifference----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentBusinessProcessDifference)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentBusinessProcessDifference)
-                            </div>
-
-                        </div>
-                        <div class="panel-footer">
-                            <p>&nbsp;</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC Assessment Outcome</h5>
-                        </div>
-                        <div class="panel-body">
-                            @*--AoCAssessmentGeneralNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.AoCAssessmentGeneralNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.AoCAssessmentGeneralNotes)
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            <p>&nbsp;</p>
-                        </div>
-                    </div>
-
-                </div>
             </div>
         </div>
-        <!-- AoC Details - tab / AoC Golive Checklist - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="AoCGoliveChecklist" class="tab-pane fade">
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC Go-live Checklist</h5>
+
+
+            <!-- AoC Details - tab / AoC Assessment - start ///////////////////////////////////////////////////////////////////////////////-->
+            <div id="AoCAssessment" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC Assessment</h5>
+                            </div>
+                            <div class="panel-body">
+
+                                @*--AoCAssessmentGoodToGo----------------------------------------------------------------------------------*@
+                                <div class="col-lg-3">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGo)
+                                </div>
+                                <div class="col-lg-1">
+                                    @Html.DisplayFor(model => model.AoCAssessmentGoodToGo)
+                                </div>
+                                @*--AoCAssessmentGoodToGoDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-4">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentGoodToGoDate)
+                                </div>
+                                <div class="col-lg-4">
+                                    @Html.DisplayFor(model => model.AoCAssessmentGoodToGoDate)
+                                </div>
+                                <p>&nbsp;</p>
+                                @*--AoCAssessmentITLiteracy----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentITLiteracy)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentITLiteracy)
+                                </div>
+                                @*--AoCAssessmentUseOfTrak----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentUseOfTrak)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentUseOfTrak)
+                                </div>
+                                @*--AoCAssessmentHardwareQuality----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentHardwareQuality)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentHardwareQuality)
+                                </div>
+
+                                @*--AoCAssessmentHardwareLocation----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentHardwareLocation)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentHardwareLocation)
+                                </div>
+                                @*--AoCAssessmentBusinessProcessDifference----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentBusinessProcessDifference)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentBusinessProcessDifference)
+                                </div>
+
+                            </div>
+                            <div class="panel-footer">
+                                <p>&nbsp;</p>
+                            </div>
                         </div>
-                        <div class="panel-body">
-
-                            @*--GoliveChecklistUsersIdentified----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentified)
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC Assessment Outcome</h5>
                             </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersIdentified)
+                            <div class="panel-body">
+                                @*--AoCAssessmentGeneralNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.AoCAssessmentGeneralNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.AoCAssessmentGeneralNotes)
+                                </div>
                             </div>
-                            @*--GoliveChecklistUsersIdentifiedDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentifiedDate)
+                            <div class="panel-footer">
+                                <p>&nbsp;</p>
                             </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersIdentifiedDate)
-                            </div>
-                            @*--GoliveChecklistUsersTrained----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrained)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersTrained)
-                            </div>
-                            @*--GoliveChecklistUsersTrainedDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrainedDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersTrainedDate)
-                            </div>
-                            @*--GoliveChecklistUsersSetup----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetup)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersSetup)
-                            </div>
-                            @*--GoliveChecklistUsersSetupDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetupDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistUsersSetupDate)
-                            </div>
-
-
-                            @*--GoliveChecklistIdentified----------------------------------------------------------------------------------*@
-                            @*<div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistIdentified)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistIdentified)
-                            </div>*@
-                            @*--GoliveChecklistIdentifiedDate----------------------------------------------------------------------------------*@
-                            @*<div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistIdentifiedDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistIdentifiedDate)
-                            </div>*@
-
-
-                            @*--GoliveChecklistAgreedUse----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUse)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistAgreedUse)
-                            </div>
-                            @*--GoliveChecklistAgreedUseDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUseDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistAgreedUseDate)
-                            </div>
-                            @*--GoliveChecklistSetupCurrent----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrent)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistSetupCurrent)
-                            </div>
-                            @*--GoliveChecklistSetupCurrentDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrentDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistSetupCurrentDate)
-                            </div>
-                            @*--GoliveChecklistSetupNew----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistSetupNew)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistSetupNew)
-                            </div>
-                            @*--GoliveChecklistSetupNewDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistSetupNewDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistSetupNewDate)
-                            </div>
-                            
-
-
-
-
-
                         </div>
-                        <div class="panel-footer">
 
-                            <p>Panel footer</p>
-
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC Go-live Checklist</h5>
-                        </div>
-                        <div class="panel-body">
+                    <div class="col-lg-6">
+                        
 
-                            @*--GoliveChecklistPrescribing----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistPrescribing)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistPrescribing)
-                            </div>
-                            @*--GoliveChecklistPrescribingDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistPrescribingDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistPrescribingDate)
-                            </div>
-                            @*--GoliveChecklistMedAdmin----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistMedAdmin)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistMedAdmin)
-                            </div>
-                            @*--GoliveChecklistMedAdminDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistMedAdminDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistMedAdminDate)
-                            </div>
-                            @*--GoliveChecklistPharmCheck----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheck)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistPharmCheck)
-                            </div>
-                            @*--GoliveChecklistPharmCheckDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheckDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistPharmCheckDate)
-                            </div>
-                            @*--GoliveChecklistContingencyAgreed----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreed)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreed)
-                            </div>
-                            @*--GoliveChecklistContingencyAgreedDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreedDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreedDate)
-                            </div>
-                            @*--GoliveChecklistGo_Nogo----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistGo_Nogo)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistGo_Nogo)
-                            </div>
-                            @*--GoliveChecklistGo_NogoDate----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistGo_NogoDate)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistGo_NogoDate)
-                            </div>
-                            @*--GoliveChecklistGeneralNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.GoliveChecklistGeneralNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.GoliveChecklistGeneralNotes)
-                            </div>
-
-                        </div>
-                        <div class="panel-footer">
-
-                            <p>&nbsp;</p>
-
-                        </div>
                     </div>
-
                 </div>
             </div>
+            <!-- AoC Details - tab / AoC Golive Checklist - start ///////////////////////////////////////////////////////////////////////////////-->
+            <div id="AoCGoliveChecklist" class="tab-pane fade">
 
-        </div>
-        <!-- AoC Details - tab / AoC BaU Checklist - start ///////////////////////////////////////////////////////////////////////////////-->
-        <div id="AoCBaUChecklist" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC Go-live Checklist</h5>
+                            </div>
+                            <div class="panel-body">
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC BaU Checklist</h5>
+                                @*--GoliveChecklistUsersIdentified----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentified)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersIdentified)
+                                </div>
+                                @*--GoliveChecklistUsersIdentifiedDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersIdentifiedDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersIdentifiedDate)
+                                </div>
+                                @*--GoliveChecklistUsersTrained----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrained)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersTrained)
+                                </div>
+                                @*--GoliveChecklistUsersTrainedDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersTrainedDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersTrainedDate)
+                                </div>
+                                @*--GoliveChecklistUsersSetup----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetup)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersSetup)
+                                </div>
+                                @*--GoliveChecklistUsersSetupDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistUsersSetupDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistUsersSetupDate)
+                                </div>
+
+
+                                @*--GoliveChecklistIdentified----------------------------------------------------------------------------------*@
+                                @*<div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistIdentified)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistIdentified)
+                                </div>*@
+                                @*--GoliveChecklistIdentifiedDate----------------------------------------------------------------------------------*@
+                                @*<div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistIdentifiedDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistIdentifiedDate)
+                                </div>*@
+
+
+                                @*--GoliveChecklistAgreedUse----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUse)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistAgreedUse)
+                                </div>
+                                @*--GoliveChecklistAgreedUseDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistAgreedUseDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistAgreedUseDate)
+                                </div>
+                                @*--GoliveChecklistSetupCurrent----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrent)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistSetupCurrent)
+                                </div>
+                                @*--GoliveChecklistSetupCurrentDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistSetupCurrentDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistSetupCurrentDate)
+                                </div>
+                                @*--GoliveChecklistSetupNew----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistSetupNew)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistSetupNew)
+                                </div>
+                                @*--GoliveChecklistSetupNewDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistSetupNewDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistSetupNewDate)
+                                </div>
+
+
+
+
+
+
+                            </div>
+                            <div class="panel-footer">
+
+                                <p>Panel footer</p>
+
+                            </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC Go-live Checklist</h5>
+                            </div>
+                            <div class="panel-body">
 
-                            @*--BaUChecklistSuccessfulGoLive----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistSuccessfulGoLive)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistSuccessfulGoLive)
-                            </div>
-                            @*--BaUChecklistSuccessfulGoliveNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistSuccessfulGoliveNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistSuccessfulGoliveNotes)
-                            </div>
-                            @*--BaUChecklistTrainingComplete----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistTrainingComplete)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistTrainingComplete)
-                            </div>
-                            @*--BaUChecklistTrainingComplete----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistTrainingCompleteNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistTrainingCompleteNotes)
-                            </div>
-                            @*--BaUChecklistUserSetup----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistUserSetup)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistUserSetup)
-                            </div>
-                            @*--BaUChecklisUserSetupNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklisUserSetupNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklisUserSetupNotes)
-                            </div>
+                                @*--GoliveChecklistPrescribing----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistPrescribing)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistPrescribing)
+                                </div>
+                                @*--GoliveChecklistPrescribingDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistPrescribingDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistPrescribingDate)
+                                </div>
+                                @*--GoliveChecklistMedAdmin----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistMedAdmin)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistMedAdmin)
+                                </div>
+                                @*--GoliveChecklistMedAdminDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistMedAdminDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistMedAdminDate)
+                                </div>
+                                @*--GoliveChecklistPharmCheck----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheck)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistPharmCheck)
+                                </div>
+                                @*--GoliveChecklistPharmCheckDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistPharmCheckDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistPharmCheckDate)
+                                </div>
+                                @*--GoliveChecklistContingencyAgreed----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreed)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreed)
+                                </div>
+                                @*--GoliveChecklistContingencyAgreedDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistContingencyAgreedDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistContingencyAgreedDate)
+                                </div>
+                                @*--GoliveChecklistGo_Nogo----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistGo_Nogo)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistGo_Nogo)
+                                </div>
+                                @*--GoliveChecklistGo_NogoDate----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistGo_NogoDate)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistGo_NogoDate)
+                                </div>
+                                @*--GoliveChecklistGeneralNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.GoliveChecklistGeneralNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.GoliveChecklistGeneralNotes)
+                                </div>
 
+                            </div>
+                            <div class="panel-footer">
 
+                                <p>&nbsp;</p>
 
-
+                            </div>
                         </div>
-                        <div class="panel-footer">
 
-                            <p>&nbsp;</p>
+                    </div>
+                    <div class="col-lg-6">
+                        
 
-                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="panel">
-                        <div class="panel-heading bg-primary">
-                            <h5>AoC Go-live Checklist</h5>
-                        </div>
-                        <div class="panel-body">
 
-                            @*--BaUChecklistHardwareSetup----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistHardwareSetup)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistHardwareSetup)
-                            </div>
-                            @*--BaUChecklistHardwareSetupNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistHardwareSetupNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistHardwareSetupNotes)
-                            </div>
-                            @*--BaUChecklistHardwareUseAgreed----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistHardwareUseAgreed)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistHardwareUseAgreed)
-                            </div>
-                            @*--BaUChecklistHardwareUseAgreedNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistHardwareUseAgreedNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistHardwareUseAgreedNotes)
-                            </div>
-                            @*--BaUChecklistContingencyAgreed----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistContingencyAgreed)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistContingencyAgreed)
-                            </div>
-                            @*--BaUChecklistContingencyAgreedNotes----------------------------------------------------------------------------------*@
-                            <div class="col-lg-12">
-                                @Html.DisplayNameFor(model => model.BaUChecklistContingencyAgreedNotes)
-                            </div>
-                            <div class="col-lg-12">
-                                @Html.DisplayFor(model => model.BaUChecklistContingencyAgreedNotes)
-                            </div>
-
-                        </div>
-                        <div class="panel-footer">
-
-                            <p>&nbsp;</p>
-
-                        </div>
-                    </div>
-
-                </div>
             </div>
+            <!-- AoC Details - tab / AoC BaU Checklist - start ///////////////////////////////////////////////////////////////////////////////-->
+            <div id="AoCBaUChecklist" class="tab-pane fade">
 
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC BaU Checklist</h5>
+                            </div>
+                            <div class="panel-body">
+
+                                @*--BaUChecklistSuccessfulGoLive----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistSuccessfulGoLive)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistSuccessfulGoLive)
+                                </div>
+                                @*--BaUChecklistSuccessfulGoliveNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistSuccessfulGoliveNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistSuccessfulGoliveNotes)
+                                </div>
+                                @*--BaUChecklistTrainingComplete----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistTrainingComplete)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistTrainingComplete)
+                                </div>
+                                @*--BaUChecklistTrainingComplete----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistTrainingCompleteNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistTrainingCompleteNotes)
+                                </div>
+                                @*--BaUChecklistUserSetup----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistUserSetup)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistUserSetup)
+                                </div>
+                                @*--BaUChecklisUserSetupNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklisUserSetupNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklisUserSetupNotes)
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="panel-footer">
+
+                                <p>&nbsp;</p>
+
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading bg-primary">
+                                <h5>AoC Go-live Checklist</h5>
+                            </div>
+                            <div class="panel-body">
+
+                                @*--BaUChecklistHardwareSetup----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistHardwareSetup)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistHardwareSetup)
+                                </div>
+                                @*--BaUChecklistHardwareSetupNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistHardwareSetupNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistHardwareSetupNotes)
+                                </div>
+                                @*--BaUChecklistHardwareUseAgreed----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistHardwareUseAgreed)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistHardwareUseAgreed)
+                                </div>
+                                @*--BaUChecklistHardwareUseAgreedNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistHardwareUseAgreedNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistHardwareUseAgreedNotes)
+                                </div>
+                                @*--BaUChecklistContingencyAgreed----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistContingencyAgreed)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistContingencyAgreed)
+                                </div>
+                                @*--BaUChecklistContingencyAgreedNotes----------------------------------------------------------------------------------*@
+                                <div class="col-lg-12">
+                                    @Html.DisplayNameFor(model => model.BaUChecklistContingencyAgreedNotes)
+                                </div>
+                                <div class="col-lg-12">
+                                    @Html.DisplayFor(model => model.BaUChecklistContingencyAgreedNotes)
+                                </div>
+
+                            </div>
+                            <div class="panel-footer">
+
+                                <p>&nbsp;</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>

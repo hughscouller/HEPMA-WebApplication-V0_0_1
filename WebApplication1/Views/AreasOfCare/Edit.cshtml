@@ -6,968 +6,979 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>AreaOfCare</h4>
+<div class="col-lg-8">
 
-    @*link back to list of AoCs for given site location*@
-    <div>
-        @*@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })*@
-        <div>@Html.ActionLink("Cancel (Back to AoC)", "Details", new { id = Model.AoCId })</div>
-    </div>
-    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-        <!-- tab menue - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#generalInformation">Project Information</a></li>
-            <li><a data-toggle="tab" href="#AoCAssessment">AoC Assessment</a></li>
-            <li><a data-toggle="tab" href="#AoCGoliveChecklist">AoC Go-live Checklist</a></li>
-            <li><a data-toggle="tab" href="#AoCBaUChecklist">AoC BaU Checklist</a></li>
-        </ul>
+        <div class="form-horizontal">
+            <h4>AreaOfCare</h4>
 
-        <div class="tab-content">
-            <!-- AoC Details - tab options - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
-            <div id="generalInformation" class="tab-pane fade in active">
-                <div class="row">
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        @*project information*@
-                        <div class="panel">
-                            <div class="panel-heading bg-primary">
-                                <h5>Project Information</h5>
-                            </div>
-                            <div class="panel-body">
+            @*link back to list of AoCs for given site location*@
+            <div>
+                @*@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })*@
+                <div>@Html.ActionLink("Cancel (Back to AoC)", "Details", new { id = Model.AoCId })</div>
+            </div>
+            <hr />
 
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                @Html.HiddenFor(model => model.AoCId)
+            <!-- tab menue - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#ProjectInformation">Project Info</a></li>
+                <li><a data-toggle="tab" href="#BusinessProcess">Business process</a></li>
+                <li><a data-toggle="tab" href="#AoCAssessment">AoC Assessment</a></li>
+                <li><a data-toggle="tab" href="#AoCGoliveChecklist">Go-live Checklist</a></li>
+                <li><a data-toggle="tab" href="#AoCBaUChecklist">BaU Checklist</a></li>
+            </ul>
 
+            <div class="tab-content">
+                <!-- AoC Details - tab options - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div id="ProjectInformation" class="tab-pane fade in active">
+                    <div class="row">
+                        @* start 12 col //////////////////////////////////////////////*@
+                        <div class="col-lg-12">
+                            @*project information*@
+                            <div class="panel">
+                                <div class="panel-heading bg-primary">
+                                    <h5>Project Information</h5>
+                                </div>
+                                <div class="panel-body">
 
-                                @*--InScope------------------------------------------------*@
-                                <div class="form-group bg-success">
-                                    @Html.LabelFor(model => model.InScope, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.InScope, new { htmlAttributes = new { @class = "form-control" } })
-
-                                        @Html.ValidationMessageFor(model => model.InScope, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    @*--SiteLocationId----------------------------------------------------------------------------------*@
-                                    @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCName----------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCName, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCName, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCName, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCType----------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCType, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCType, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCType, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCDescription---------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCDescription, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCDescription, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCDescription, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                &nbsp;
-                                @*--AoCPlannedGoLiveDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPlannedGoLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCPlannedGoLiveDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCPlannedGoLiveDateAgreedAoC--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPlannedGoLiveDateAgreedAoC, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCPlannedGoLiveDateAgreedAoC, new { htmlAttributes = new { @class = "form-control" } })
-
-                                        @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDateAgreedAoC, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCRecordOpened--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCRecordOpened, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCRecordOpened, new { htmlAttributes = new { @class = "form-control" } })
-
-                                        @Html.ValidationMessageFor(model => model.AoCRecordOpened, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCRecordClosed--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCFirstContact--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCFirstContact, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCFirstContact, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCFirstContact, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCFirstContactDate----------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCFirstContactDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCFirstContactDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCFirstContactDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCLive----------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCLive, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCLive, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCLive, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCLiveDate------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCLiveDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCLiveDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCBaU-----------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCBaU, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCBaU, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCBaU, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCBaUDate-------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCBaUDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCBaUDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCBaUDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCOnHold--------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCOnHold, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCOnHold, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCOnHold, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoConHoldReason--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoConHoldReason, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoConHoldReason, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoConHoldReason, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--NoLongerInScope--------------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NoLongerInScope, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.NoLongerInScope, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.NoLongerInScope, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--NoLongerInScopeReason--------------------------------------------------------------------------*@
-                                &nbsp;
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.NoLongerInScopeReason, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.NoLongerInScopeReason, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.NoLongerInScopeReason, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.AoCId)
 
 
+                                    @*--InScope------------------------------------------------*@
+                                    <div class="form-group bg-success">
+                                        @Html.LabelFor(model => model.InScope, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.InScope, new { htmlAttributes = new { @class = "form-control" } })
 
-
-
-                                @*-------------------------------------------------------------------------------------------*@
-
-                            </div>   @*end panel body*@
-                        </div>   @*end panel*@
-                    </div> @* end 6 col ////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        @*use of Trak*@
-                        <div class="panel">
-                            <div class="panel-heading bg-primary">
-                                <h5>Use of Trak</h5>
-                            </div>
-
-                            <div class="panel-body">
-
-                                <div class="row">
-
-                                    @*--AoCMedicinesReconciliation---------------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCMedicinesReconciliation, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-7">
-                                            @Html.CheckBoxFor(model => model.AoCMedicinesReconciliation, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliation, "", new { @class = "text-danger" })
+                                            @Html.ValidationMessageFor(model => model.InScope, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
 
-                                    @*--AoCMedicinesReconciliationRealTime-------------------------------------------------------*@
                                     <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCMedicinesReconciliationRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-7">
-                                            @Html.CheckBoxFor(model => model.AoCMedicinesReconciliationRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliationRealTime, "", new { @class = "text-danger" })
+                                        @*--SiteLocationId----------------------------------------------------------------------------------*@
+                                        @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
-
-
-                                    @*----AoCOutpatientClinicManagedOnTrak-------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrak, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                    @*--AoCOutpatientClinicManagedOnTrakInRealTime-----------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                    @*--AoCADTsManagedOnTrak---------------------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCADTsManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCADTsManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTrak, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-                                    @*--AoCADTsManagedOnTraIInRealTime-----------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCADTsManagedOnTraIInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCADTsManagedOnTraIInRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTraIInRealTime, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                    @*--AoCIDLsProducedInTrak--------------------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCIDLsProducedInTrak, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrak, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrak, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                    @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------*@
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.AoCIDLsProducedInTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
-                                        <div class="col-md-1">
-                                            @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrakInRealTime, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>   @*end panel body*@
-                        </div>   @*end panel*@
-                        @*prescribing information*@
-                        <div class="panel">
-
-                            <div class="panel-heading bg-primary">
-                                <h5>Prescribing</h5>
-                            </div>
-
-                            <div class="panel-body">
-
-                                @*--AoCWardRounds-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCWardRounds, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCWardRounds, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCWardRounds, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--AoCDoctorsRoom----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCDoctorsRoom, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCDoctorsRoom, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCDoctorsRoom, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--AoCNursesStation--------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCNursesStation, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCNursesStation, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCNursesStation, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-
-                                @*--AoCOffice-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCOffice, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCOffice, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCOffice, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--AoCOfficeText----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCOfficeText, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-5">
-                                        @Html.EditorFor(model => model.AoCOfficeText, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCOfficeText, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <p>&nbsp;</p>
-
-                                @*--AoCPOther----------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPOther, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCPOther, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPOther, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--AoCPOtherText----------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPOtherText, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-5">
-                                        @Html.EditorFor(model => model.AoCPOtherText, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPOtherText, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                            </div>   @*end panel body*@
-                        </div>   @*end panel*@
-                        @*medicines admin information*@
-                        <div class="panel">
-
-                            <div class="panel-heading bg-primary">
-                                <h5>Medicines Administration</h5>
-                            </div>
-
-                            <div class="panel-body">
-
-                                @*--AoCDrugRoundAtBedside-------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCDrugRoundAtBedside, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCDrugRoundAtBedside, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCDrugRoundAtBedside, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--AoCDrugRoundFromCentralPoint------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCDrugRoundFromCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCDrugRoundFromCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCDrugRoundFromCentralPoint, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <p>&nbsp;</p>
-                                @*--AoCPatientComesToCentralPoint-----------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPatientComesToCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCPatientComesToCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPatientComesToCentralPoint, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6">
+                                    @*--AoCName----------------------------------------------------------------------------------*@
                                     &nbsp;
-                                </div>
-                                <p>&nbsp;</p>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCName, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCType----------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCType, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCType, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCDescription---------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCDescription, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCDescription, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCDescription, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    &nbsp;
+                                    @*--AoCPlannedGoLiveDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPlannedGoLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCPlannedGoLiveDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCPlannedGoLiveDateAgreedAoC--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPlannedGoLiveDateAgreedAoC, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCPlannedGoLiveDateAgreedAoC, new { htmlAttributes = new { @class = "form-control" } })
 
-                                @*--AoCMAOther------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCMAOther, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-1">
-                                        @Html.CheckBoxFor(model => model.AoCMAOther, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCMAOther, "", new { @class = "text-danger" })
+                                            @Html.ValidationMessageFor(model => model.AoCPlannedGoLiveDateAgreedAoC, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
+                                    @*--AoCRecordOpened--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCRecordOpened, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCRecordOpened, new { htmlAttributes = new { @class = "form-control" } })
+
+                                            @Html.ValidationMessageFor(model => model.AoCRecordOpened, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCRecordClosed--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCRecordClosed, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCRecordClosed, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCRecordClosed, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCFirstContact--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCFirstContact, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCFirstContact, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCFirstContact, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCFirstContactDate----------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCFirstContactDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCFirstContactDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCFirstContactDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCLive----------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCLive, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCLive, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCLive, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCLiveDate------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCLiveDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCLiveDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCLiveDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCBaU-----------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCBaU, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCBaU, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCBaU, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCBaUDate-------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCBaUDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCBaUDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCBaUDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCOnHold--------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCOnHold, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCOnHold, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCOnHold, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoConHoldReason--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoConHoldReason, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoConHoldReason, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoConHoldReason, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--NoLongerInScope--------------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NoLongerInScope, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.NoLongerInScope, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.NoLongerInScope, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--NoLongerInScopeReason--------------------------------------------------------------------------*@
+                                    &nbsp;
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.NoLongerInScopeReason, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.NoLongerInScopeReason, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.NoLongerInScopeReason, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    @*-------------------------------------------------------------------------------------------*@
+
+                                </div>   @*end panel body*@
+                            </div>   @*end panel*@
+
+                        </div>
+                    </div>@*end div row*@
+                </div>
+
+
+                <!-- AoC Details - tab options - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div id="BusinessProcess" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @*use of Trak*@
+                            <div class="panel">
+                                <div class="panel-heading bg-primary">
+                                    <h5>Use of Trak</h5>
                                 </div>
 
-                                @*--AoCMAOtherText--------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCMAOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-7">
-                                        @Html.EditorFor(model => model.AoCMAOtherText, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
+                                <div class="panel-body">
+
+                                    <div class="row">
+
+                                        @*--AoCMedicinesReconciliation---------------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCMedicinesReconciliation, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-7">
+                                                @Html.CheckBoxFor(model => model.AoCMedicinesReconciliation, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliation, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @*--AoCMedicinesReconciliationRealTime-------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCMedicinesReconciliationRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-7">
+                                                @Html.CheckBoxFor(model => model.AoCMedicinesReconciliationRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliationRealTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        @*----AoCOutpatientClinicManagedOnTrak-------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrak, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @*--AoCOutpatientClinicManagedOnTrakInRealTime-----------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCOutpatientClinicManagedOnTrakInRealTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @*--AoCADTsManagedOnTrak---------------------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCADTsManagedOnTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCADTsManagedOnTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTrak, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        @*--AoCADTsManagedOnTraIInRealTime-----------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCADTsManagedOnTraIInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCADTsManagedOnTraIInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCADTsManagedOnTraIInRealTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @*--AoCIDLsProducedInTrak--------------------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCIDLsProducedInTrak, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrak, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------*@
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.AoCIDLsProducedInTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                                            <div class="col-md-1">
+                                                @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrakInRealTime, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
                                     </div>
+                                </div>   @*end panel body*@
+                            </div>   @*end panel*@
+                            @*prescribing information*@
+                            <div class="panel">
+
+                                <div class="panel-heading bg-primary">
+                                    <h5>Prescribing</h5>
                                 </div>
 
-                            </div>   @*end panel body*@
-                        </div>   @*end panel*@
-                        @*pharmacy check information*@
-                        <div class="panel">
-                            <div class="panel-heading bg-primary">
-                                <h5>Pharmacy check</h5>
-                            </div>
-                            <div class="panel-body">
-                                @*--AoCBedside------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCBedside, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-7">
-                                        @Html.CheckBoxFor(model => model.AoCBedside, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                &nbsp;
-                                @*--AoCCentralPointInWard-------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCCentralPointInWard, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-7">
-                                        @Html.CheckBoxFor(model => model.AoCCentralPointInWard, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCCentralPointInWard, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                &nbsp;
-                                @*--AoCPCOher-------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPCOher, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-7">
-                                        @Html.CheckBoxFor(model => model.AoCPCOher, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPCOher, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                &nbsp;
-                                @*--AoCPCOher-------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCPCOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
-                                    <div class="col-md-7">
-                                        @Html.EditorFor(model => model.AoCPCOtherText, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCPCOtherText, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                &nbsp;
+                                <div class="panel-body">
 
-                            </div>   @*end panel body*@
-                        </div>   @*end panel*@
-                    </div>@*end col-lg-6////////////////////////////////////////*@
-                </div>@*end div row - container for two column form sections*@
-            </div>
+                                    @*--AoCWardRounds-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCWardRounds, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCWardRounds, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCWardRounds, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-            <!-- AoC Assessment - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
-            <div id="AoCAssessment" class="tab-pane fade">
-                <div class="row">
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>AoC Assessment</p>
-                            </div>
-                            <div class="panel-body">
+                                    @*--AoCDoctorsRoom----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCDoctorsRoom, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCDoctorsRoom, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCDoctorsRoom, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                                @*--AoCAssessmentGoodToGo-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentGoodToGo, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.AoCAssessmentGoodToGo, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentGoodToGo, "", new { @class = "text-danger" })
+                                    @*--AoCNursesStation--------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCNursesStation, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCNursesStation, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCNursesStation, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                @*--AoCAssessmentGoodToGoDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentGoodToGoDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentGoodToGoDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentGoodToGoDate, "", new { @class = "text-danger" })
+
+
+
+                                    @*--AoCOffice-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCOffice, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCOffice, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCOffice, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                @*--AoCAssessmentITLiteracy-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentITLiteracy, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentITLiteracy, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentITLiteracy, "", new { @class = "text-danger" })
+
+                                    @*--AoCOfficeText----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCOfficeText, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-5">
+                                            @Html.EditorFor(model => model.AoCOfficeText, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCOfficeText, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                @*--AoCAssessmentUseOfTrak-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentUseOfTrak, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentUseOfTrak, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentUseOfTrak, "", new { @class = "text-danger" })
+
+                                    <p>&nbsp;</p>
+
+                                    @*--AoCPOther----------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPOther, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCPOther, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPOther, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                @*--AoCAssessmentHardwareQuality-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentHardwareQuality, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentHardwareQuality, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentHardwareQuality, "", new { @class = "text-danger" })
+
+                                    @*--AoCPOtherText----------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPOtherText, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-5">
+                                            @Html.EditorFor(model => model.AoCPOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPOtherText, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                @*--AoCAssessmentHardwareLocation-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentHardwareLocation, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentHardwareLocation, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentHardwareLocation, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--AoCAssessmentBusinessProcessDifference-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentBusinessProcessDifference, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentBusinessProcessDifference, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentBusinessProcessDifference, "", new { @class = "text-danger" })
-                                    </div>
+
+                                </div>   @*end panel body*@
+                            </div>   @*end panel*@
+                            @*medicines admin information*@
+                            <div class="panel">
+
+                                <div class="panel-heading bg-primary">
+                                    <h5>Medicines Administration</h5>
                                 </div>
 
-                            </div>
-                            <div class="panel-footer">
+                                <div class="panel-body">
 
-                            </div>
+                                    @*--AoCDrugRoundAtBedside-------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCDrugRoundAtBedside, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCDrugRoundAtBedside, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCDrugRoundAtBedside, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    @*--AoCDrugRoundFromCentralPoint------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCDrugRoundFromCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCDrugRoundFromCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCDrugRoundFromCentralPoint, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <p>&nbsp;</p>
+                                    @*--AoCPatientComesToCentralPoint-----------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPatientComesToCentralPoint, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCPatientComesToCentralPoint, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPatientComesToCentralPoint, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        &nbsp;
+                                    </div>
+                                    <p>&nbsp;</p>
+
+                                    @*--AoCMAOther------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCMAOther, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-1">
+                                            @Html.CheckBoxFor(model => model.AoCMAOther, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCMAOther, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    @*--AoCMAOtherText--------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCMAOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-7">
+                                            @Html.EditorFor(model => model.AoCMAOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>   @*end panel body*@
+                            </div>   @*end panel*@
+                            @*pharmacy check information*@
+                            <div class="panel">
+                                <div class="panel-heading bg-primary">
+                                    <h5>Pharmacy check</h5>
+                                </div>
+                                <div class="panel-body">
+                                    @*--AoCBedside------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCBedside, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-7">
+                                            @Html.CheckBoxFor(model => model.AoCBedside, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCMAOtherText, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    &nbsp;
+                                    @*--AoCCentralPointInWard-------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCCentralPointInWard, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-7">
+                                            @Html.CheckBoxFor(model => model.AoCCentralPointInWard, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCCentralPointInWard, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    &nbsp;
+                                    @*--AoCPCOher-------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPCOher, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-7">
+                                            @Html.CheckBoxFor(model => model.AoCPCOher, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPCOher, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    &nbsp;
+                                    @*--AoCPCOher-------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCPCOtherText, htmlAttributes: new { @class = "control-label col-md-5" })
+                                        <div class="col-md-7">
+                                            @Html.EditorFor(model => model.AoCPCOtherText, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCPCOtherText, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    &nbsp;
+
+                                </div>   @*end panel body*@
+                            </div>   @*end panel*@
                         </div>
                     </div>
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>AoC Assessment Outcome</p>
-                            </div>
-                            <div class="panel-body">
-                                @*--AoCAssessmentGeneralNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.AoCAssessmentGeneralNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.AoCAssessmentGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.AoCAssessmentGeneralNotes, "", new { @class = "text-danger" })
+                </div>
+
+                <!-- AoC Assessment - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div id="AoCAssessment" class="tab-pane fade">
+                    <div class="row">
+                        @* start 12 col //////////////////////////////////////////////*@
+                        <div class="col-lg-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>AoC Assessment</p>
+                                </div>
+                                <div class="panel-body">
+
+                                    @*--AoCAssessmentGoodToGo-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentGoodToGo, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.AoCAssessmentGoodToGo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentGoodToGo, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
+                                    @*--AoCAssessmentGoodToGoDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentGoodToGoDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentGoodToGoDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentGoodToGoDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCAssessmentITLiteracy-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentITLiteracy, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentITLiteracy, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentITLiteracy, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCAssessmentUseOfTrak-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentUseOfTrak, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentUseOfTrak, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentUseOfTrak, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCAssessmentHardwareQuality-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentHardwareQuality, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentHardwareQuality, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentHardwareQuality, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCAssessmentHardwareLocation-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentHardwareLocation, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentHardwareLocation, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentHardwareLocation, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--AoCAssessmentBusinessProcessDifference-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentBusinessProcessDifference, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentBusinessProcessDifference, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentBusinessProcessDifference, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+
                                 </div>
                             </div>
-                            <div class="panel-footer">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>AoC Assessment Outcome</p>
+                                </div>
+                                <div class="panel-body">
+                                    @*--AoCAssessmentGeneralNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.AoCAssessmentGeneralNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.AoCAssessmentGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AoCAssessmentGeneralNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
 
+                                </div>
                             </div>
+
                         </div>
+                       @* end 12 col ////////////////////////////////////////*@
                     </div>
-                    @* end 6 col ////////////////////////////////////////*@
+                </div>
+
+                <!-- AoC Go-live Checklist - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div id="AoCGoliveChecklist" class="tab-pane fade">
+                    <div class="row">
+                        @* start 12 col //////////////////////////////////////////////*@
+                        <div class="col-lg-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>AoC Go-live Checklist 1</p>
+                                </div>
+                                <div class="panel-body">
+                                    @*--GoliveChecklistUsersIdentified-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersIdentified, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistUsersIdentified, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersIdentified, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistUsersIdentifiedDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersIdentifiedDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistUsersIdentifiedDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersIdentifiedDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;</p>
+                                    @*--GoliveChecklistUsersTrained-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersTrained, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistUsersTrained, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersTrained, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistUsersTrainedDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersTrainedDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistUsersTrainedDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersTrainedDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistUsersSetup-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersSetup, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistUsersSetup, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersSetup, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistUsersSetupDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistUsersSetupDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistUsersSetupDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistUsersSetupDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistAgreedUse-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistAgreedUse, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistAgreedUse, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistAgreedUse, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistAgreedUseDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistAgreedUseDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistAgreedUseDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistAgreedUseDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistSetupCurrent-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistSetupCurrent, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistSetupCurrent, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistSetupCurrent, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistSetupCurrentDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistSetupCurrentDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistSetupCurrentDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistSetupCurrentDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistSetupNew-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistSetupNew, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistSetupNew, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistSetupNew, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistSetupNewDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistSetupNewDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistSetupNewDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistSetupNewDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="panel-footer">
+
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>AoC Go-live Checklist 2</p>
+                                </div>
+                                <div class="panel-body">
+                                    @*--GoliveChecklistPrescribing-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistPrescribing, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistPrescribing, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistPrescribing, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistPrescribingDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistPrescribingDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistPrescribingDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistPrescribingDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistMedAdmin-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistMedAdmin, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistMedAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistMedAdmin, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistMedAdminDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistMedAdminDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistMedAdminDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistMedAdminDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistPharmCheck-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistPharmCheck, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistPharmCheck, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistPharmCheck, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistPharmCheckDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistPharmCheckDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistPharmCheckDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistPharmCheckDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistContingencyAgreed-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistContingencyAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistContingencyAgreed, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistContingencyAgreed, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistContingencyAgreedDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistContingencyAgreedDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistContingencyAgreedDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistContingencyAgreedDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistGo_Nogo-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistGo_Nogo, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.GoliveChecklistGo_Nogo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistGo_Nogo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--GoliveChecklistGo_NogoDate-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistGo_NogoDate, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistGo_NogoDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistGo_NogoDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    @*--GoliveChecklistGeneralNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.GoliveChecklistGeneralNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.GoliveChecklistGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GoliveChecklistGeneralNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="panel-footer">
+
+                                </div>
+                            </div>
+
+                        </div> @* end 12 col ////////////////////////////////////////*@
+                    </div>
+                </div>
+
+                <!-- AoC BaU checklist - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div id="AoCBaUChecklist" class="tab-pane fade">
+                    <div class="row">
+                        @* start 12 col //////////////////////////////////////////////*@
+                        <div class="col-lg-12">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>Panel heading</p>
+                                </div>
+                                <div class="panel-body">
+                                    @*--BaUChecklistSuccessfulGoLive-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistSuccessfulGoLive, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistSuccessfulGoLive, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistSuccessfulGoLive, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistSuccessfulGoliveNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistSuccessfulGoliveNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklistSuccessfulGoliveNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistSuccessfulGoliveNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistTrainingComplete-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistTrainingComplete, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistTrainingComplete, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistTrainingComplete, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistTrainingCompleteNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistTrainingCompleteNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklistTrainingCompleteNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistTrainingCompleteNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistUserSetup-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistUserSetup, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistUserSetup, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistUserSetup, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklisUserSetupNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklisUserSetupNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklisUserSetupNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklisUserSetupNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="panel-footer">
+
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <p>Panel heading</p>
+                                </div>
+                                <div class="panel-body">
+                                    @*--BaUChecklistHardwareSetup-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistHardwareSetup, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistHardwareSetup, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistHardwareSetup, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistHardwareSetupNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistHardwareSetupNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklistHardwareSetupNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistHardwareSetupNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistHardwareUseAgreed-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistHardwareUseAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistHardwareUseAgreed, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistHardwareUseAgreed, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistHardwareUseAgreedNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistHardwareUseAgreedNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklistHardwareUseAgreedNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistHardwareUseAgreedNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistContingencyAgreed-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistContingencyAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.CheckBoxFor(model => model.BaUChecklistContingencyAgreed, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistContingencyAgreed, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @*--BaUChecklistContingencyAgreedNotes-----------------------------------------------------------------------------------------*@
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.BaUChecklistContingencyAgreedNotes, htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-8">
+                                            @Html.EditorFor(model => model.BaUChecklistContingencyAgreedNotes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.BaUChecklistContingencyAgreedNotes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-footer">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        @* end 12 col ////////////////////////////////////////*@
+                    </div>
                 </div>
             </div>
+        </div>@*end form-horizontal*@
 
-            <!-- AoC Go-live Checklist - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
-            <div id="AoCGoliveChecklist" class="tab-pane fade">
-                <div class="row">
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>AoC Go-live Checklist 1</p>
-                            </div>
-                            <div class="panel-body">
-                                @*--GoliveChecklistUsersIdentified-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersIdentified, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistUsersIdentified, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersIdentified, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistUsersIdentifiedDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersIdentifiedDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistUsersIdentifiedDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersIdentifiedDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <p>&nbsp;</p>
-                                @*--GoliveChecklistUsersTrained-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersTrained, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistUsersTrained, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersTrained, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistUsersTrainedDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersTrainedDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistUsersTrainedDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersTrainedDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistUsersSetup-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersSetup, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistUsersSetup, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersSetup, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistUsersSetupDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistUsersSetupDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistUsersSetupDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistUsersSetupDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistAgreedUse-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistAgreedUse, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistAgreedUse, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistAgreedUse, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistAgreedUseDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistAgreedUseDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistAgreedUseDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistAgreedUseDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistSetupCurrent-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistSetupCurrent, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistSetupCurrent, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistSetupCurrent, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistSetupCurrentDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistSetupCurrentDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistSetupCurrentDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistSetupCurrentDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistSetupNew-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistSetupNew, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistSetupNew, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistSetupNew, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistSetupNewDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistSetupNewDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistSetupNewDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistSetupNewDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="panel-footer">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>AoC Go-live Checklist 2</p>
-                            </div>
-                            <div class="panel-body">
-                                @*--GoliveChecklistPrescribing-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistPrescribing, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistPrescribing, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistPrescribing, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistPrescribingDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistPrescribingDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistPrescribingDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistPrescribingDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistMedAdmin-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistMedAdmin, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistMedAdmin, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistMedAdmin, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistMedAdminDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistMedAdminDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistMedAdminDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistMedAdminDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistPharmCheck-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistPharmCheck, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistPharmCheck, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistPharmCheck, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistPharmCheckDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistPharmCheckDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistPharmCheckDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistPharmCheckDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistContingencyAgreed-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistContingencyAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistContingencyAgreed, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistContingencyAgreed, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistContingencyAgreedDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistContingencyAgreedDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistContingencyAgreedDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistContingencyAgreedDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistGo_Nogo-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistGo_Nogo, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.GoliveChecklistGo_Nogo, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistGo_Nogo, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--GoliveChecklistGo_NogoDate-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistGo_NogoDate, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistGo_NogoDate, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistGo_NogoDate, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                                @*--GoliveChecklistGeneralNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.GoliveChecklistGeneralNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.GoliveChecklistGeneralNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.GoliveChecklistGeneralNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="panel-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                    @* end 6 col ////////////////////////////////////////*@
-                </div>
-            </div>
-
-            <!-- AoC BaU checklist - tab options - start ///////////////////////////////////////////////////////////////////////////////////////////////////-->
-            <div id="AoCBaUChecklist" class="tab-pane fade">
-                <div class="row">
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>Panel heading</p>
-                            </div>
-                            <div class="panel-body">
-                                @*--BaUChecklistSuccessfulGoLive-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistSuccessfulGoLive, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistSuccessfulGoLive, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistSuccessfulGoLive, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistSuccessfulGoliveNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistSuccessfulGoliveNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklistSuccessfulGoliveNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistSuccessfulGoliveNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistTrainingComplete-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistTrainingComplete, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistTrainingComplete, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistTrainingComplete, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistTrainingCompleteNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistTrainingCompleteNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklistTrainingCompleteNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistTrainingCompleteNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistUserSetup-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistUserSetup, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistUserSetup, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistUserSetup, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklisUserSetupNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklisUserSetupNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklisUserSetupNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklisUserSetupNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="panel-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                    @* start 6 col //////////////////////////////////////////////*@
-                    <div class="col-lg-6">
-                        <div class="panel">
-                            <div class="panel-heading">
-                                <p>Panel heading</p>
-                            </div>
-                            <div class="panel-body">
-                                @*--BaUChecklistHardwareSetup-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistHardwareSetup, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistHardwareSetup, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistHardwareSetup, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistHardwareSetupNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistHardwareSetupNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklistHardwareSetupNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistHardwareSetupNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistHardwareUseAgreed-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistHardwareUseAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistHardwareUseAgreed, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistHardwareUseAgreed, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistHardwareUseAgreedNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistHardwareUseAgreedNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklistHardwareUseAgreedNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistHardwareUseAgreedNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistContingencyAgreed-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistContingencyAgreed, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.CheckBoxFor(model => model.BaUChecklistContingencyAgreed, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistContingencyAgreed, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                @*--BaUChecklistContingencyAgreedNotes-----------------------------------------------------------------------------------------*@
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.BaUChecklistContingencyAgreedNotes, htmlAttributes: new { @class = "control-label col-md-4" })
-                                    <div class="col-md-8">
-                                        @Html.EditorFor(model => model.BaUChecklistContingencyAgreedNotes, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.BaUChecklistContingencyAgreedNotes, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="panel-footer">
-
-                            </div>
-                        </div>
-                    </div>
-                    @* end 6 col ////////////////////////////////////////*@
+        <div class="text-center">
+            @*submit btn*@
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success" />
                 </div>
             </div>
         </div>
-    </div>@*end form-horizontal*@
-    <div class="text-center">
-        @*submit btn*@
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success" />
-            </div>
-        </div>
-    </div>
+
+
     }
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+</div>
+<div class="col-lg-4"></div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
