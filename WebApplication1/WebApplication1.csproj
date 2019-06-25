@@ -186,8 +186,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AreasOfCareController.cs" />
+    <Compile Include="Controllers\HardwareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalSitesController.cs" />
+    <Compile Include="Controllers\LocationsOfInterestController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotesFieldsHospitalSiteController.cs" />
     <Compile Include="Controllers\NotesFieldsSiteLocationController.cs" />
@@ -196,15 +198,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906061940332_Initial.cs" />
-    <Compile Include="Migrations\201906061940332_Initial.Designer.cs">
-      <DependentUpon>201906061940332_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201906250858164_Initial.cs" />
+    <Compile Include="Migrations\201906250858164_Initial.Designer.cs">
+      <DependentUpon>201906250858164_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906250948415_update.cs" />
+    <Compile Include="Migrations\201906250948415_update.Designer.cs">
+      <DependentUpon>201906250948415_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
+    <Compile Include="Models\HEPMA\Hardware.cs" />
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
+    <Compile Include="Models\HEPMA\LocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
     <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
@@ -501,6 +509,16 @@
     <Content Include="Views\NotesFieldsSiteLocation\Details.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Edit.cshtml" />
     <Content Include="Views\NotesFieldsSiteLocation\Index.cshtml" />
+    <Content Include="Views\LocationsOfInterest\Create.cshtml" />
+    <Content Include="Views\LocationsOfInterest\Delete.cshtml" />
+    <Content Include="Views\LocationsOfInterest\Details.cshtml" />
+    <Content Include="Views\LocationsOfInterest\Edit.cshtml" />
+    <Content Include="Views\LocationsOfInterest\Index.cshtml" />
+    <Content Include="Views\Hardware\Create.cshtml" />
+    <Content Include="Views\Hardware\Delete.cshtml" />
+    <Content Include="Views\Hardware\Details.cshtml" />
+    <Content Include="Views\Hardware\Edit.cshtml" />
+    <Content Include="Views\Hardware\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -519,8 +537,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906061940332_Initial.resx">
-      <DependentUpon>201906061940332_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906250858164_Initial.resx">
+      <DependentUpon>201906250858164_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906250948415_update.resx">
+      <DependentUpon>201906250948415_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
