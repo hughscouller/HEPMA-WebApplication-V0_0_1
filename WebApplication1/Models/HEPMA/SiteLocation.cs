@@ -16,7 +16,7 @@ namespace WebApplication1.Models.HEPMA
         public int? HospitalSiteId { get; set; }
         public virtual HospitalSite HospitalSite { get; set; }
 
-        public virtual ICollection<AreaOfCare> AreasOfCare { get; set; }
+        public virtual ICollection<AreaOfCare> AreaOfCare { get; set; }
 
     }
 }

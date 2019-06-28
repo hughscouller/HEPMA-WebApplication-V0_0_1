@@ -34,10 +34,30 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+            
 
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
             HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
-            ViewBag.SiteLocation = siteLocation.Name;
+            //ViewBag.SiteLocation = siteLocation.Name;
+            ViewBag.HospitalSiteName = hospitalSite.Name;
+            ViewBag.HospitalSiteId = hospitalSite.Id;
+
+
+            //List<LocationOfInterest> locationsOfInterest = new List<LocationOfInterest>;
+            
+            // find all SiteLocations where HospitalSiteId = id ////
+            var locationsOfInterest = db.LocationOfInterests
+                    .Where(loi => loi.LoIAoCId == id);
+
+            ViewBag.locationsOfInterest = locationsOfInterest;
+
+            int count = 0;
+            foreach(var loi in locationsOfInterest )
+            {
+                count++;
+            }
+            ViewBag.locationsOfInterestCount = count;
+            ////////////////////////////////////////////////////////
 
             return View(areaOfCare);
         }

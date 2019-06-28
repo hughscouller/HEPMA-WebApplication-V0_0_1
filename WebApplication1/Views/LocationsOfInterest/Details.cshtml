@@ -6,23 +6,32 @@
 
 <h2>Location of Interest Details </h2>
 
-<!-- LoI Details - page - start /////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- LoI Page Header - start ////////////////////////////////////////////////////////////////////////////////-->
 <div>
-    <h4><strong>@Model.LoIName - </strong></h4>
+
+    <h4><strong>@*@Model.AreaOfCare.AoCName*@ - @Model.LoIName </strong></h4>
 
     <div class="row">
-        <div>@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })</div>
-
-
+        @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
+        <p>Hospital Site - Site Location - Area of Care - Location of Interest</p>
     </div>
 
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LoIId })
+        |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
     <hr />
+
 </div>
 
 
 <div class="row">
-    <div class="col-lg-4">
-        <div class="panel">
+
+    <div class="col-lg-4"><!-- LoI Left column ////////////////////////////////////////////////////////////////////////////////////// -->
+        
+    <div class="panel">
             <div class="panel-heading bg-primary">
                 <h3>@*@Html.DisplayFor(model => model.AoCName)*@Object</h3>
                 <p class="bg-info text-center">
@@ -61,117 +70,78 @@
 
             </div>
             <div class="panel-footer">
-                <!-- Trigger the modal notes area -->
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
-
-                <!--Link to hospital notes create page -->
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@*@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.AoCId })*@
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-8">
-        
-        <div class="row col-lg-12">
-            <div class="table-responsive table-bordered">
-                <table style="padding:5px; border-style: solid; border-color: white">
-
-                    <tr>
-                        <td style="width:200px">table</td>
-                        <td style="width:200px">table</td>
-                        <td style="width:200px">table</td>
-                        <td style="width:200px">table</td>
-                    </tr>
-                    <tr>
-                        <td>table</td>
-                        <td>table</td>
-                        <td>table</td>
-                        <td>table</td>
-                    </tr>
-                </table>
+                
+                <div class="row">
+                    <div class="col-lg-6 text-center">
+                        <!-- Trigger the modal notes area -->
+                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <!--Link to hospital notes create page -->
+                        <href>Add Note</href>@*@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.AoCId })*@
+                    </div>
+                </div>
+            
+            
             </div>
         </div>
 
     </div>
+
+    <div class="col-lg-8"><!-- LoI Right column ////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <table class="table">
+
+            <tr class="bg-primary">
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>InScope</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Areas of Care</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Planned go-live</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>Agreed</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white"><strong>No longer in scope</strong></td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp</td>
+            </tr>
+            <tr>
+                <td>table</td>
+                <td>table</td>
+                <td>table</td>
+                <td>table</td>
+                <td>table</td>
+                <td>table</td>
+            </tr>
+
+            @*@foreach (var ListOfAoC in ViewBag.AreasOfCare)
+            {
+                <tr>
+                    @if (ListOfAoC.InScope == true)
+                    {
+                        <td class="bg-success" style="border-style: solid; border-color: white">
+                            <p>@ListOfAoC.InScope</p>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>&nbsp;</td>
+                    }
+                    
+                </tr>
+
+            }*@
+
+
+            <tr class="alert-info">
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                @*<td>&nbsp;</td>*@
+                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> x</strong></td>
+            </tr>
+
+
+
+
+        </table>
+    </div>
 </div>
 
-
-
-
-
-
-
-
-<div>
-    <h4>LocationOfInterest</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIRoomReference)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIRoomReference)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIDescription)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIPrescribing)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIPrescribing)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIMedicinesAdministration)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIMedicinesAdministration)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIPharmacyCheck)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIPharmacyCheck)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoINotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoINotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoIAoCId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoIAoCId)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LoIId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
