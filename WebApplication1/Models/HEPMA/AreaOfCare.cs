@@ -57,10 +57,10 @@ namespace WebApplication1.Models.HEPMA
         [DataType(DataType.Date)]
         public DateTime? AoCRecordClosed { get; set; }
 
-        [Display(Name = "First contact")]
-        public bool AoCFirstContact { get; set; }
+        //[Display(Name = "First contact")]
+        //public bool AoCFirstContact { get; set; }
 
-        [Display(Name = "Date")]
+        [Display(Name = "First contact date")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [DataType(DataType.Date)]
         public DateTime? AoCFirstContactDate { get; set; }

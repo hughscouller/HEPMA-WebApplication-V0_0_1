@@ -29,70 +29,100 @@
                 <div class="panel-heading bg-primary">
                     <h3>@Html.DisplayFor(model => model.AoCName)</h3>
                     <p class="bg-info text-center">
-                        <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.AoCId })</strong>
+                        <strong>@Html.ActionLink("Edit Area of Care", "Edit", new { id = Model.AoCId })</strong>
                     </p>
                 </div>
 
                 <div class="panel-body">
-                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                    <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
                         @Html.DisplayNameFor(model => model.AoCDescription) :
                     </div>
-                    <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
                         @Html.DisplayFor(model => model.AoCDescription) :
                     </div>
-                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.AoCNotes)*@ :
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.InScope)
                     </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.InScope)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCType)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCType)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDateAgreedAoC)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCFirstContactDate)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCFirstContactDate)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCLiveDate)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCLiveDate)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCBaUDate)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCBaUDate)&nbsp;
+                    </div>
+
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.AoCOnHold)
+                    </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.AoCOnHold)&nbsp;
+                    </div>
+
                     <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.AoCNotes)*@ :
+                        @Html.DisplayNameFor(model => model.AoConHoldReason)
                     </div>
-
                     <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.note)*@ :
-                    </div>
-                    <div class="col-lg-12" style="background :#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.Notes)*@
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.PlannedStart)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.PlannedStart)*@ &nbsp;
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.PlannedComplete)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.PlannedComplete)*@ &nbsp;
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.AccommodationComplimentStandardBed)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.AccommodationComplimentStandardBed)*@ &nbsp;
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.AccommodationComplimentDaySurgeryBed)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.AccommodationComplimentDaySurgeryBed)*@ &nbsp;
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.AccommodationComplimentTrolly)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.AccommodationComplimentTrolly)*@ &nbsp;
-                    </div>
-                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                        @*@Html.DisplayNameFor(model => model.AccommodationComplimentChair)*@ :
-                    </div>
-                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        @*@Html.DisplayFor(model => model.AccommodationComplimentChair)*@ &nbsp;
+                        @Html.DisplayFor(model => model.AoConHoldReason)&nbsp;
                     </div>
 
-                    <div class="col-lg-12 text-center" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        Area of Care Paperwork
+                    <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.NoLongerInScope)
                     </div>
+                    <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.NoLongerInScope)&nbsp;
+                    </div>
+
+                    <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        @Html.DisplayNameFor(model => model.NoLongerInScopeReason)
+                    </div>
+                    <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                        @Html.DisplayFor(model => model.NoLongerInScopeReason)&nbsp;
+                    </div>
+
+
+                    @*<div class="col-lg-12 text-center" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                        Area of Care Paperwork
+                    </div>*@
 
 
 
@@ -125,97 +155,15 @@
     </div>
 
 
-
-
-
-
-
     <div class="col-lg-8">
 
 
-        <table class="table">
 
-            <tr class="bg-primary">
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Name</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Ref No</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Prescribing</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Med Admin</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Pharm Check</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp</td>
-            </tr>
-
-
-            @foreach (var loi in ViewBag.locationsOfInterest)
-            {
-            <tr>
-
-                <td>
-                    @loi.LoIName
-                </td>
-                <td>
-                    @loi.LoIRoomReference
-                </td>
-                <td>
-                    @loi.LoIPrescribing
-                </td>
-                <td>
-                    @loi.LoIMedicinesAdministration
-                </td>
-                <td>
-                    @loi.LoIPharmacyCheck
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "../LocationsOfInterest/Details", new { id = loi.LoIId })
-                </td>
-            </tr>
-
-            }
-
-
-            <tr class="alert-info">
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
-                @*<td>&nbsp;</td>*@
-                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Create New", "../LocationsOfInterest/Create", new { id = Model.AoCId })</strong></td>
-            </tr>
-
-
-
-
-        </table>
-
-        <hr />
-        <p>&nbsp;</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>
+        @*<p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>*@
         <!-- AoC Details - tab options - start //////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#ProjectInformation">Project Info</a></li>
+            <li class="active"><a data-toggle="tab" href="#ProjectInformation">Locations of Interest</a></li>
             <li><a data-toggle="tab" href="#BusinessProcess">Business process</a></li>
             <li><a data-toggle="tab" href="#AoCAssessment">AoC Assessment</a></li>
             <li><a data-toggle="tab" href="#AoCGoliveChecklist">Go-live Checklist</a></li>
@@ -231,165 +179,64 @@
                     <div class="col-lg-12">
                         <div class="panel">
                             <div class="panel-heading bg-primary">
-                                <h5>Project Information</h5>
+                                <h5>Locations of Interest</h5>
                             </div>
                             <div class="panel-body">
-                                <div class="table">
 
-                                    @*--InScope---------------------------------------------------------------------------------------------*@
-                                    <div class="col-lg-12 bg-success">
-                                        <div class="col-lg-4">
-                                            @Html.DisplayNameFor(model => model.InScope)
-                                        </div>
-                                        <div class="col-lg-8">
-                                            @Html.DisplayFor(model => model.InScope)
-                                        </div>
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--SiteLocation.Name----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @*@Html.DisplayNameFor(model => model.SiteLocation.Name)*@
-                                        Site location name
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.SiteLocation.Name)
-                                    </div>
-                                    @*--AoCName----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCName)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCName)
-                                    </div>
-                                    @*--AoCType----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCType)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCType)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCDescription----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCDescription)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCDescription)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCPlannedGoLiveDate----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDate)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCPlannedGoLiveDateAgreedAoC----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCPlannedGoLiveDateAgreedAoC)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCRecordOpened----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCRecordOpened)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCRecordOpened)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCRecordClosed----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCRecordClosed)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCRecordClosed)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCFirstContact----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCFirstContact)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCFirstContact)
-                                    </div>
-                                    @*<p>&nbsp;</p>*@
-                                    @*--AoCFirstContactDate----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCFirstContactDate)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCFirstContactDate)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCLive----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCLive)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCLive)
-                                    </div>
-                                    @*<p>&nbsp;</p>*@
-                                    @*--AoCLiveDate----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCLiveDate)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCLiveDate)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCBaU----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCBaU)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCBaU)
-                                    </div>
-                                    @*<p>&nbsp;</p>*@
-                                    @*--AoCBaUDate----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCBaUDate)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCBaUDate)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--AoCOnHold----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.AoCOnHold)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoCOnHold)
-                                    </div>
-                                    @*<p>&nbsp;</p>*@
-                                    @*--AoConHoldReason----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @*@Html.DisplayNameFor(model => model.AoConHoldReason)*@
-                                        Reason
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.AoConHoldReason)
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    @*--NoLongerInScope----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.NoLongerInScope)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.NoLongerInScope)
-                                    </div>
+                                <table class="table">
 
-                                    @*--NoLongerInScopeReason----------------------------------------------------------------------------------*@
-                                    <div class="col-lg-4">
-                                        @Html.DisplayNameFor(model => model.NoLongerInScopeReason)
-                                    </div>
-                                    <div class="col-lg-8">
-                                        @Html.DisplayFor(model => model.NoLongerInScopeReason)
-                                    </div>
-                                </div>
+                                    <tr class="bg-primary">
+                                        <td style="padding:5px; border-style: solid; border-color: white"><strong>Name</strong></td>
+                                        <td style="padding:5px; border-style: solid; border-color: white"><strong>Ref No</strong></td>
+                                        <td style="padding:5px; border-style: solid; border-color: white"><strong>Prescribing</strong></td>
+                                        <td style="padding:5px; border-style: solid; border-color: white"><strong>Med Admin</strong></td>
+                                        <td style="padding:5px; border-style: solid; border-color: white"><strong>Pharm Check</strong></td>
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp</td>
+                                    </tr>
+
+
+                                    @foreach (var loi in ViewBag.locationsOfInterest)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                @loi.LoIName
+                                            </td>
+                                            <td>
+                                                @loi.LoIRoomReference
+                                            </td>
+                                            <td>
+                                                @loi.LoIPrescribing
+                                            </td>
+                                            <td>
+                                                @loi.LoIMedicinesAdministration
+                                            </td>
+                                            <td>
+                                                @loi.LoIPharmacyCheck
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Details", "../LocationsOfInterest/Details", new { id = loi.LoIId })
+                                            </td>
+                                        </tr>
+
+                                    }
+
+
+                                    <tr class="alert-info">
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                                        <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                                        @*<td>&nbsp;</td>*@
+                                        <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Create New", "../LocationsOfInterest/Create", new { id = Model.AoCId })</strong></td>
+                                    </tr>
+
+
+
+
+                                </table>
+
                             </div>
                         </div>
 
@@ -401,6 +248,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel">
+
+                            <p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>
+
                             <div class="panel-heading bg-primary">
                                 <h5>Use of Trak</h5>
                             </div>
@@ -632,6 +482,9 @@
             <div id="AoCAssessment" class="tab-pane fade">
                 <div class="row">
                     <div class="col-lg-12">
+
+                        <p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>
+
                         <div class="panel">
                             <div class="panel-heading bg-primary">
                                 <h5>AoC Assessment</h5>
@@ -720,6 +573,9 @@
 
                 <div class="row">
                     <div class="col-lg-12">
+
+                        <p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>
+
                         <div class="panel">
                             <div class="panel-heading bg-primary">
                                 <h5>AoC Go-live Checklist</h5>
@@ -924,6 +780,9 @@
 
                 <div class="row">
                     <div class="col-lg-12">
+
+                        <p><div class="text-center">@Html.ActionLink("Edit", "Edit", new { id = Model.AoCId })</div></p>
+
                         <div class="panel">
                             <div class="panel-heading bg-primary">
                                 <h5>AoC BaU Checklist</h5>

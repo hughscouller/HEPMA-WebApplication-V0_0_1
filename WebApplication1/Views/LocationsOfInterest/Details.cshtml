@@ -93,12 +93,15 @@
         <table class="table">
 
             <tr class="bg-primary">
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>InScope</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Areas of Care</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Planned go-live</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>Agreed</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white"><strong>No longer in scope</strong></td>
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Type</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Asset NUmber</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Mac Address</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Network Port</td>
+                <td style="padding:5px; border-style: solid; border-color: white">NP In Use</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Electrical Socket</td>
+                <td style="padding:5px; border-style: solid; border-color: white">ES In Use</td>
+                <td style="padding:5px; border-style: solid; border-color: white">Trailing Socket</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
             </tr>
             <tr>
                 <td>table</td>
@@ -135,7 +138,7 @@
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 @*<td>&nbsp;</td>*@
-                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> x</strong></td>
+                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Add Hardware", "../SiteLocations/Hardware/", new { id = Model.LoIId })</strong></td>
             </tr>
 
 
