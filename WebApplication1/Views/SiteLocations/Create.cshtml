@@ -14,7 +14,7 @@
 <div class="form-horizontal">
     <h4>SiteLocation</h4>
     <div>
-        @Html.ActionLink("Back to List", "../HospitalSites/Details", new { @Id = Model.HospitalSiteId })
+        @Html.ActionLink("Back to Hospital Site", "../HospitalSites/Details", new { @Id = Model.HospitalSiteId })
     </div>
     <hr />
 
@@ -51,11 +51,6 @@
             @Html.HiddenFor(model => model.HospitalSiteId, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.HospitalSiteId, "", new { @class = "text-danger" })
         </div>
-        @*@Html.LabelFor(model => model.HospitalSiteId, "HospitalSiteId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("HospitalSiteId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.HospitalSiteId, "", new { @class = "text-danger" })
-            </div>*@
 
     </div>
 

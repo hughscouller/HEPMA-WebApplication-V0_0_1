@@ -33,13 +33,36 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
+
+            // ///////////////////////////////////////////////////////
+            AreaOfCare areaOfCare = db.AreasOfCare.Find(locationOfInterest.LoIAoCId);
+            SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
+            HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
+
+            ViewBag.HospitalSiteName = hospitalSite.Name;
+            ViewBag.HospitalSiteID = siteLocation.HospitalSiteId;
+            ViewBag.siteLocationName = siteLocation.Name;
+            ViewBag.siteLocationID = siteLocation.Id;
+            ViewBag.areaOfCareName = areaOfCare.AoCName;
+
+            var hardware = db.Hardwares
+                .Where(H => H.HLoIId == id);
+
+            ViewBag.Hardware = hardware;
+
+            ////////////////////////////////////////////////////////
+            // //////////////////////////////////////////////////////
+
             return View(locationOfInterest);
         }
 
         // GET: LocationsOfInterest/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            LocationOfInterest locationOfInterest = new LocationOfInterest();
+            locationOfInterest.LoIAoCId = id;
+
+            return View(locationOfInterest);
         }
 
         // POST: LocationsOfInterest/Create
@@ -53,7 +76,7 @@ namespace WebApplication1.Controllers
             {
                 db.LocationOfInterests.Add(locationOfInterest);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../AreasOfCare/Details/", new { id = locationOfInterest.LoIAoCId });
             }
 
             return View(locationOfInterest);
@@ -85,7 +108,7 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(locationOfInterest).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../AreasOfCare/Details/", new { id = locationOfInterest.LoIAoCId });
             }
             return View(locationOfInterest);
         }

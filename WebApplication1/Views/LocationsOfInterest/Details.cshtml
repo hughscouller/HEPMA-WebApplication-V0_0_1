@@ -9,68 +9,83 @@
 <!-- LoI Page Header - start ////////////////////////////////////////////////////////////////////////////////-->
 <div>
 
-    <h4><strong>@*@Model.AreaOfCare.AoCName*@ - @Model.LoIName </strong></h4>
-
     <div class="row">
         @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
-        <p>Hospital Site - Site Location - Area of Care - Location of Interest</p>
+        <p>@ViewBag.HospitalSiteName - @ViewBag.SiteLocationName - @ViewBag.AreaOfCareName - @Model.LoIName</p>
     </div>
 
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.LoIId })
+        @Html.ActionLink("Back to parent Hospital Site", "../HospitalSites/Details", new { id = ViewBag.hospitalSiteID })
         |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details", new { id = ViewBag.siteLocationID })
+        |
+        @Html.ActionLink("Back to parent Area of Care", "../AreasOfCare/Details", new { id = Model.LoIAoCId })
     </p>
 
     <hr />
 
 </div>
-
+<!-- LoI Page Header - end ////////////////////////////////////////////////////////////////////////////////-->
 
 <div class="row">
 
-    <div class="col-lg-4"><!-- LoI Left column ////////////////////////////////////////////////////////////////////////////////////// -->
-        
-    <div class="panel">
+    <div class="col-lg-4">
+        <!-- LoI Left column ////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <div class="panel">
             <div class="panel-heading bg-primary">
-                <h3>@*@Html.DisplayFor(model => model.AoCName)*@Object</h3>
+                <h3>@Html.DisplayFor(model => model.LoIName)</h3>
                 <p class="bg-info text-center">
-                    <strong>@*@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.AoCId })*@Edit Link</strong>
+                    <strong>@Html.ActionLink("Edit Location of Interest", "Edit", new { id = Model.LoIId })</strong>
                 </p>
             </div>
             <div class="panel-body">
 
-                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                    @*@Html.DisplayNameFor(model => model.AoCDescription)*@ x:
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                    @Html.DisplayNameFor(model => model.LoIRoomReference):
                 </div>
-                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                    @*@Html.DisplayFor(model => model.AoCDescription)*@ x
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                    @Html.DisplayFor(model => model.LoIRoomReference)
                 </div>
 
                 <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                    @*@Html.DisplayNameFor(model => model.AoCDescription)*@ x:
+                    @Html.DisplayNameFor(model => model.LoIDescription):
                 </div>
                 <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                    @*@Html.DisplayFor(model => model.AoCDescription)*@ x
+                    @Html.DisplayFor(model => model.LoIDescription) &nbsp;
                 </div>
 
                 <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                    @*@Html.DisplayNameFor(model => model.AoCDescription)*@ x:
+                    @Html.DisplayNameFor(model => model.LoIPrescribing):
                 </div>
                 <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                    @*@Html.DisplayFor(model => model.AoCDescription)*@ x
+                    @Html.DisplayFor(model => model.LoIPrescribing)
                 </div>
 
                 <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
-                    @*@Html.DisplayNameFor(model => model.AoCDescription)*@ x:
+                    @Html.DisplayNameFor(model => model.LoIMedicinesAdministration):
                 </div>
                 <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                    @*@Html.DisplayFor(model => model.AoCDescription)*@ x
+                    @Html.DisplayFor(model => model.LoIMedicinesAdministration)
+                </div>
+
+                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                    @Html.DisplayNameFor(model => model.LoIPharmacyCheck):
+                </div>
+                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                    @Html.DisplayFor(model => model.LoIPharmacyCheck)
+                </div>
+
+                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                    @Html.DisplayNameFor(model => model.LoINotes):
+                </div>
+                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                    @Html.DisplayFor(model => model.LoINotes)
                 </div>
 
             </div>
             <div class="panel-footer">
-                
+
                 <div class="row">
                     <div class="col-lg-6 text-center">
                         <!-- Trigger the modal notes area -->
@@ -81,14 +96,15 @@
                         <href>Add Note</href>@*@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.AoCId })*@
                     </div>
                 </div>
-            
-            
+
+
             </div>
         </div>
 
     </div>
 
-    <div class="col-lg-8"><!-- LoI Right column ////////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="col-lg-8">
+        <!-- LoI Right column ////////////////////////////////////////////////////////////////////////////////////// -->
 
         <table class="table">
 
@@ -103,32 +119,23 @@
                 <td style="padding:5px; border-style: solid; border-color: white">Trailing Socket</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
             </tr>
+
+
+            @foreach (var ListOfHardware in ViewBag.Hardware)
+        {
             <tr>
-                <td>table</td>
-                <td>table</td>
-                <td>table</td>
-                <td>table</td>
-                <td>table</td>
-                <td>table</td>
+
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HType</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HAssetNumber</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HMacAddress</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNetworkPort</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNPInUse</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HElectricalSocket  </td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HESInUse</td>
+                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HTrailingSocket</td>
             </tr>
 
-            @*@foreach (var ListOfAoC in ViewBag.AreasOfCare)
-            {
-                <tr>
-                    @if (ListOfAoC.InScope == true)
-                    {
-                        <td class="bg-success" style="border-style: solid; border-color: white">
-                            <p>@ListOfAoC.InScope</p>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>&nbsp;</td>
-                    }
-                    
-                </tr>
-
-            }*@
+        }
 
 
             <tr class="alert-info">
@@ -137,12 +144,12 @@
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 @*<td>&nbsp;</td>*@
-                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Add Hardware", "../SiteLocations/Hardware/", new { id = Model.LoIId })</strong></td>
+                <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Add Hardware", "../Hardware/create", new { id = Model.LoIId })</strong></td>
             </tr>
-
-
-
 
         </table>
     </div>

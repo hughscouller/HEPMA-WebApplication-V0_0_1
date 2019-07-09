@@ -37,9 +37,12 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Hardware/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            Hardware hardware = new Hardware();
+            hardware.HLoIId = id;
+
+            return View(hardware);
         }
 
         // POST: Hardware/Create
@@ -53,7 +56,7 @@ namespace WebApplication1.Controllers
             {
                 db.Hardwares.Add(hardware);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../LocationsOfInterest/Details/", new { id = hardware.HLoIId });
             }
 
             return View(hardware);
