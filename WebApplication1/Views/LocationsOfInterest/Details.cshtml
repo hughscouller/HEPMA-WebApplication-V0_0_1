@@ -9,18 +9,20 @@
 <!-- LoI Page Header - start ////////////////////////////////////////////////////////////////////////////////-->
 <div>
 
-    <div class="row">
+    
         @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
-        <p>@ViewBag.HospitalSiteName - @ViewBag.SiteLocationName - @ViewBag.AreaOfCareName - @Model.LoIName</p>
-    </div>
+        <p>@ViewBag.HospitalSite.Name >> @ViewBag.SiteLocationName >> @ViewBag.AreaOfCareName >> @Model.LoIName</p>
+    
 
-    <p>
+    
+        @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index")
+        ||
         @Html.ActionLink("Back to parent Hospital Site", "../HospitalSites/Details", new { id = ViewBag.hospitalSiteID })
-        |
+        ||
         @Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details", new { id = ViewBag.siteLocationID })
-        |
+        ||
         @Html.ActionLink("Back to parent Area of Care", "../AreasOfCare/Details", new { id = Model.LoIAoCId })
-    </p>
+    
 
     <hr />
 

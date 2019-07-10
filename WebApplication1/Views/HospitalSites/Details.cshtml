@@ -9,6 +9,7 @@
 <h4><strong>@Model.Name</strong></h4>
 
 @Html.ActionLink("Back to list of hospital sites", "../HospitalSites/Index")
+
 <hr />
 
 
@@ -121,12 +122,6 @@
                         <td>@siteLocation.Descrption</td>
                         <td>@ViewBag.AreaOfCareCount[i]</td>
                         <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
-
-                        @*<td>
-                            | @Html.ActionLink("Edit", "../SiteLocations/Edit", new { id = siteLocation.Id })
-        | @Html.ActionLink("Delete", "../SiteLocations/Delete", new { id = siteLocation.Id }) |
-                        </td>*@
-
                     </tr>
                         i++;
                     } @*---------------------close of for each loop ----------------------------*@
@@ -146,8 +141,6 @@
     </div>
 
 </div>@*end of class row*@
-
-
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- Notes - Modal code -->

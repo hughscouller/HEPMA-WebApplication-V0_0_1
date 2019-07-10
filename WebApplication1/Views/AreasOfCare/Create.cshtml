@@ -8,7 +8,7 @@
 
 <h4>AreaOfCare</h4>
 <div>
-    @Html.ActionLink("Back to Site Location", "../SiteLocations/Details/", new { id = Model.SiteLocationId })
+    @Html.ActionLink("Cancel", "../SiteLocations/Details/", new { id = Model.SiteLocationId })
 </div>
 
 <hr />
@@ -47,10 +47,11 @@
                         &nbsp;
                         <div class="form-group">
                             @*--SiteLocationId----------------------------------------------------------------------------------*@
-                            @Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-4" })
+                            @*@Html.LabelFor(model => model.SiteLocationId, "SiteLocationId", htmlAttributes: new { @class = "control-label col-md-4" })*@
                             <div class="col-md-8">
-                                @Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })
-                                @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.SiteLocationId, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @*@Html.DropDownList("SiteLocationId", null, htmlAttributes: new { @class = "form-control" })*@
+                                @*@Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })*@
                             </div>
                         </div>
                         @*--AoCName----------------------------------------------------------------------------------*@

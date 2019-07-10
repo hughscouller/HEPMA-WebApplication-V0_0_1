@@ -7,16 +7,16 @@
 <h2>Area Of Care Details</h2>
 
 <h4>
-    @ViewBag.HospitalSiteName >> @Model.SiteLocation.Name >> @Model.AoCName 
+    @ViewBag.HospitalSiteName >> @Model.SiteLocation.Name >> @Model.AoCName
 </h4>
 
-@Html.ActionLink("Back to list of hospital sites", "../HospitalSites/Index")
- | 
-@Html.ActionLink("Back to list of Site Locations", "../SiteLocations/Details/", new { id = Model.SiteLocation.Id })
+@Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index")
+ ||
+@Html.ActionLink("Back to parent hospital site", "../HospitalSites/Details/", new { id = Model.SiteLocation.HospitalSiteId })
+ ||
+@Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details/", new { id = Model.SiteLocation.Id })
 
 <hr />
-
-
 
 <div class="row">
     <div class="col-lg-4">
@@ -121,8 +121,8 @@
 
 
                     @*<div class="col-lg-12 text-center" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                        Area of Care Paperwork
-                    </div>*@
+                            Area of Care Paperwork
+                        </div>*@
 
 
 

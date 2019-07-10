@@ -12,10 +12,10 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>NotesFieldSiteLocation</h4>
+    <h4><strong>Notes for site location</strong></h4>
 
     <div>
-        @Html.ActionLink("Back to List", "../SiteLocations/Details", new { id = Model.SiteLocationId })
+        @Html.ActionLink("Cancel", "../SiteLocations/Details", new { id = Model.SiteLocationId })
     </div>
 
     <hr />
@@ -49,11 +49,11 @@
 
     <div class="form-group">
         @*@Html.LabelFor(model => model.SiteLocationId, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        <div class="col-lg-2">&nbsp;</div>
-        <div class="col-md-10">
+        @*<div class="col-lg-2">&nbsp;</div>*@
+        @*<div class="col-md-10">*@
             @Html.HiddenFor(model => model.SiteLocationId, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.SiteLocationId, "", new { @class = "text-danger" })
-        </div>
+        @*</div>*@
     </div>
 
     <div class="form-group">
@@ -66,7 +66,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Create" class="btn btn-success" />
         </div>
     </div>
 </div>

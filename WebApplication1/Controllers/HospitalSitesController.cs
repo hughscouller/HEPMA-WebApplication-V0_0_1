@@ -129,7 +129,7 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(hospitalSite).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = hospitalSite.Id });
             }
             return View(hospitalSite);
         }
