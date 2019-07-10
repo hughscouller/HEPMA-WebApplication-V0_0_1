@@ -38,13 +38,19 @@ namespace WebApplication1.Controllers
 
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
             HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
+
+            // ////////////////////////////////////////////////////
+
+            List<NotesFieldAreaOfCare> AoCNotes = new List<NotesFieldAreaOfCare>(db.NotesFieldAreaOfCares.Where(aocn => aocn.AoCId == areaOfCare.AoCId).ToList().OrderByDescending(aocn => aocn.CreatedOn));
+
+            ViewBag.HospitalNotes = AoCNotes;
             //ViewBag.SiteLocation = siteLocation.Name;
             //ViewBag.HospitalSiteName = hospitalSite.Name;
             //ViewBag.HospitalSiteId = hospitalSite.Id;
 
 
             //List<LocationOfInterest> locationsOfInterest = new List<LocationOfInterest>;
-            
+
             // find all SiteLocations where HospitalSiteId = id ////
             var locationsOfInterest = db.LocationOfInterests
                     .Where(loi => loi.LoIAoCId == id);

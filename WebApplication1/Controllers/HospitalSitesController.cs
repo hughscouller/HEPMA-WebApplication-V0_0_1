@@ -55,9 +55,9 @@ namespace WebApplication1.Controllers
             ViewBag.AreaOfCareCount = aocCount;
             // ////////////////////////////////////////////////////
 
-            List<NotesFieldHospitalSite> HospitalNotesBag = new List<NotesFieldHospitalSite> (db.HospitalNotes.Where(hn => hn.HospitalId == hospitalSite.Id ).ToList().OrderByDescending(hn => hn.CreatedOn) );
+            List<NotesFieldHospitalSite> hospitalSiteNotes = new List<NotesFieldHospitalSite> (db.HospitalNotes.Where(hn => hn.HospitalId == hospitalSite.Id ).ToList().OrderByDescending(hn => hn.CreatedOn) );
 
-            ViewBag.HospitalNotes = HospitalNotesBag;
+            ViewBag.HospitalNotes = hospitalSiteNotes;
 
             return View(hospitalSite);
         }
@@ -78,7 +78,6 @@ namespace WebApplication1.Controllers
 
             return count;
         }
-
         // end helper function - Details Post ////////////////////////////////////////////////
         // ////////////////////////////////////////////////////////////////////
 

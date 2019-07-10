@@ -191,6 +191,7 @@
     <Compile Include="Controllers\HospitalSitesController.cs" />
     <Compile Include="Controllers\LocationsOfInterestController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NotesFieldAreaOfCaresController.cs" />
     <Compile Include="Controllers\NotesFieldsHospitalSiteController.cs" />
     <Compile Include="Controllers\NotesFieldsSiteLocationController.cs" />
     <Compile Include="Controllers\SiteLocationsController.cs" />
@@ -214,6 +215,30 @@
     <Compile Include="Migrations\201907100713313_update2.Designer.cs">
       <DependentUpon>201907100713313_update2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907101245596_DBchange.cs" />
+    <Compile Include="Migrations\201907101245596_DBchange.Designer.cs">
+      <DependentUpon>201907101245596_DBchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101301233_22.cs" />
+    <Compile Include="Migrations\201907101301233_22.Designer.cs">
+      <DependentUpon>201907101301233_22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101310212_aaa.cs" />
+    <Compile Include="Migrations\201907101310212_aaa.Designer.cs">
+      <DependentUpon>201907101310212_aaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101352505_44.cs" />
+    <Compile Include="Migrations\201907101352505_44.Designer.cs">
+      <DependentUpon>201907101352505_44.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101356253_55.cs" />
+    <Compile Include="Migrations\201907101356253_55.Designer.cs">
+      <DependentUpon>201907101356253_55.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907101401502_66.cs" />
+    <Compile Include="Migrations\201907101401502_66.Designer.cs">
+      <DependentUpon>201907101401502_66.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
@@ -221,6 +246,7 @@
     <Compile Include="Models\HEPMA\HospitalSite.cs" />
     <Compile Include="Models\HEPMA\ImplementationOrder.cs" />
     <Compile Include="Models\HEPMA\LocationOfInterest.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldAreaOfCare.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
     <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
@@ -527,6 +553,16 @@
     <Content Include="Views\Hardware\Details.cshtml" />
     <Content Include="Views\Hardware\Edit.cshtml" />
     <Content Include="Views\Hardware\Index.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCare\Create.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCare\Delete.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCare\Details.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCare\Edit.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCare\Index.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCares\Create.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCares\Delete.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCares\Details.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCares\Edit.cshtml" />
+    <Content Include="Views\NotesFieldAreaOfCares\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -556,6 +592,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907100713313_update2.resx">
       <DependentUpon>201907100713313_update2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101245596_DBchange.resx">
+      <DependentUpon>201907101245596_DBchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101301233_22.resx">
+      <DependentUpon>201907101301233_22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101310212_aaa.resx">
+      <DependentUpon>201907101310212_aaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101352505_44.resx">
+      <DependentUpon>201907101352505_44.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101356253_55.resx">
+      <DependentUpon>201907101356253_55.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907101401502_66.resx">
+      <DependentUpon>201907101401502_66.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

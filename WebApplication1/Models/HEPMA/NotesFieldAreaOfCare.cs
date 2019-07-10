@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebApplication1.Models.HEPMA
 {
-    public class NotesFieldHospitalSite
+    public class NotesFieldAreaOfCare
     {
         public int Id { get; set; }
 
@@ -21,12 +21,12 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Note Type")]
         public string NoteType { get; set; }
 
-        [Display(Name = "Hosp ID")]
-        public int HospitalId { get; set; }
+        [Display(Name = "AoC ID")]
+        public int AoCId { get; set; }
 
         [Display(Name = "Note")]
         public string Note { get; set; }
 
-        public virtual HospitalSite HospitalSite { get; set; }
+        public virtual AreaOfCare areaOfCare { get; set; }
     }
 }
