@@ -125,17 +125,18 @@
 
             @foreach (var ListOfHardware in ViewBag.Hardware)
         {
-            <tr>
+        <tr>
 
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HType</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HAssetNumber</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HMacAddress</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNetworkPort</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNPInUse</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HElectricalSocket  </td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HESInUse</td>
-                <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HTrailingSocket</td>
-            </tr>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HType</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HAssetNumber</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HMacAddress</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNetworkPort</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNPInUse</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HElectricalSocket  </td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HESInUse</td>
+            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HTrailingSocket</td>
+            <td class="" style="border-style: solid; border-color: white">@Html.ActionLink("Edit", "../Hardware/Edit", new { id = ListOfHardware.HId })</td>
+        </tr>
 
         }
 

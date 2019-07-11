@@ -3,7 +3,7 @@ namespace WebApplication1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class aaa : DbMigration
+    public partial class creaete : DbMigration
     {
         public override void Up()
         {
@@ -15,20 +15,19 @@ namespace WebApplication1.Migrations
                         CreatedBy = c.String(),
                         CreatedOn = c.DateTime(),
                         NoteType = c.String(),
-                        AreaOfCareId = c.Int(nullable: false),
+                        AoCId = c.Int(nullable: false),
                         Note = c.String(),
-                        areaOfCare_AoCId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AreaOfCares", t => t.areaOfCare_AoCId)
-                .Index(t => t.areaOfCare_AoCId);
+                .ForeignKey("dbo.AreaOfCares", t => t.AoCId, cascadeDelete: true)
+                .Index(t => t.AoCId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.NotesFieldAreaOfCares", "areaOfCare_AoCId", "dbo.AreaOfCares");
-            DropIndex("dbo.NotesFieldAreaOfCares", new[] { "areaOfCare_AoCId" });
+            DropForeignKey("dbo.NotesFieldAreaOfCares", "AoCId", "dbo.AreaOfCares");
+            DropIndex("dbo.NotesFieldAreaOfCares", new[] { "AoCId" });
             DropTable("dbo.NotesFieldAreaOfCares");
         }
     }

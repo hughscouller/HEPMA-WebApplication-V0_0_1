@@ -88,7 +88,7 @@ namespace WebApplication1.Controllers
             {
                 db.Entry(hardware).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../LocationsOfInterest/Details", new { id = hardware.HLoIId });
             }
             return View(hardware);
         }
