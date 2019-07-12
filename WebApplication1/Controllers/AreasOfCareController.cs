@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
 
             List<NotesFieldAreaOfCare> AoCNotes = new List<NotesFieldAreaOfCare>(db.NotesFieldAreaOfCares.Where(aocn => aocn.AoCId == areaOfCare.AoCId).ToList().OrderByDescending(aocn => aocn.CreatedOn));
 
-            ViewBag.HospitalNotes = AoCNotes;
+            ViewBag.AoCNotes = AoCNotes;
             //ViewBag.SiteLocation = siteLocation.Name;
             //ViewBag.HospitalSiteName = hospitalSite.Name;
             //ViewBag.HospitalSiteId = hospitalSite.Id;
