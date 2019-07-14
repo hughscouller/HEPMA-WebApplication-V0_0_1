@@ -9,20 +9,20 @@
 <!-- LoI Page Header - start ////////////////////////////////////////////////////////////////////////////////-->
 <div>
 
-    
-        @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
-        <p>@ViewBag.HospitalSite.Name >> @ViewBag.SiteLocationName >> @ViewBag.AreaOfCareName >> @Model.LoIName</p>
-    
 
-    
-        @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index")
-        ||
-        @Html.ActionLink("Back to parent Hospital Site", "../HospitalSites/Details", new { id = ViewBag.hospitalSiteID })
-        ||
-        @Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details", new { id = ViewBag.siteLocationID })
-        ||
-        @Html.ActionLink("Back to parent Area of Care", "../AreasOfCare/Details", new { id = Model.LoIAoCId })
-    
+    @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
+    <p>@ViewBag.HospitalSite.Name >> @ViewBag.SiteLocationName >> @ViewBag.AreaOfCareName >> @Model.LoIName</p>
+
+
+
+    @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index")
+    ||
+    @Html.ActionLink("Back to parent Hospital Site", "../HospitalSites/Details", new { id = ViewBag.hospitalSiteID })
+    ||
+    @Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details", new { id = ViewBag.siteLocationID })
+    ||
+    @Html.ActionLink("Back to parent Area of Care", "../AreasOfCare/Details", new { id = Model.LoIAoCId })
+
 
     <hr />
 
@@ -124,21 +124,21 @@
 
 
             @foreach (var ListOfHardware in ViewBag.Hardware)
-        {
-        <tr>
+            {
+                <tr>
 
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HType</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HAssetNumber</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HMacAddress</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNetworkPort</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNPInUse</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HElectricalSocket  </td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HESInUse</td>
-            <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HTrailingSocket</td>
-            <td class="" style="border-style: solid; border-color: white">@Html.ActionLink("Edit", "../Hardware/Edit", new { id = ListOfHardware.HId })</td>
-        </tr>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HType</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HAssetNumber</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HMacAddress</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNetworkPort</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HNPInUse</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HElectricalSocket  </td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HESInUse</td>
+                    <td class="" style="border-style: solid; border-color: white">@ListOfHardware.HTrailingSocket</td>
+                    <td class="" style="border-style: solid; border-color: white">@Html.ActionLink("Edit", "../Hardware/Edit", new { id = ListOfHardware.HId })</td>
+                </tr>
 
-        }
+            }
 
 
             <tr class="alert-info">
@@ -158,3 +158,38 @@
     </div>
 </div>
 
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- Notes - Modal code -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Location of Interest Notes - @Model.LoIName</h4>
+            </div>
+            <div class="modal-body">
+
+                @foreach (var note in ViewBag.LocationOfInterestNotes)
+                {
+                    <div class="panel">
+                        <div class="panel-heading bg-info" style="background:#fac808">
+                            <p>@note.CreatedBy - @note.CreatedOn.ToString("dd/MM/yyyy") - @note.NoteType</p>
+                        </div>
+                        <div class="panel-body">
+                            <p>@note.Note</p>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->

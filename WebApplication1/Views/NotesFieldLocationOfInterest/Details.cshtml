@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.HEPMA.NotesFieldAreaOfCare
+﻿@model WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest
 
 @{
     ViewBag.Title = "Details";
@@ -7,9 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>NotesFieldAreaOfCare</h4>
+    <h4>NotesFieldLocationOfInterest</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.locationOf.LoIName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.locationOf.LoIName)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.CreatedBy)
         </dt>
@@ -32,14 +40,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.NoteType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AreaOfCareId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AreaOfCareId)
         </dd>
 
         <dt>

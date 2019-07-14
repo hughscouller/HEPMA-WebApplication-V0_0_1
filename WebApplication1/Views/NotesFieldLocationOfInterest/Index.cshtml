@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.HEPMA.NotesFieldAreaOfCare>
+﻿@model IEnumerable<WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest>
 
 @{
     ViewBag.Title = "Index";
@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.locationOf.LoIName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CreatedBy)
         </th>
         <th>
@@ -19,9 +22,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NoteType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AreaOfCareId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Note)
@@ -32,6 +32,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.locationOf.LoIName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.CreatedBy)
         </td>
         <td>
@@ -39,9 +42,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NoteType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AreaOfCareId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Note)

@@ -6,15 +6,14 @@
 
 
 <h2>Edit</h2>
-    
+
 <h4>AreaOfCare</h4>
 
-@*link back to list of AoCs for given site location*@
-<div>
-    @*@Html.ActionLink("Back to List", "../SiteLocations/Details/", new { id = Model.SiteLocationId })*@
-    <p>&nbsp;</p>
-</div>
+@Html.ActionLink("Cancel", "Details", new { id = Model.AoCId })
+
 <hr />
+
+@*link back to list of AoCs for given site location*@
 
 <div class="row">
 

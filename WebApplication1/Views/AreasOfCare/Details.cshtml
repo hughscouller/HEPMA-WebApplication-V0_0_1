@@ -197,27 +197,49 @@
 
                                     @foreach (var loi in ViewBag.locationsOfInterest)
                                     {
-                                        <tr>
+                                <tr>
 
-                                            <td>
-                                                @loi.LoIName
-                                            </td>
-                                            <td>
-                                                @loi.LoIRoomReference
-                                            </td>
-                                            <td>
-                                                @loi.LoIPrescribing
-                                            </td>
-                                            <td>
-                                                @loi.LoIMedicinesAdministration
-                                            </td>
-                                            <td>
-                                                @loi.LoIPharmacyCheck
-                                            </td>
-                                            <td>
-                                                @Html.ActionLink("Details", "../LocationsOfInterest/Details", new { id = loi.LoIId })
-                                            </td>
-                                        </tr>
+                                    <td>
+                                        @loi.LoIName
+                                    </td>
+                                    <td>
+                                        @loi.LoIRoomReference
+                                    </td>
+
+                                    <!--  LoIPrescribing   /////////////////////////////////////////////////////////////// -->
+                                    @if (loi.LoIPrescribing)
+                                    {
+                                        <td class="bg-success">@loi.LoIPrescribing</td>
+                                    }
+                                    else
+                                    {
+                                        <td>&nbsp;</td>
+                                    }
+                                    <!--  /////////////////////////////////////////////////////////////// -->
+                                    <!--  LoIMedicinesAdministration   /////////////////////////////////////////////////////////////// -->
+                                    @if (loi.LoIMedicinesAdministration)
+                                    {
+                                        <td class="bg-success">@loi.LoIMedicinesAdministration</td>
+                                    }
+                                    else
+                                    {
+                                        <td>&nbsp;</td>
+                                    }
+                                    <!--  /////////////////////////////////////////////////////////////// -->
+                                    <!--  LoIPharmacyCheck   /////////////////////////////////////////////////////////////// -->
+                                    @if (loi.LoIPharmacyCheck)
+                                    {
+                                        <td class="bg-success">@loi.LoIPharmacyCheck</td>
+                                    }
+                                    else
+                                    {
+                                        <td>&nbsp;</td>
+                                    }
+                                    <!--  /////////////////////////////////////////////////////////////// -->
+                                    <td>
+                                        @Html.ActionLink("Details", "../LocationsOfInterest/Details", new { id = loi.LoIId })
+                                    </td>
+                                </tr>
 
                                     }
 
@@ -231,9 +253,6 @@
                                         @*<td>&nbsp;</td>*@
                                         <td class="bg-success" style="padding:5px; border-style: solid; border-color: white"><strong> @Html.ActionLink("Create New", "../LocationsOfInterest/Create", new { id = Model.AoCId })</strong></td>
                                     </tr>
-
-
-
 
                                 </table>
 

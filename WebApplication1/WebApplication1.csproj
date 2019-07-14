@@ -192,6 +192,7 @@
     <Compile Include="Controllers\LocationsOfInterestController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NotesFieldAreaOfCaresController.cs" />
+    <Compile Include="Controllers\NotesFieldLocationOfInterestController.cs" />
     <Compile Include="Controllers\NotesFieldsHospitalSiteController.cs" />
     <Compile Include="Controllers\NotesFieldsSiteLocationController.cs" />
     <Compile Include="Controllers\SiteLocationsController.cs" />
@@ -203,6 +204,10 @@
     <Compile Include="Migrations\201907111801243_creaete.Designer.cs">
       <DependentUpon>201907111801243_creaete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907141655161_eric.cs" />
+    <Compile Include="Migrations\201907141655161_eric.Designer.cs">
+      <DependentUpon>201907141655161_eric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\HEPMA\AreaOfCare.cs" />
@@ -212,6 +217,7 @@
     <Compile Include="Models\HEPMA\LocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldAreaOfCare.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldLocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -517,16 +523,16 @@
     <Content Include="Views\Hardware\Details.cshtml" />
     <Content Include="Views\Hardware\Edit.cshtml" />
     <Content Include="Views\Hardware\Index.cshtml" />
-    <Content Include="Views\NotesFieldAreaOfCare\Create.cshtml" />
-    <Content Include="Views\NotesFieldAreaOfCare\Delete.cshtml" />
-    <Content Include="Views\NotesFieldAreaOfCare\Details.cshtml" />
-    <Content Include="Views\NotesFieldAreaOfCare\Edit.cshtml" />
-    <Content Include="Views\NotesFieldAreaOfCare\Index.cshtml" />
     <Content Include="Views\NotesFieldAreaOfCares\Create.cshtml" />
     <Content Include="Views\NotesFieldAreaOfCares\Delete.cshtml" />
     <Content Include="Views\NotesFieldAreaOfCares\Details.cshtml" />
     <Content Include="Views\NotesFieldAreaOfCares\Edit.cshtml" />
     <Content Include="Views\NotesFieldAreaOfCares\Index.cshtml" />
+    <Content Include="Views\NotesFieldLocationOfInterest\Create.cshtml" />
+    <Content Include="Views\NotesFieldLocationOfInterest\Delete.cshtml" />
+    <Content Include="Views\NotesFieldLocationOfInterest\Details.cshtml" />
+    <Content Include="Views\NotesFieldLocationOfInterest\Edit.cshtml" />
+    <Content Include="Views\NotesFieldLocationOfInterest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -547,6 +553,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201907111801243_creaete.resx">
       <DependentUpon>201907111801243_creaete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907141655161_eric.resx">
+      <DependentUpon>201907141655161_eric.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
