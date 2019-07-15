@@ -17,12 +17,14 @@ namespace WebApplication1.DAL
 
         public DbSet<NotesFieldSiteLocation> LocationNotes { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFeildLocationOfInterest> LocationOfInterests { get; set; }
+        public DbSet<LocationOfInterest> LocationOfInterest { get; set; }
+
+        //public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.LocationOfInterest> LocationOfInterests { get; set; }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.Hardware> Hardwares { get; set; }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldAreaOfCare> NotesFieldAreaOfCares { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest> NotesFieldLocationOfInterests { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest> NotesFieldLocationOfInterest { get; set; }
     }
 }

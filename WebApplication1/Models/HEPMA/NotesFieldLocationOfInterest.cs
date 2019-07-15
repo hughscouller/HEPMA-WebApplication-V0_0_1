@@ -28,7 +28,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Note")]
         public string Note { get; set; }
 
-        public virtual NotesFeildLocationOfInterest locationOf { get; set; }
+        public virtual LocationOfInterest locationOfInterest { get; set; }
 
 
     }

@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
             //List<LocationOfInterest> locationsOfInterest = new List<LocationOfInterest>;
 
             // find all SiteLocations where HospitalSiteId = id ////
-            var locationsOfInterest = db.LocationOfInterests
+            var locationsOfInterest = db.LocationOfInterest
                     .Where(loi => loi.LoIAoCId == id);
 
             ViewBag.locationsOfInterest = locationsOfInterest;
@@ -80,8 +80,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: AreasOfCare/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "InScope,AoCId,SiteLocationId,AoCName,AoCType,AoCDescription,AoCPlannedGoLiveDate,AoCPlannedGoLiveDateAgreedAoC,AoCRecordOpened,AoCRecordClosed,AoCFirstContactDate,AoCLive,AoCLiveDate,AoCBaU,AoCBaUDate,AoCOnHold,AoConHoldReason,NoLongerInScope,NoLongerInScopeReason,AoCMedicinesReconciliation,AoCMedicinesReconciliationRealTime,AoCOutpatientClinicManagedOnTrak,AoCOutpatientClinicManagedOnTrakInRealTime,AoCADTsManagedOnTrak,AoCADTsManagedOnTraIInRealTime,AoCIDLsProducedInTrak,AoCIDLsProducedInTrakInRealTime,AoCWardRounds,AoCDoctorsRoom,AoCNursesStation,AoCOffice,AoCOfficeText,AoCPOther,AoCPOtherText,AoCDrugRoundAtBedside,AoCDrugRoundFromCentralPoint,AoCPatientComesToCentralPoint,AoCMAOther,AoCMAOtherText,AoCBedside,AoCCentralPointInWard,AoCPCOher,AoCPCOtherText")] AreaOfCare areaOfCare)

@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         // GET: NotesFieldLocationOfInterest
         public ActionResult Index()
         {
-            var notesFieldLocationOfInterests = db.NotesFieldLocationOfInterests.Include(n => n.locationOf);
+            var notesFieldLocationOfInterests = db.NotesFieldLocationOfInterest.Include(n => n.locationOfInterest);
             return View(notesFieldLocationOfInterests.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterests.Find(id);
+            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterest.Find(id);
             if (notesFieldLocationOfInterest == null)
             {
                 return HttpNotFound();
@@ -53,12 +53,12 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.NotesFieldLocationOfInterests.Add(notesFieldLocationOfInterest);
+                db.NotesFieldLocationOfInterest.Add(notesFieldLocationOfInterest);
                 db.SaveChanges();
                 return RedirectToAction("../LocationsOfInterest/Details/", new { id = notesFieldLocationOfInterest.LoIId });
             }
 
-            ViewBag.LoIId = new SelectList(db.LocationOfInterests, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
+            ViewBag.LoIId = new SelectList(db.LocationOfInterest, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
             return View(notesFieldLocationOfInterest);
         }
 
@@ -69,12 +69,12 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterests.Find(id);
+            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterest.Find(id);
             if (notesFieldLocationOfInterest == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.LoIId = new SelectList(db.LocationOfInterests, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
+            ViewBag.LoIId = new SelectList(db.LocationOfInterest, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
             return View(notesFieldLocationOfInterest);
         }
 
@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LoIId = new SelectList(db.LocationOfInterests, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
+            ViewBag.LoIId = new SelectList(db.LocationOfInterest, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
             return View(notesFieldLocationOfInterest);
         }
 
@@ -100,7 +100,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterests.Find(id);
+            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterest.Find(id);
             if (notesFieldLocationOfInterest == null)
             {
                 return HttpNotFound();
@@ -113,8 +113,8 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterests.Find(id);
-            db.NotesFieldLocationOfInterests.Remove(notesFieldLocationOfInterest);
+            NotesFieldLocationOfInterest notesFieldLocationOfInterest = db.NotesFieldLocationOfInterest.Find(id);
+            db.NotesFieldLocationOfInterest.Remove(notesFieldLocationOfInterest);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
