@@ -71,8 +71,6 @@ namespace WebApplication1.Controllers
             // ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name");  // required for the HospitalSite dropdown form field
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name");
 
-
-
             var SL = new SiteLocation();
             SL.HospitalSiteId = id;
             //ViewBag.HSID = id;
@@ -81,8 +79,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: SiteLocations/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Descrption,Notes,HospitalSiteId")] SiteLocation siteLocation)
@@ -118,8 +114,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: SiteLocations/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Descrption,Notes,HospitalSiteId")] SiteLocation siteLocation)

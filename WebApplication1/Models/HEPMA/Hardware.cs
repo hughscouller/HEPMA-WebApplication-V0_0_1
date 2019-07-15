@@ -30,6 +30,6 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "LoI ID")]
         public int HLoIId { get; set; }
 
-        public virtual LocationOfInterest LocationOfInterest { get; set; }
+        public virtual NotesFeildLocationOfInterest LocationOfInterest { get; set; }
     }
 }

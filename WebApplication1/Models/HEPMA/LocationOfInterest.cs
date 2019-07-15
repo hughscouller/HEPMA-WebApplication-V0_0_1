@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebApplication1.Models.HEPMA
 {
-    public class LocationOfInterest
+    public class NotesFeildLocationOfInterest
     {
         [Key]
         [Display(Name = "LoC ID")]

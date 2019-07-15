@@ -17,7 +17,7 @@ namespace WebApplication1.DAL
 
         public DbSet<NotesFieldSiteLocation> LocationNotes { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.LocationOfInterest> LocationOfInterests { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFeildLocationOfInterest> LocationOfInterests { get; set; }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.Hardware> Hardwares { get; set; }
 

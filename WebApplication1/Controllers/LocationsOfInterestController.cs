@@ -28,7 +28,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
+            NotesFeildLocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
             if (locationOfInterest == null)
             {
                 return HttpNotFound();
@@ -39,11 +39,16 @@ namespace WebApplication1.Controllers
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
             HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.HospitalSiteId);
 
+            //List<NotesFieldLocationOfInterest> notesFieldLocationOfInterest = db.NotesFieldLocationOfInterests.Find(locationOfInterest.LoIId);
+            List<NotesFieldLocationOfInterest> notesFieldLocationOfInterest = new List<NotesFieldLocationOfInterest>(db.NotesFieldLocationOfInterests.Where(loin => loin.LoIId == locationOfInterest.LoIId).ToList().OrderByDescending(loin => loin.CreatedOn));
+
             ViewBag.HospitalSite = hospitalSite;
             ViewBag.HospitalSiteID = siteLocation.HospitalSiteId;
             ViewBag.siteLocationName = siteLocation.Name;
             ViewBag.siteLocationID = siteLocation.Id;
             ViewBag.areaOfCareName = areaOfCare.AoCName;
+
+            ViewBag.LocationOfInterestNotes = notesFieldLocationOfInterest;
 
             var hardware = db.Hardwares
                 .Where(H => H.HLoIId == id);
@@ -59,7 +64,7 @@ namespace WebApplication1.Controllers
         // GET: LocationsOfInterest/Create
         public ActionResult Create(int id)
         {
-            LocationOfInterest locationOfInterest = new LocationOfInterest();
+            NotesFeildLocationOfInterest locationOfInterest = new NotesFeildLocationOfInterest();
             locationOfInterest.LoIAoCId = id;
 
             return View(locationOfInterest);
@@ -70,7 +75,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LoIId,LoIName,LoIRoomReference,LoIDescription,LoIPrescribing,LoIMedicinesAdministration,LoIPharmacyCheck,LoINotes,LoIAoCId")] LocationOfInterest locationOfInterest)
+        public ActionResult Create([Bind(Include = "LoIId,LoIName,LoIRoomReference,LoIDescription,LoIPrescribing,LoIMedicinesAdministration,LoIPharmacyCheck,LoINotes,LoIAoCId")] NotesFeildLocationOfInterest locationOfInterest)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +94,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
+            NotesFeildLocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
             if (locationOfInterest == null)
             {
                 return HttpNotFound();
@@ -102,7 +107,7 @@ namespace WebApplication1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LoIId,LoIName,LoIRoomReference,LoIDescription,LoIPrescribing,LoIMedicinesAdministration,LoIPharmacyCheck,LoINotes,LoIAoCId")] LocationOfInterest locationOfInterest)
+        public ActionResult Edit([Bind(Include = "LoIId,LoIName,LoIRoomReference,LoIDescription,LoIPrescribing,LoIMedicinesAdministration,LoIPharmacyCheck,LoINotes,LoIAoCId")] NotesFeildLocationOfInterest locationOfInterest)
         {
             if (ModelState.IsValid)
             {
@@ -120,7 +125,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            LocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
+            NotesFeildLocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
             if (locationOfInterest == null)
             {
                 return HttpNotFound();
@@ -133,7 +138,7 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            LocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
+            NotesFeildLocationOfInterest locationOfInterest = db.LocationOfInterests.Find(id);
             db.LocationOfInterests.Remove(locationOfInterest);
             db.SaveChanges();
             return RedirectToAction("Index");

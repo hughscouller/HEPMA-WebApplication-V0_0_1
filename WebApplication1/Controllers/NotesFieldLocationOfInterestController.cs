@@ -38,15 +38,15 @@ namespace WebApplication1.Controllers
         }
 
         // GET: NotesFieldLocationOfInterest/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            ViewBag.LoIId = new SelectList(db.LocationOfInterests, "LoIId", "LoIName");
-            return View();
+            NotesFieldLocationOfInterest NFLoI = new NotesFieldLocationOfInterest();
+            NFLoI.LoIId = id;
+
+            return View(NFLoI);
         }
 
         // POST: NotesFieldLocationOfInterest/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,CreatedBy,CreatedOn,NoteType,LoIId,Note")] NotesFieldLocationOfInterest notesFieldLocationOfInterest)
@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers
             {
                 db.NotesFieldLocationOfInterests.Add(notesFieldLocationOfInterest);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("../LocationsOfInterest/Details/", new { id = notesFieldLocationOfInterest.LoIId });
             }
 
             ViewBag.LoIId = new SelectList(db.LocationOfInterests, "LoIId", "LoIName", notesFieldLocationOfInterest.LoIId);
@@ -79,8 +79,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: NotesFieldLocationOfInterest/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,CreatedBy,CreatedOn,NoteType,LoIId,Note")] NotesFieldLocationOfInterest notesFieldLocationOfInterest)

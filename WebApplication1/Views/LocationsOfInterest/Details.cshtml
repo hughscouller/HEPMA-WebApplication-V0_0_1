@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.HEPMA.LocationOfInterest
+﻿@model WebApplication1.Models.HEPMA.NotesFeildLocationOfInterest
 
 @{
     ViewBag.Title = "Details";
@@ -95,14 +95,11 @@
                     </div>
                     <div class="col-lg-6 text-center">
                         <!--Link to hospital notes create page -->
-                        <href>Add Note</href>@*@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.AoCId })*@
+                        @Html.ActionLink("Add LoI Note", "../NotesFieldLocationOfInterest/create", new { id = Model.LoIId })
                     </div>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 
     <div class="col-lg-8">
@@ -171,19 +168,20 @@
             </div>
             <div class="modal-body">
 
-                @foreach (var note in ViewBag.LocationOfInterestNotes)
-                {
-                    <div class="panel">
-                        <div class="panel-heading bg-info" style="background:#fac808">
-                            <p>@note.CreatedBy - @note.CreatedOn.ToString("dd/MM/yyyy") - @note.NoteType</p>
+                @if(ViewBag.LocationOfInterestNotes != null) { 
+                    foreach (var note in ViewBag.LocationOfInterestNotes)
+                    {
+                        <div class="panel">
+                            <div class="panel-heading bg-info" style="background:#fac808">
+                                <p>@note.CreatedBy - @note.CreatedOn.ToString("dd/MM/yyyy") - @note.NoteType</p>
+                            </div>
+                            <div class="panel-body">
+                                <p>@note.Note</p>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <p>@note.Note</p>
-                        </div>
-                    </div>
 
+                    }
                 }
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
