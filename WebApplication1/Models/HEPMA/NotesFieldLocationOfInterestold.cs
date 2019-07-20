@@ -3,8 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models.HEPMA
 {
-    public class NotesFieldAreaOfCare
+    public class NotesFieldLocationOfInterestold
     {
+        [Key]
         public int Id { get; set; }
 
         [Display(Name = "Created By")]
@@ -18,12 +19,14 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Note Type")]
         public string NoteType { get; set; }
 
-        [Display(Name = "AoC ID")]
-        public int AoCId { get; set; }
+        [Display(Name = "LoI ID")]
+        public int LoIId { get; set; }
 
         [Display(Name = "Note")]
         public string Note { get; set; }
 
-        public virtual AreaOfCare areaOfCare { get; set; }
+        public virtual LocationOfInterest LocationOfInterest { get; set; }
+
+
     }
 }

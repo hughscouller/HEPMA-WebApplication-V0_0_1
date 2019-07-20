@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace WebApplication1.Models.HEPMA
 {
@@ -11,10 +9,10 @@ namespace WebApplication1.Models.HEPMA
 
         [Key]
         public int AoCId { get; set; }
-        
+
         // EF Navigation items section /////////////////////////////////////////
         public virtual SiteLocation SiteLocation { get; set; }
-        
+
         public virtual ICollection<SiteLocation> SiteLocations { get; set; }
 
         public int SiteLocationId { get; set; }
@@ -48,7 +46,7 @@ namespace WebApplication1.Models.HEPMA
         public bool AoCPlannedGoLiveDateAgreedAoC { get; set; }
 
         [Display(Name = "Record opened")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]     
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? AoCRecordOpened { get; set; }
 
@@ -191,7 +189,7 @@ namespace WebApplication1.Models.HEPMA
         public string AoCAssessmentUseOfTrak { get; set; }
         [Display(Name = "Hardware Quality")]
         public string AoCAssessmentHardwareQuality { get; set; }
-        
+
         [Display(Name = "Hardware Location")]
         public string AoCAssessmentHardwareLocation { get; set; }
         [Display(Name = "Business Process")]
@@ -228,7 +226,7 @@ namespace WebApplication1.Models.HEPMA
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime? GoliveChecklistUsersSetupDate { get; set; }
-        
+
 
 
         //public bool GoliveChecklistIdentified { get; set; }

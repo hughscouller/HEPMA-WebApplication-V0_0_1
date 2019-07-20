@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
@@ -18,7 +14,7 @@ namespace WebApplication1.Controllers
         // GET: NotesFieldLocationOfInterest
         public ActionResult Index()
         {
-            var notesFieldLocationOfInterests = db.NotesFieldLocationOfInterest.Include(n => n.locationOfInterest);
+            var notesFieldLocationOfInterests = db.NotesFieldLocationOfInterest.Include(n => n.LocationOfInterest);
             return View(notesFieldLocationOfInterests.ToList());
         }
 

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
@@ -34,7 +32,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
-            
+
 
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
             HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
@@ -58,7 +56,7 @@ namespace WebApplication1.Controllers
             ViewBag.locationsOfInterest = locationsOfInterest;
 
             int count = 0;
-            foreach(var loi in locationsOfInterest )
+            foreach (var loi in locationsOfInterest)
             {
                 count++;
             }

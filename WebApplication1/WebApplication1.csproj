@@ -221,6 +221,7 @@
     <Compile Include="Models\HEPMA\LocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldAreaOfCare.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldLocationOfInterestold.cs" />
     <Compile Include="Models\HEPMA\NotesFieldLocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
@@ -248,6 +249,8 @@
     <Content Include="Content\gridmvc.datepicker.min.css" />
     <Content Include="Content\images\1268658-sm-border.png" />
     <Content Include="Content\images\1268658.png" />
+    <Content Include="Content\images\1699779.jpg" />
+    <Content Include="Content\images\1833765.jpg" />
     <Content Include="Content\images\1890503.jpg" />
     <Content Include="Content\images\1941688.jpg" />
     <Content Include="Content\images\Artboard 2.png" />
