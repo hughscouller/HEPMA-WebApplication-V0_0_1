@@ -47,7 +47,7 @@ namespace WebApplication1.Controllers
             ViewBag.siteLocationID = siteLocation.Id;
             ViewBag.areaOfCareName = areaOfCare.AoCName;
 
-            ViewBag.LocationOfInterestNotes = notesFieldLocationOfInterest;
+            ViewBag.notesFieldLocationOfInterest = notesFieldLocationOfInterest;
 
             var hardware = db.Hardwares
                 .Where(H => H.HLoIId == id);

@@ -19,12 +19,10 @@ namespace WebApplication1.DAL
 
         public DbSet<LocationOfInterest> LocationOfInterest { get; set; }
 
-        //public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.LocationOfInterest> LocationOfInterests { get; set; }
+        public DbSet<Hardware> Hardwares { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.Hardware> Hardwares { get; set; }
+        public DbSet<NotesFieldAreaOfCare> NotesFieldAreaOfCares { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldAreaOfCare> NotesFieldAreaOfCares { get; set; }
-
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest> NotesFieldLocationOfInterest { get; set; }
+        public DbSet<NotesFieldLocationOfInterest> NotesFieldLocationOfInterest { get; set; }
     }
 }
