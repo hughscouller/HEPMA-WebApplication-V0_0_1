@@ -7,6 +7,7 @@ using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class HardwareController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();

@@ -9,12 +9,13 @@ using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class HospitalSitesController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();
 
         // GET: HospitalSites
-        //[Authorize]
+        
         public ActionResult Index()
         {
             return View(db.HospitalSites.ToList());
