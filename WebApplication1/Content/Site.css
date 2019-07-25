@@ -22,3 +22,22 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/* test custom css HS ///////////////////////////////////////////////////////*/
+
+.panelBodyBG{
+    background-color:snow;
+}
+
+.roundedBorder {
+    border-radius: 12px;
+}
+
+.roundedBorderTop {
+    border-radius: 12px 12px 0px 0px;
+}
+
+.roundedBorderBottom {
+    border-radius: 0px 0px 12px 12px ;
+}

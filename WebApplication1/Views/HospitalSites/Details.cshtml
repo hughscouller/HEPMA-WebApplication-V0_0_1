@@ -16,11 +16,11 @@
 <div class="row">
     @*start of left panel /////////////////////////////////////////////////*@
     <div class="col-lg-4">
-        <div class="panel">
+        <div class="panel redpanelBodyBG roundedBorder" style="border: 1px solid black">
 
-            <div class="panel-heading bg-primary">
+            <div class="panel-heading bg-primary roundedBorderTop">
                 <h3>@Html.DisplayFor(model => model.Name)</h3>
-                <p class="bg-info text-center">
+                <p class="bg-info text-center roundedBorder">
                     <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
                 </p>
             </div>
@@ -84,14 +84,14 @@
                 <div class="col-lg-6" >
                     Site locations :
                 </div>
-                <div class="col-lg-6"">
+                <div class="col-lg-6">
                     @ViewBag.SiteLocationsCount
                 </div>
             </div>@*end of panel-body*@
 
-            <div class="panel-footer">
+            <div class="panel-footer roundedBorderBottom">
                 <!-- Trigger the modal notes area -->
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
+                <button type="button" class="btn bg-primary btn-sm roundedBorder" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
 
                 <!--Link to hospital notes create page -->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.Id })
