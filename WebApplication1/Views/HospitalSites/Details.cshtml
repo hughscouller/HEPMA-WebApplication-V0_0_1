@@ -4,7 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Hospital Site Details</h2>
+
+<div class="custom_colour-5" style="padding:1px 20px">
+    <h2>Hospital Site Details</h2>
+</div>
 
 <h4><strong>@Model.Name</strong></h4>
 
@@ -16,70 +19,80 @@
 <div class="row">
     @*start of left panel /////////////////////////////////////////////////*@
     <div class="col-lg-4">
-        <div class="panel redpanelBodyBG roundedBorder" style="border: 1px solid black">
+        <div class="panel @*custom_panelBodyBG*@ custom_roundedBorderAll" style="border: 1px solid black">
 
-            <div class="panel-heading bg-primary roundedBorderTop">
-                <h3>@Html.DisplayFor(model => model.Name)</h3>
-                <p class="bg-info text-center roundedBorder">
-                    <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id })</strong>
-                </p>
+            <div class="panel-heading custom_panelHeadingBG custom_roundedBorderTop">
+
+                <h3 style="color:white"><strong>@Html.DisplayFor(model => model.Name)</strong></h3>
+
+                <p class="custom_colour-4 text-center custom_roundedBorderAll"> <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id }) </strong> </p>
+
             </div>
 
             <div class="panel-body">
-                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-5 custom_roundedBorderTop" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.Description) :
                 </div>
-                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-3 custom_roundedBorderBottom" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.Description)
                 </div>
-                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-12 custom_colour-5 custom_roundedBorderTop" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.Notes) :
                 </div>
-                <div class="col-lg-12" style="background :#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-3 custom_roundedBorderBottom" style=" border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.Notes)
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.PlannedStart) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.PlannedStart) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.PlannedComplete) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.PlannedComplete) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentStandardBed) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentStandardBed) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentDaySurgeryBed) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentDaySurgeryBed) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentTrolly) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentTrolly) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentChair) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentChair) &nbsp;
                 </div>
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot) :
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot) &nbsp;
                 </div>
+
             <p>&nbsp;</p>
                 <div class="col-lg-6" >
                     Site locations :
@@ -89,9 +102,9 @@
                 </div>
             </div>@*end of panel-body*@
 
-            <div class="panel-footer roundedBorderBottom">
+            <div class="panel-footer custom_panelFooterBG custom_roundedBorderBottom">
                 <!-- Trigger the modal notes area -->
-                <button type="button" class="btn bg-primary btn-sm roundedBorder" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
+                <button type="button" class="btn custom_colour-5 btn-sm custom_roundedBorderAll" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
 
                 <!--Link to hospital notes create page -->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.ActionLink("Add Hospital Site Note", "../NotesFieldsHospitalSite/create", new { id = Model.Id })
@@ -103,11 +116,11 @@
     <div class="col-lg-8">
         <div class="row">
             <div class="table">
-                <table class="table table-dark">
+                <table class="table table-condensed">
 
-                    <tr class="bg-primary">
-                        <td class="col-lg-5" style="padding:5px; border-style: solid; border-color: white"><strong>Site Locations</strong></td>
-                        <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>Description</strong></td>
+                    <tr class="custom_colour-1" style="color:white">
+                        <td class="col-lg-5" style="padding:5px; border-style: solid; border-color: white; border-radius: 12px 0px 0px 0px"><strong>Site Locations</strong></td>
+                        <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white;"><strong>Description</strong></td>
                         <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>No. AoCs</strong></td>
                         <td class="col-lg-2"style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                     </tr>
@@ -127,7 +140,7 @@
                     } @*---------------------close of for each loop ----------------------------*@
 
                     <tr class="alert-info" style="padding:5px; border-style: solid; border-color: white">
-                        <td style="padding:5px; border-style: solid; border-color: white"></td>
+                        <td style="padding:5px; border-style: solid; border-color: white; border-radius: 0px 0px 0px 12px"></td>
                         <td style="padding:5px; border-style: solid; border-color: white"></td>
                         <td style="padding:5px; border-style: solid; border-color: white"></td>
                         @*<td></td>*@

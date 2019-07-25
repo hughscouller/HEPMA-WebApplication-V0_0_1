@@ -25,19 +25,59 @@ textarea {
 
 /*///////////////////////////////////////////////////////////////////////////*/
 /* test custom css HS ///////////////////////////////////////////////////////*/
-
-.panelBodyBG{
-    background-color:snow;
+/*///////////////////////////////////////////////////////////////////////////*/
+/* Color Theme Swatches in Hex */
+.custom_colour-1 {
+    background-color: #305473;
 }
 
-.roundedBorder {
+.custom_colour-2 {
+    background-color: #4B83A6;
+}
+
+.custom_colour-3 {
+    background-color: #DFEDF2;
+}
+
+.custom_colour-4 {
+    background-color: #69AFBF;
+}
+
+.custom_colour-5 {
+    background-color: #A9D0D9;
+}
+/*///////////////////////////////////////////////////////////////////////////*/
+
+
+
+.custom_panelHeadingBG {
+    background-color: #305473;
+}
+
+.custom_panelBodyBG {
+    background-color: #ffffff;
+}
+.custom_panelFooterBG {
+    background-color: #DFEDF2;
+}
+
+
+.custom_roundedBorderAll {
     border-radius: 12px;
 }
 
-.roundedBorderTop {
+.custom_roundedBorderTop {
     border-radius: 12px 12px 0px 0px;
 }
 
-.roundedBorderBottom {
-    border-radius: 0px 0px 12px 12px ;
+.custom_roundedBorderBottom {
+    border-radius: 0px 0px 12px 12px;
+}
+
+.custom_roundedBorderLeft {
+    border-radius: 12px 0px 0px 12px;
+}
+
+.custom_roundedBorderRight {
+    border-radius: 0px 12px 12px 0px;
 }
