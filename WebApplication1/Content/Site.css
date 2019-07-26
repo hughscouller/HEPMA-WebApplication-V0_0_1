@@ -63,21 +63,21 @@ textarea {
 
 
 .custom_roundedBorderAll {
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 .custom_roundedBorderTop {
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 15px 12px 0px 0px;
 }
 
 .custom_roundedBorderBottom {
-    border-radius: 0px 0px 12px 12px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 .custom_roundedBorderLeft {
-    border-radius: 12px 0px 0px 12px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 .custom_roundedBorderRight {
-    border-radius: 0px 12px 12px 0px;
+    border-radius: 0px 15px 15px 0px;
 }
