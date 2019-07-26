@@ -20,15 +20,14 @@
 
 <div class="row">
     <div class="col-lg-4">
+        @*start of left panel /////////////////////////////////////////////////*@
+        <div class="row">
+            <div class="panel custom_roundedBorderAll" style="border: 1px solid black">
 
+                <div class="panel-heading custom_panelHeadingBG custom_roundedBorderTop">
 
-        <div class="row" @*style="background-color:orange"*@>
-
-            <div class="panel">
-
-                <div class="panel-heading bg-primary">
-                    <h3>@Html.DisplayFor(model => model.AoCName)</h3>
-                    <p class="bg-info text-center">
+                    <h3 style="color:white">@Html.DisplayFor(model => model.AoCName)</h3>
+                    <p class="custom_colour-4 text-center custom_roundedBorderAll">
                         <strong>@Html.ActionLink("Edit Area of Care", "Edit", new { id = Model.AoCId })</strong>
                     </p>
                 </div>
@@ -118,11 +117,11 @@
                     <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
                         @Html.DisplayFor(model => model.NoLongerInScopeReason)&nbsp;
                     </div>
-                    
+
 
                     @*<div class="col-lg-12 text-center" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
-                            Area of Care Paperwork
-                        </div>*@
+                Area of Care Paperwork
+            </div>*@
 
 
 

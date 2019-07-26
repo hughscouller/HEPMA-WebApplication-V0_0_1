@@ -5,9 +5,7 @@
 }
 
 
-<div class="custom_colour-5" style="padding:1px 20px">
-    <h2>Hospital Site Details</h2>
-</div>
+<h2>Hospital Site Details</h2>
 
 <h4><strong>@Model.Name</strong></h4>
 
@@ -17,9 +15,10 @@
 
 
 <div class="row">
-    @*start of left panel /////////////////////////////////////////////////*@
+    
     <div class="col-lg-4">
-        <div class="panel @*custom_panelBodyBG*@ custom_roundedBorderAll" style="border: 1px solid black">
+        @*start of left panel /////////////////////////////////////////////////*@
+        <div class="panel custom_roundedBorderAll" style="border: 1px solid black">
 
             <div class="panel-heading custom_panelHeadingBG custom_roundedBorderTop">
 
@@ -93,8 +92,8 @@
                     @Html.DisplayFor(model => model.AccommodationComplimentSpecialCareBabyUnitCot) &nbsp;
                 </div>
 
-            <p>&nbsp;</p>
-                <div class="col-lg-6" >
+                <p>&nbsp;</p>
+                <div class="col-lg-6">
                     Site locations :
                 </div>
                 <div class="col-lg-6">
@@ -119,7 +118,7 @@
                 <table class="table table-condensed">
 
                     <tr class="custom_colour-1" style="color:white">
-                        <td class="col-lg-5" style="padding:5px; border-style: solid; border-color: white; border-radius: 12px 0px 0px 0px"><strong>Site Locations</strong></td>
+                        <td class="col-lg-2" style="border-radius:12px 0px 0px 0px;padding:5px; border-style: solid; border-color: white;"><strong>Site Locations</strong></td>
                         <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white;"><strong>Description</strong></td>
                         <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>No. AoCs</strong></td>
                         <td class="col-lg-2"style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
