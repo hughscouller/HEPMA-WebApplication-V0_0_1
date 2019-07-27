@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.DAL
@@ -17,12 +13,12 @@ namespace WebApplication1.DAL
 
         public DbSet<NotesFieldSiteLocation> LocationNotes { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFeildLocationOfInterest> LocationOfInterests { get; set; }
+        public DbSet<LocationOfInterest> LocationOfInterest { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.Hardware> Hardwares { get; set; }
+        public DbSet<Hardware> Hardwares { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldAreaOfCare> NotesFieldAreaOfCares { get; set; }
+        public DbSet<NotesFieldAreaOfCare> NotesFieldAreaOfCares { get; set; }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.HEPMA.NotesFieldLocationOfInterest> NotesFieldLocationOfInterests { get; set; }
+        public DbSet<NotesFieldLocationOfInterest> NotesFieldLocationOfInterest { get; set; }
     }
 }

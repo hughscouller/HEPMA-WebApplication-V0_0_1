@@ -200,13 +200,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907150742054_create.cs" />
-    <Compile Include="Migrations\201907150742054_create.Designer.cs">
-      <DependentUpon>201907150742054_create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907151216129_update.cs" />
-    <Compile Include="Migrations\201907151216129_update.Designer.cs">
-      <DependentUpon>201907151216129_update.cs</DependentUpon>
+    <Compile Include="Migrations\201907211312264_Create.cs" />
+    <Compile Include="Migrations\201907211312264_Create.Designer.cs">
+      <DependentUpon>201907211312264_Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -217,6 +213,7 @@
     <Compile Include="Models\HEPMA\LocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldAreaOfCare.cs" />
     <Compile Include="Models\HEPMA\NotesFieldHospitalSite.cs" />
+    <Compile Include="Models\HEPMA\NotesFieldLocationOfInterestold.cs" />
     <Compile Include="Models\HEPMA\NotesFieldLocationOfInterest.cs" />
     <Compile Include="Models\HEPMA\NotesFieldSiteLocation.cs" />
     <Compile Include="Models\HEPMA\SiteLocation.cs" />
@@ -244,13 +241,18 @@
     <Content Include="Content\gridmvc.datepicker.min.css" />
     <Content Include="Content\images\1268658-sm-border.png" />
     <Content Include="Content\images\1268658.png" />
+    <Content Include="Content\images\1699779.jpg" />
+    <Content Include="Content\images\1833765.jpg" />
     <Content Include="Content\images\1890503.jpg" />
+    <Content Include="Content\images\1941688.jpg" />
+    <Content Include="Content\images\Artboard 2.png" />
     <Content Include="Content\images\High level patient episode v0_1.gif" />
     <Content Include="Content\images\High level patient episode v0_1.jpg" />
     <Content Include="Content\images\image294.png" />
     <Content Include="Content\images\image2961.gif" />
     <Content Include="Content\images\image2971.gif" />
     <Content Include="Content\images\image387.png" />
+    <Content Include="Content\images\Tracey-Gillies[1].jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content_old\bootstrap-theme.css" />
     <Content Include="Content_old\bootstrap-theme.min.css" />
@@ -551,11 +553,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907150742054_create.resx">
-      <DependentUpon>201907150742054_create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907151216129_update.resx">
-      <DependentUpon>201907151216129_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907211312264_Create.resx">
+      <DependentUpon>201907211312264_Create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

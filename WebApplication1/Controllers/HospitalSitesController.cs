@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class HospitalSitesController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();
 
         // GET: HospitalSites
-        //[Authorize]
+        
         public ActionResult Index()
         {
             return View(db.HospitalSites.ToList());
@@ -43,19 +42,19 @@ namespace WebApplication1.Controllers
             ViewBag.SiteLocations = siteLocations;
             ViewBag.SiteLocationsCount = siteLocations.Count();
             ////////////////////////////////////////////////////////
-            
+
             // Areas of Care information //////////////////////////
             List<AreaOfCare> areasOfCare = db.AreasOfCare.ToList();
 
             List<int> aocCount = new List<int>();
-            foreach(var sl in siteLocations)
+            foreach (var sl in siteLocations)
             {
                 aocCount.Add(siteLocationAoCsCount(areasOfCare, sl.Id));
             }
             ViewBag.AreaOfCareCount = aocCount;
             // ////////////////////////////////////////////////////
 
-            List<NotesFieldHospitalSite> hospitalSiteNotes = new List<NotesFieldHospitalSite> (db.HospitalNotes.Where(hn => hn.HospitalId == hospitalSite.Id ).ToList().OrderByDescending(hn => hn.CreatedOn) );
+            List<NotesFieldHospitalSite> hospitalSiteNotes = new List<NotesFieldHospitalSite>(db.HospitalNotes.Where(hn => hn.HospitalId == hospitalSite.Id).ToList().OrderByDescending(hn => hn.CreatedOn));
 
             ViewBag.HospitalNotes = hospitalSiteNotes;
 
@@ -68,9 +67,9 @@ namespace WebApplication1.Controllers
         {
             int count = 0;
 
-            foreach(var aoc in aocs)
+            foreach (var aoc in aocs)
             {
-                if(aoc.SiteLocationId == SLId)
+                if (aoc.SiteLocationId == SLId)
                 {
                     count++;
                 }

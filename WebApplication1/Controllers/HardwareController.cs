@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class HardwareController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();

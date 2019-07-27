@@ -1,4 +1,4 @@
-﻿@model WebApplication1.Models.HEPMA.NotesFeildLocationOfInterest
+﻿@model WebApplication1.Models.HEPMA.LocationOfInterest
 
 @{
     ViewBag.Title = "Details";
@@ -9,11 +9,7 @@
 <!-- LoI Page Header - start ////////////////////////////////////////////////////////////////////////////////-->
 <div>
 
-
-    @*@Html.ActionLink("Back to List", "../AreaOfCares/Details/", new { id = Model.LoIAoCId })*@
     <p>@ViewBag.HospitalSite.Name >> @ViewBag.SiteLocationName >> @ViewBag.AreaOfCareName >> @Model.LoIName</p>
-
-
 
     @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index")
     ||
@@ -22,7 +18,6 @@
     @Html.ActionLink("Back to parent Site Location", "../SiteLocations/Details", new { id = ViewBag.siteLocationID })
     ||
     @Html.ActionLink("Back to parent Area of Care", "../AreasOfCare/Details", new { id = Model.LoIAoCId })
-
 
     <hr />
 
@@ -34,64 +29,67 @@
     <div class="col-lg-4">
         <!-- LoI Left column ////////////////////////////////////////////////////////////////////////////////////// -->
 
-        <div class="panel">
-            <div class="panel-heading bg-primary">
-                <h3>@Html.DisplayFor(model => model.LoIName)</h3>
-                <p class="bg-info text-center">
+        <div class="panel custom_roundedBorderAll" style="border: 1px solid black">
+
+            <div class="panel-heading custom_panelHeadingBG custom_roundedBorderTop">
+
+                <h3 style="color:white">@Html.DisplayFor(model => model.LoIName)</h3>
+                <p class="custom_colour-4 text-center custom_roundedBorderAll">
                     <strong>@Html.ActionLink("Edit Location of Interest", "Edit", new { id = Model.LoIId })</strong>
                 </p>
             </div>
+
             <div class="panel-body">
 
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoIRoomReference):
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoIRoomReference)
                 </div>
 
-                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-5 custom_roundedBorderTop" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoIDescription):
                 </div>
-                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-3 custom_roundedBorderBottom" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoIDescription) &nbsp;
                 </div>
 
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoIPrescribing):
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoIPrescribing)
                 </div>
 
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoIMedicinesAdministration):
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoIMedicinesAdministration)
                 </div>
 
-                <div class="col-lg-6 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoIPharmacyCheck):
                 </div>
-                <div class="col-lg-6" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-6 custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoIPharmacyCheck)
                 </div>
 
-                <div class="col-lg-12 bg-success" style="padding:5px; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-5 custom_roundedBorderTop" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayNameFor(model => model.LoINotes):
                 </div>
-                <div class="col-lg-12" style="padding:5px; background:#fac808; border-style: solid; border-color: white">
+                <div class="col-lg-12 custom_colour-3 custom_roundedBorderBottom" style="padding:5px; border-style: solid; border-color: white">
                     @Html.DisplayFor(model => model.LoINotes)
                 </div>
 
             </div>
-            <div class="panel-footer">
+            <div class="panel-footer custom_panelFooterBG custom_roundedBorderBottom">
 
                 <div class="row">
                     <div class="col-lg-6 text-center">
                         <!-- Trigger the modal notes area -->
-                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Hospital Site Notes</button>
+                        <button type="button" class="btn custom_colour-5 btn-sm custom_roundedBorderAll" data-toggle="modal" data-target="#myModal">LoI Notes</button>
                     </div>
                     <div class="col-lg-6 text-center">
                         <!--Link to hospital notes create page -->
@@ -139,7 +137,7 @@
 
 
             <tr class="alert-info">
-                <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                <td style="padding:5px; border-style: solid; border-color: white; border-radius:0px 0px 0px 15px">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                 <td style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
@@ -168,8 +166,8 @@
             </div>
             <div class="modal-body">
 
-                @if(ViewBag.LocationOfInterestNotes != null) { 
-                    foreach (var note in ViewBag.LocationOfInterestNotes)
+                @if(ViewBag.notesFieldLocationOfInterest != null) { 
+                    foreach (var note in ViewBag.notesFieldLocationOfInterest)
                     {
                         <div class="panel">
                             <div class="panel-heading bg-info" style="background:#fac808">

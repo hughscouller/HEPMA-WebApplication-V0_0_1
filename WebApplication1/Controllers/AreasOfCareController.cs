@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class AreasOfCareController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();
@@ -34,7 +33,7 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
-            
+
 
             SiteLocation siteLocation = db.SiteLocations.Find(areaOfCare.SiteLocationId);
             HospitalSite hospitalSite = db.HospitalSites.Find(siteLocation.Id);
@@ -52,13 +51,13 @@ namespace WebApplication1.Controllers
             //List<LocationOfInterest> locationsOfInterest = new List<LocationOfInterest>;
 
             // find all SiteLocations where HospitalSiteId = id ////
-            var locationsOfInterest = db.LocationOfInterests
+            var locationsOfInterest = db.LocationOfInterest
                     .Where(loi => loi.LoIAoCId == id);
 
             ViewBag.locationsOfInterest = locationsOfInterest;
 
             int count = 0;
-            foreach(var loi in locationsOfInterest )
+            foreach (var loi in locationsOfInterest)
             {
                 count++;
             }
@@ -80,8 +79,6 @@ namespace WebApplication1.Controllers
         }
 
         // POST: AreasOfCare/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "InScope,AoCId,SiteLocationId,AoCName,AoCType,AoCDescription,AoCPlannedGoLiveDate,AoCPlannedGoLiveDateAgreedAoC,AoCRecordOpened,AoCRecordClosed,AoCFirstContactDate,AoCLive,AoCLiveDate,AoCBaU,AoCBaUDate,AoCOnHold,AoConHoldReason,NoLongerInScope,NoLongerInScopeReason,AoCMedicinesReconciliation,AoCMedicinesReconciliationRealTime,AoCOutpatientClinicManagedOnTrak,AoCOutpatientClinicManagedOnTrakInRealTime,AoCADTsManagedOnTrak,AoCADTsManagedOnTraIInRealTime,AoCIDLsProducedInTrak,AoCIDLsProducedInTrakInRealTime,AoCWardRounds,AoCDoctorsRoom,AoCNursesStation,AoCOffice,AoCOfficeText,AoCPOther,AoCPOtherText,AoCDrugRoundAtBedside,AoCDrugRoundFromCentralPoint,AoCPatientComesToCentralPoint,AoCMAOther,AoCMAOtherText,AoCBedside,AoCCentralPointInWard,AoCPCOher,AoCPCOtherText")] AreaOfCare areaOfCare)

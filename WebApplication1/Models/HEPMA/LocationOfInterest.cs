@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models.HEPMA
 {
-    public class NotesFeildLocationOfInterest
+    public class LocationOfInterest
     {
         [Key]
         [Display(Name = "LoC ID")]

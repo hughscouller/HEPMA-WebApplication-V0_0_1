@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models.HEPMA
 {
@@ -30,6 +26,6 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "LoI ID")]
         public int HLoIId { get; set; }
 
-        public virtual NotesFeildLocationOfInterest LocationOfInterest { get; set; }
+        public virtual LocationOfInterest LocationOfInterest { get; set; }
     }
 }

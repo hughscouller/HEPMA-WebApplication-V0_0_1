@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using WebApplication1.DAL;
 using WebApplication1.Models.HEPMA;
 
 namespace WebApplication1.Controllers
 {
+    [Authorize(Roles = "ProjectTeam, Admin")]
     public class SiteLocationsController : Controller
     {
         private HEPMADbContext db = new HEPMADbContext();
@@ -47,7 +46,7 @@ namespace WebApplication1.Controllers
 
             ViewBag.AreasOfCareCount = AreasOfCare.Count();
             // //////////////////////////////////////////////////
-            
+
 
             if (siteLocation == null)
             {
@@ -110,7 +109,7 @@ namespace WebApplication1.Controllers
             }
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
-            
+
         }
 
         // POST: SiteLocations/Edit/5
@@ -127,7 +126,7 @@ namespace WebApplication1.Controllers
             }
             ViewBag.HospitalSiteId = new SelectList(db.HospitalSites, "Id", "Name", siteLocation.HospitalSiteId);
             return View(siteLocation);
-            
+
         }
 
         // GET: AreasOfCare/Delete/5
