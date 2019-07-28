@@ -195,6 +195,7 @@
     <Compile Include="Controllers\NotesFieldLocationOfInterestController.cs" />
     <Compile Include="Controllers\NotesFieldsHospitalSiteController.cs" />
     <Compile Include="Controllers\NotesFieldsSiteLocationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SiteLocationsController.cs" />
     <Compile Include="DAL\HEPMADbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -535,6 +536,8 @@
     <Content Include="Views\NotesFieldLocationOfInterest\Details.cshtml" />
     <Content Include="Views\NotesFieldLocationOfInterest\Edit.cshtml" />
     <Content Include="Views\NotesFieldLocationOfInterest\Index.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

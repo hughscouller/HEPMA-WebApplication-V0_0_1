@@ -33,8 +33,15 @@
 
                     <li>@Html.ActionLink("Hospitals", "index", "HospitalSites")</li>
                     <li>@Html.ActionLink("Reports", "index")</li>
-                    @*<li>@Html.ActionLink("Locations", "index", "SiteLocations")</li>
-                        <li>@Html.ActionLink("AoCs", "index", "AreasOfCare")</li>*@
+
+                    @*<li>@Html.ActionLink("Role", "Index", "Role")</li>*@
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>@Html.ActionLink("Register New Users", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Creat New Role", "Index", "Role")</li>
+                    }
+
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
