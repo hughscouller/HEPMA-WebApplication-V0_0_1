@@ -5,24 +5,24 @@
 
 <h2>Available Roles For Application</h2>
 
-
-<hr>
-
-
 @Html.ActionLink("Create Role", "Create", "Role")
 
-<hr />
+<style type="text/css">
+    #tbrole, .c {
+        border: double;
+    }
+</style>
 
-<table>
+<table id="tbrole">
     <tr>
-        <td style="background-color:lightgrey">
+        <td class="c">
             Role Name
         </td>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class="c">
                 @item.Name
             </td>
         </tr>

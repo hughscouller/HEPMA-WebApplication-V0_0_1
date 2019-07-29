@@ -140,6 +140,7 @@ namespace WebApplication1.Controllers
         public ActionResult Register()
         {
             ViewBag.Users = context.Users.ToList();
+            ViewBag.Roles = context.Roles.ToList();
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
@@ -153,13 +154,13 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
 
                     //Assign Role to user Here 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserName);
                     //Ends Here
 
 

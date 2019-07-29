@@ -65,7 +65,7 @@ namespace WebApplication1.Models
     public class RegisterViewModel
     {
         [Required]
-        public string Name { get; set; }
+        public string UserName { get; set; }
 
         [Required]
         [EmailAddress]
