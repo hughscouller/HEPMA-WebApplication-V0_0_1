@@ -9,13 +9,15 @@
 
 <h4><strong>@Model.Name</strong></h4>
 
-@Html.ActionLink("Back to list of hospital sites", "../HospitalSites/Index")
+<div class="custom_colour-3 custom_roundedBorderAll" style="padding:5px 10px">
+    @Html.ActionLink("Back to list of hospital sites", "../HospitalSites/Index")
+</div>
 
 <hr />
 
 
 <div class="row">
-    
+
     <div class="col-lg-4">
         @*start of left panel /////////////////////////////////////////////////*@
         <div class="panel custom_roundedBorderAll" style="border: 1px solid black">
@@ -24,7 +26,7 @@
 
                 <h3 style="color:white"><strong>@Html.DisplayFor(model => model.Name)</strong></h3>
 
-                <p class="custom_colour-4 text-center custom_roundedBorderAll"> <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id }) </strong> </p>
+                <p class="custom_colour-3 text-center custom_roundedBorderAll"> <strong>@Html.ActionLink("Edit Hospital Site", "Edit", new { id = Model.Id }) </strong> </p>
 
             </div>
 
@@ -121,20 +123,20 @@
                         <td class="col-lg-2" style="border-radius:12px 0px 0px 0px;padding:5px; border-style: solid; border-color: white;"><strong>Site Locations</strong></td>
                         <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white;"><strong>Description</strong></td>
                         <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white"><strong>No. AoCs</strong></td>
-                        <td class="col-lg-2"style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
+                        <td class="col-lg-2" style="padding:5px; border-style: solid; border-color: white">&nbsp;</td>
                     </tr>
 
-                    @{ 
+                    @{
                         int i = 0;
                     }
                     @foreach (var siteLocation in ViewBag.SiteLocations)
                     {
-                    <tr>
-                        <td style="background:#fac808; padding:5px; border-style: solid; border-color: white"><strong>@siteLocation.Name</strong></td>
-                        <td>@siteLocation.Descrption</td>
-                        <td>@ViewBag.AreaOfCareCount[i]</td>
-                        <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
-                    </tr>
+                        <tr>
+                            <td style="background:#fac808; padding:5px; border-style: solid; border-color: white"><strong>@siteLocation.Name</strong></td>
+                            <td>@siteLocation.Descrption</td>
+                            <td>@ViewBag.AreaOfCareCount[i]</td>
+                            <td>@Html.ActionLink("Details", "../SiteLocations/Details", new { id = siteLocation.Id })</td>
+                        </tr>
                         i++;
                     } @*---------------------close of for each loop ----------------------------*@
 
@@ -149,7 +151,7 @@
 
             </div>
         </div>
-        
+
     </div>
 
 </div>@*end of class row*@
@@ -167,7 +169,7 @@
             </div>
             <div class="modal-body">
 
-                @foreach(var note in ViewBag.HospitalNotes)
+                @foreach (var note in ViewBag.HospitalNotes)
                 {
                     <div class="panel">
                         <div class="panel-heading" style="background:#fac808">
@@ -177,7 +179,7 @@
                             <p>@note.Note</p>
                         </div>
                     </div>
-                    
+
                 }
 
             </div>

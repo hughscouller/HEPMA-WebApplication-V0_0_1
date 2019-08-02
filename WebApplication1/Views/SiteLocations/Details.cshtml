@@ -8,8 +8,10 @@
 
 <h4><strong>@Model.HospitalSite.Name >> @Model.Name</strong></h4>
 
-@Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index") ||
-@Html.ActionLink("Back to parent Hospital Sight", "../HospitalSites/Details", new { id = Model.HospitalSiteId })
+<div class="custom_colour-3 custom_roundedBorderAll" style="padding:5px 10px">
+    @Html.ActionLink("Back to List of Hospitals", "../HospitalSites/Index") ||
+    @Html.ActionLink("Back to parent Hospital Sight", "../HospitalSites/Details", new { id = Model.HospitalSiteId })
+</div>
 
 <hr />
 
@@ -23,7 +25,7 @@
 
                 <h3 style="color:white"><strong>@Html.DisplayFor(model => model.Name)</strong></h3>
 
-                <div class="bg-info text-center">
+                <div class="custom_colour-3 text-center custom_roundedBorderAll">
 
                     <strong>@Html.ActionLink("Edit Site Location", "Edit", new { id = Model.Id })</strong>
 
