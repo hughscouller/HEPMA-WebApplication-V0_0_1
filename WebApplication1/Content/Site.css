@@ -81,3 +81,8 @@ textarea {
 .custom_roundedBorderRight {
     border-radius: 0px 15px 15px 0px;
 }
+
+.custom_Font01 {
+    font-family: 'M PLUS 1p', sans-serif;
+    /*font-size: 18px;*/
+}
