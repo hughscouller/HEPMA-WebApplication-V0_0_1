@@ -47,7 +47,7 @@
     <div class="form-group">
         @Html.Label("Select Your User Type", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownList("Name")
+            @Html.DropDownList("RoleName")
         </div>
     </div>
     <!--Ends Here-->
@@ -72,11 +72,12 @@
         </div>
 
         <div class="col-lg-2">
-            
+            @item.Roles.Count
             &nbsp;
         </div>
-
+        
             <div class="col-lg-2">
+                @ViewBag.roleName.Items
                 &nbsp;
             </div>
             <div class="col-lg-2">

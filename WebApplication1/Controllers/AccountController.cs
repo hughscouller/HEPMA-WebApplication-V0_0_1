@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace WebApplication1.Controllers
         private ApplicationUserManager _userManager;
 
         ApplicationDbContext context;
+        
 
         public AccountController()
         {
@@ -140,8 +142,16 @@ namespace WebApplication1.Controllers
         public ActionResult Register()
         {
             ViewBag.Users = context.Users.ToList();
-            ViewBag.Roles = context.Roles.ToList();
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+
+            ViewBag.roleName = context.Roles.First(); // ToList();
+                
+
+                //context.Users
+                //.Where(x => x.Roles.Select(a => a.Id))
+                //.ToList();
+
+            //ViewBag.Roles = context.Roles.ToList();
+            ViewBag.RoleName = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -160,11 +170,11 @@ namespace WebApplication1.Controllers
                 {
 
                     //Assign Role to user Here 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserName);
+                    await this.UserManager.AddToRoleAsync(user.Id, model.RoleName.ToString());
                     //Ends Here
 
 
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -172,12 +182,14 @@ namespace WebApplication1.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Register", "Account");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
+            ViewBag.Users = context.Users.ToList();
+            ViewBag.RoleName = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View(model);
         }
 
