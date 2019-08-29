@@ -75,17 +75,29 @@
             @item.Roles.Count
             &nbsp;
         </div>
+        <div class="col-lg-2">
+            @*Bad hack - remove use of hard coded values*@
+            @foreach (var i in item.Roles)
+            {
+                if (i.RoleId == "7e88478d-f6be-41d8-b832-7dd597db6f00")
+                {<strong>Admin</strong> }
+                if (i.RoleId == "680f0e38-8ebd-48ce-908c-652d98b6c161")
+                { <strong>ProjectTeam</strong>}
+                if (i.RoleId == "b601f436-3aac-45fd-abf7-d7aef018d129")
+                { <strong>Projectstakeholder</strong>}
+            }
+
+            &nbsp;
+        </div>
+        <div class="col-lg-4">
+            @*@foreach (var i in item.Roles)
+            {
+                @i.UserId;
+            }*@
+            &nbsp;
+        </div>
         
-            <div class="col-lg-2">
-                @ViewBag.roleName.Items
-                &nbsp;
-            </div>
-            <div class="col-lg-2">
-                &nbsp;
-            </div>
-            <div class="col-lg-2">
-                &nbsp;
-            </div>
+        
 
 
         }

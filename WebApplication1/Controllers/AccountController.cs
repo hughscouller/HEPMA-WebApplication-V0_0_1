@@ -143,14 +143,10 @@ namespace WebApplication1.Controllers
         {
             ViewBag.Users = context.Users.ToList();
 
-            ViewBag.roleName = context.Roles.First(); // ToList();
-                
-
                 //context.Users
                 //.Where(x => x.Roles.Select(a => a.Id))
                 //.ToList();
 
-            //ViewBag.Roles = context.Roles.ToList();
             ViewBag.RoleName = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
