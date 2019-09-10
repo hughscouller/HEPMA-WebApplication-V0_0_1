@@ -124,6 +124,7 @@ namespace WebApplication1.Controllers
                 return HttpNotFound();
             }
             ViewBag.SiteLocationId = new SelectList(db.SiteLocations, "Id", "Name", areaOfCare.SiteLocationId);
+            //ViewBag.SiteLocationId = new SelectListItem();
             return View(areaOfCare);
         }
 

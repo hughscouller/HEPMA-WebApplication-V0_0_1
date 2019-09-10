@@ -27,7 +27,7 @@ namespace WebApplication1.Models.HEPMA
         [Display(Name = "Name")]
         public string AoCName { get; set; }
 
-        [Display(Name = "Type")]
+        [Display(Name = "Care Setting")]
         public string AoCType { get; set; }
 
         [Display(Name = "Description")]

@@ -50,12 +50,18 @@
                             @Html.DisplayFor(model => model.InScope)&nbsp;
                         </div>
 
+
                         <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                             @Html.DisplayNameFor(model => model.AoCType)
                         </div>
+
+
+
                         <div class="col-lg-6  custom_colour-3 custom_roundedBorderRight" style="padding:5px; border-style: solid; border-color: white">
                             @Html.DisplayFor(model => model.AoCType)&nbsp;
                         </div>
+
+
 
                         <div class="col-lg-6 custom_colour-5 custom_roundedBorderLeft" style="padding:5px; border-style: solid; border-color: white">
                             @Html.DisplayNameFor(model => model.AoCPlannedGoLiveDate)
@@ -203,7 +209,10 @@
                                                 <!--  LoIPrescribing   /////////////////////////////////////////////////////////////// -->
                                                 @if (loi.LoIPrescribing)
                                                 {
-                                                    <td class="bg-success">@loi.LoIPrescribing</td>
+                                                    <td class="bg-success">
+                                                    @*@loi.LoIPrescribing*@
+                                                        <p>Yes</p>
+                                                    </td>
                                                 }
                                                 else
                                                 {
@@ -213,7 +222,10 @@
                                                 <!--  LoIMedicinesAdministration   /////////////////////////////////////////////////////////////// -->
                                                 @if (loi.LoIMedicinesAdministration)
                                                 {
-                                                    <td class="bg-success">@loi.LoIMedicinesAdministration</td>
+                                                    <td class="bg-success">
+                                                        @*@loi.LoIMedicinesAdministration*@
+                                                        <p>Yes</p>
+                                                    </td>
                                                 }
                                                 else
                                                 {
