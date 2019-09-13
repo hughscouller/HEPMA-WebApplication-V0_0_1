@@ -277,15 +277,19 @@
                                                 </div>
                                             </div>
 
+                                            @* //////////////////////////////////////// Data item no longer used ////////////////////////////////*@
                                             @*--AoCMedicinesReconciliationRealTime-------------------------------------------------------*@
-                                            <div class="form-group">
-                                                @Html.LabelFor(model => model.AoCMedicinesReconciliationRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
-                                                <div class="col-md-7">
-                                                    @Html.CheckBoxFor(model => model.AoCMedicinesReconciliationRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.AoCMedicinesReconciliationRealTime, "", new { @class = "text-danger" })
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    @*@Html.LabelFor(model => model.AoCMedicinesReconciliationRealTime, htmlAttributes: new { @class = "control-label col-md-5" })*@
+                                                    &nbsp;
+                                                    <div class="col-md-7">
+                                                        @Html.HiddenFor(model => model.AoCMedicinesReconciliationRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @*@Html.ValidationMessageFor(model => model.AoCMedicinesReconciliationRealTime, "", new { @class = "text-danger" })*@
+                                                        &nbsp;
+                                                    </div>
                                                 </div>
                                             </div>
-
 
                                             @*----AoCOutpatientClinicManagedOnTrak-------------------------------------------------------*@
                                             <div class="form-group">
@@ -331,14 +335,20 @@
                                                 </div>
                                             </div>
 
+                                            @* //////////////////////////////////////// Data item no longer used ////////////////////////////////*@
                                             @*--AoCIDLsProducedInTrakInRealTime----------------------------------------------------------*@
+                                        <div class="row">
                                             <div class="form-group">
-                                                @Html.LabelFor(model => model.AoCIDLsProducedInTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })
+                                                @*@Html.LabelFor(model => model.AoCIDLsProducedInTrakInRealTime, htmlAttributes: new { @class = "control-label col-md-5" })*@
+                                                &nbsp;
                                                 <div class="col-md-1">
-                                                    @Html.CheckBoxFor(model => model.AoCIDLsProducedInTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrakInRealTime, "", new { @class = "text-danger" })
+                                                    @Html.HiddenFor(model => model.AoCIDLsProducedInTrakInRealTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @*@Html.ValidationMessageFor(model => model.AoCIDLsProducedInTrakInRealTime, "", new { @class = "text-danger" })*@
+                                                    &nbsp;
                                                 </div>
                                             </div>
+                                        </div>
+
 
                                         </div>
                                     </div>   @*end panel body*@
