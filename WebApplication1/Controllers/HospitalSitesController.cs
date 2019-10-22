@@ -166,5 +166,20 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        // /////////////////testing ///////////////////////
+
+        public ActionResult FullList(int HSId)
+        {
+            List<HospitalSite> HSs = db.HospitalSites.ToList();
+            List<SiteLocation> SLs = db.SiteLocations.ToList();
+
+            ViewBag.HSs = HSs;
+            ViewBag.SLs = SLs;
+
+            return View();
+        }
+        // ////////////////////////////////////////////////
+
     }
 }
