@@ -167,6 +167,7 @@ namespace WebApplication1.Controllers
             base.Dispose(disposing);
         }
 
+<<<<<<< HEAD
         public ActionResult Report(int? id)
         {
             if (id == null)
@@ -186,6 +187,21 @@ namespace WebApplication1.Controllers
 
         }
 
+=======
+        // /////////////////testing ///////////////////////
+
+        public ActionResult FullList(int HSId)
+        {
+            List<HospitalSite> HSs = db.HospitalSites.ToList();
+            List<SiteLocation> SLs = db.SiteLocations.ToList();
+
+            ViewBag.HSs = HSs;
+            ViewBag.SLs = SLs;
+
+            return View();
+        }
+        // ////////////////////////////////////////////////
+>>>>>>> ea3c4ccdbd6d6409beb6cfbaee4c04fff2e0b6a5
 
     }
 }
