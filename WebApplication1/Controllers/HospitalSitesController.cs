@@ -169,6 +169,18 @@ namespace WebApplication1.Controllers
 
         // /////////////////testing ///////////////////////
 
+        public ActionResult Reporting(int? id)
+        {
+            if (id== null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            return View();
+        }
+
+
+
         public ActionResult FullList(int HSId)
         {
             List<HospitalSite> HSs = db.HospitalSites.ToList();
