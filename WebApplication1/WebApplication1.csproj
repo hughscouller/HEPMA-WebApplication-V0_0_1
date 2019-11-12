@@ -356,7 +356,8 @@
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Content\images\1268658.eps" />
     <None Include="Properties\PublishProfiles\cyberstudioone.com - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\rie-iistest.pubxml" />
+    <None Include="Properties\PublishProfiles\sjh-deviis1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -166,5 +166,26 @@ namespace WebApplication1.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Report(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            HospitalSite hospitalSite = db.HospitalSites.Find(id);
+
+            List<HospitalSite> hospitalSites = new List<HospitalSite>(db.HospitalSites.ToList());
+            List<SiteLocation> siteLocations = new List<SiteLocation>(db.SiteLocations.ToList());
+            List<AreaOfCare> areasOfCare = new List<AreaOfCare>(db.AreasOfCare.ToList());
+
+
+
+            return View();
+
+        }
+
+
     }
 }
