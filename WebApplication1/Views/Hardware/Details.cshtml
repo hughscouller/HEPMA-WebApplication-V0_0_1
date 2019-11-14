@@ -1,0 +1,90 @@
+﻿@model WebApplication1.Models.HEPMA.Hardware
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hardware</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HAssetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HAssetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HMacAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HMacAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HNetworkPort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HNetworkPort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HNPInUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HNPInUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HElectricalSocket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HElectricalSocket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HESInUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HESInUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HTrailingSocket)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HTrailingSocket)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HLoIId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HLoIId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.HId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

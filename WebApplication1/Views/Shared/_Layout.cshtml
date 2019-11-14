@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - HEPMA Project</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    
+
+</head>
+<body>
+
+<<<<<<< Updated upstream
+    <div class="navbar @*navbar-inverse*@ navbar-fixed-top navbar-default">
+=======
+    <div class="navbar navbar-inverse">
+        @*<div class="navbar @*navbar-inverse navbar-fixed-top navbar-default custom_colour-3">*@
+>>>>>>> Stashed changes
+
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("HEPMA Project Application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+<<<<<<< Updated upstream
+                    <li>@Html.ActionLink("Hospitals", "index", "HospitalSites")</li>
+                    <li>@Html.ActionLink("Reports", "index")</li>
+                    @*<li>@Html.ActionLink("Locations", "index", "SiteLocations")</li>
+                        <li>@Html.ActionLink("AoCs", "index", "AreasOfCare")</li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+=======
+                        <li>@Html.ActionLink("Hospitals", "index", "HospitalSites")</li>
+                        <li>@Html.ActionLink("Reports", "index")</li>
+
+
+
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Register New Users", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            <li>@Html.ActionLink("Creat New Role", "Index", "Role")</li>
+                        }
+
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+>>>>>>> Stashed changes
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer class="custom_roundedBorderAll custom_colour-5" style="height:40px; padding:10px">
+                <p style="text-align:center">&copy; @DateTime.Now.Year - H Scouller - HEPMA Project Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+
+        @RenderSection("scripts", required: false)
+</body>
+</html>

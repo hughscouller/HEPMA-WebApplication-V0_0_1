@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication1.Models.HEPMA.AreaOfCare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteLocation.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AoCName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AoCDescription)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteLocation.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AoCName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AoCDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AoCId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AoCId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AoCId })
+        </td>
+    </tr>
+}
+
+</table>
